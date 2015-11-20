@@ -26,6 +26,7 @@ using System.Reflection;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using InterClubBadminton.Properties;
+using Tools;
 
 namespace InterClubBadminton
 {

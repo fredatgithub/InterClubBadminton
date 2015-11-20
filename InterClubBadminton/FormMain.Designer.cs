@@ -65,7 +65,11 @@
       this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
       this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.tabControlMain = new System.Windows.Forms.TabControl();
+      this.tabPageTeamCreation = new System.Windows.Forms.TabPage();
+      this.tabPageVisualizeTeam = new System.Windows.Forms.TabPage();
       this.menuStrip1.SuspendLayout();
+      this.tabControlMain.SuspendLayout();
       this.SuspendLayout();
       // 
       // menuStrip1
@@ -364,11 +368,43 @@
       this.aboutToolStripMenuItem.Text = "À &propos de...";
       this.aboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
       // 
+      // tabControlMain
+      // 
+      this.tabControlMain.Controls.Add(this.tabPageTeamCreation);
+      this.tabControlMain.Controls.Add(this.tabPageVisualizeTeam);
+      this.tabControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.tabControlMain.Location = new System.Drawing.Point(0, 28);
+      this.tabControlMain.Name = "tabControlMain";
+      this.tabControlMain.SelectedIndex = 0;
+      this.tabControlMain.Size = new System.Drawing.Size(911, 506);
+      this.tabControlMain.TabIndex = 2;
+      // 
+      // tabPageTeamCreation
+      // 
+      this.tabPageTeamCreation.Location = new System.Drawing.Point(4, 25);
+      this.tabPageTeamCreation.Name = "tabPageTeamCreation";
+      this.tabPageTeamCreation.Padding = new System.Windows.Forms.Padding(3);
+      this.tabPageTeamCreation.Size = new System.Drawing.Size(903, 477);
+      this.tabPageTeamCreation.TabIndex = 0;
+      this.tabPageTeamCreation.Text = "Création équipe";
+      this.tabPageTeamCreation.UseVisualStyleBackColor = true;
+      // 
+      // tabPageVisualizeTeam
+      // 
+      this.tabPageVisualizeTeam.Location = new System.Drawing.Point(4, 25);
+      this.tabPageVisualizeTeam.Name = "tabPageVisualizeTeam";
+      this.tabPageVisualizeTeam.Padding = new System.Windows.Forms.Padding(3);
+      this.tabPageVisualizeTeam.Size = new System.Drawing.Size(192, 71);
+      this.tabPageVisualizeTeam.TabIndex = 1;
+      this.tabPageVisualizeTeam.Text = "Visualize team";
+      this.tabPageVisualizeTeam.UseVisualStyleBackColor = true;
+      // 
       // FormMain
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(911, 534);
+      this.Controls.Add(this.tabControlMain);
       this.Controls.Add(this.menuStrip1);
       this.MainMenuStrip = this.menuStrip1;
       this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -379,6 +415,7 @@
       this.Load += new System.EventHandler(this.FormMain_Load);
       this.menuStrip1.ResumeLayout(false);
       this.menuStrip1.PerformLayout();
+      this.tabControlMain.ResumeLayout(false);
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -423,5 +460,8 @@
     private System.Windows.Forms.ToolStripMenuItem SmallToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem MediumToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem LargeToolStripMenuItem;
+    private System.Windows.Forms.TabControl tabControlMain;
+    private System.Windows.Forms.TabPage tabPageTeamCreation;
+    private System.Windows.Forms.TabPage tabPageVisualizeTeam;
   }
 }
