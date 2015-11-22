@@ -456,7 +456,7 @@ namespace InterClubBadminton
 
     private void cutToolStripMenuItem_Click(object sender, EventArgs e)
     {
-      Control focusedControl = FindFocusedControl(new List<Control> { }); // add your controls in the List
+      Control focusedControl = FindFocusedControl(new List<Control> { });
       var tb = focusedControl as TextBox;
       if (tb != null)
       {
