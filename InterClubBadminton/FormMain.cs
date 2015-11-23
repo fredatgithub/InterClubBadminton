@@ -17,6 +17,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
+#define DEBUG
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -27,7 +28,6 @@ using System.Windows.Forms;
 using System.Xml.Linq;
 using InterClubBadminton.Properties;
 using Tools;
-
 namespace InterClubBadminton
 {
   public partial class FormMain : Form
@@ -41,7 +41,7 @@ namespace InterClubBadminton
     public readonly Dictionary<string, string> _languageDicoFr = new Dictionary<string, string>();
     private string _currentLanguage = "english";
     private ConfigurationOptions _configurationOptions = new ConfigurationOptions();
-    private bool _teamMembersCreated = false;
+    private bool _teamMembersCreated;
 
     private void QuitToolStripMenuItem_Click(object sender, EventArgs e)
     {
@@ -74,6 +74,9 @@ namespace InterClubBadminton
       LoadLanguages();
       SetLanguage(Settings.Default.LastLanguageUsed);
       LoadCombobox(comboBoxSex, Enum.GetNames(typeof (Gender)));
+      LoadComboboxWithXmlFile(comboBoxSimple, "Resources/Points.xml", "point", "name", "value");
+      LoadComboboxWithXmlFile(comboBoxDouble, "Resources/Points.xml", "point", "name", "value");
+      LoadComboboxWithXmlFile(comboBoxMixed, "Resources/Points.xml", "point", "name", "value");
     }
 
     private static void LoadCombobox(ComboBox cb, IEnumerable<string> collectionStrings)
@@ -82,6 +85,55 @@ namespace InterClubBadminton
       foreach (string item in collectionStrings)
       {
         cb.Items.Add(item);
+      }
+    }
+
+    private void LoadComboboxWithXmlFile(ComboBox cb, string filename, params string[] tags)
+    {
+      cb.Items.Clear();
+      if (!File.Exists(filename))
+      {
+        _teamMembersCreated = false;
+        return;
+      }
+
+      _teamMembersCreated = true;
+      XDocument xDoc;
+      try
+      {
+        xDoc = XDocument.Load(filename);
+      }
+      catch (Exception exception)
+      {
+        MessageBox.Show(Resources.Error_while_loading_the + Punctuation.OneSpace +
+          Settings.Default.LanguageFileName + Punctuation.OneSpace +
+          Resources.xml_file + Punctuation.OneSpace + exception.Message);
+        return;
+      }
+      var result = from node in xDoc.Descendants(tags[0])
+                   where node.HasElements
+                   let xElementName = node.Element(tags[1])
+                   where xElementName != null
+                   let xElementValue = node.Element(tags[2])
+                   where xElementValue != null
+                   select new
+                   {
+                     NodeValue1 = xElementName.Value,
+                     NodeValue2 = xElementValue.Value
+                   };
+      foreach (var i in result)
+      {
+        if (!cb.Items.Contains(i.NodeValue1))
+        {
+          cb.Items.Add(i.NodeValue1);
+        }
+#if DEBUG
+        else
+        {
+          MessageBox.Show(Resources.Your_XML_file_has_duplicate_like +
+            Punctuation.Colon + Punctuation.OneSpace + i.NodeValue1);
+        }
+#endif
       }
     }
 
@@ -112,7 +164,9 @@ namespace InterClubBadminton
       }
       catch (Exception exception)
       {
-        MessageBox.Show("Error while loading the " + Settings.Default.LanguageFileName + " xml file " + exception.Message);
+        MessageBox.Show(Resources.Error_while_loading_the + Punctuation.OneSpace + 
+          Settings.Default.LanguageFileName + Punctuation.OneSpace +  
+          Resources.xml_file + Punctuation.OneSpace + exception.Message);
         CreateLanguageFile();
         return;
       }
@@ -138,7 +192,8 @@ namespace InterClubBadminton
         }
         else
         {
-          MessageBox.Show("Your xml file has duplicate like: " + i.name);
+          MessageBox.Show(Resources.Your_XML_file_has_duplicate_like + 
+            Punctuation.Colon + Punctuation.OneSpace + i.name);
         }
 
         if (!_languageDicoFr.ContainsKey(i.name))
@@ -147,7 +202,8 @@ namespace InterClubBadminton
         }
         else
         {
-          MessageBox.Show("Your xml file has duplicate like: " + i.name);
+          MessageBox.Show(Resources.Your_XML_file_has_duplicate_like +
+            Punctuation.Colon + Punctuation.OneSpace + i.name);
         }
       }
     }
@@ -307,6 +363,7 @@ namespace InterClubBadminton
       Left = Settings.Default.WindowLeft < 0 ? 0 : Settings.Default.WindowLeft;
       SetDisplayOption(Settings.Default.DisplayToolStripMenuItem);
       LoadConfigurationOptions();
+      _teamMembersCreated = Settings.Default._teamMembersCreated;
     }
 
     private void SaveWindowValue()
@@ -318,6 +375,7 @@ namespace InterClubBadminton
       Settings.Default.LastLanguageUsed = frenchToolStripMenuItem.Checked ? "French" : "English";
       Settings.Default.DisplayToolStripMenuItem = GetDisplayOption();
       SaveConfigurationOptions();
+      Settings.Default._teamMembersCreated = _teamMembersCreated;
       Settings.Default.Save();
     }
 

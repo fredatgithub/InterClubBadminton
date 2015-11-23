@@ -66,7 +66,7 @@
       this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
       this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.tabControlMain = new System.Windows.Forms.TabControl();
-      this.tabPageInitialTeamCreation = new System.Windows.Forms.TabPage();
+      this.tabPageAddPlayer = new System.Windows.Forms.TabPage();
       this.tabPageVisualizeTeam = new System.Windows.Forms.TabPage();
       this.tabPageCreateTeam = new System.Windows.Forms.TabPage();
       this.labelFirstName = new System.Windows.Forms.Label();
@@ -81,9 +81,10 @@
       this.labelMixed = new System.Windows.Forms.Label();
       this.labelSex = new System.Windows.Forms.Label();
       this.comboBoxSex = new System.Windows.Forms.ComboBox();
+      this.buttonAddPlayer = new System.Windows.Forms.Button();
       this.menuStrip1.SuspendLayout();
       this.tabControlMain.SuspendLayout();
-      this.tabPageInitialTeamCreation.SuspendLayout();
+      this.tabPageAddPlayer.SuspendLayout();
       this.SuspendLayout();
       // 
       // menuStrip1
@@ -384,7 +385,7 @@
       // 
       // tabControlMain
       // 
-      this.tabControlMain.Controls.Add(this.tabPageInitialTeamCreation);
+      this.tabControlMain.Controls.Add(this.tabPageAddPlayer);
       this.tabControlMain.Controls.Add(this.tabPageVisualizeTeam);
       this.tabControlMain.Controls.Add(this.tabPageCreateTeam);
       this.tabControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -394,27 +395,28 @@
       this.tabControlMain.Size = new System.Drawing.Size(911, 506);
       this.tabControlMain.TabIndex = 2;
       // 
-      // tabPageInitialTeamCreation
+      // tabPageAddPlayer
       // 
-      this.tabPageInitialTeamCreation.Controls.Add(this.comboBoxSex);
-      this.tabPageInitialTeamCreation.Controls.Add(this.labelSex);
-      this.tabPageInitialTeamCreation.Controls.Add(this.comboBoxMixed);
-      this.tabPageInitialTeamCreation.Controls.Add(this.labelMixed);
-      this.tabPageInitialTeamCreation.Controls.Add(this.comboBoxDouble);
-      this.tabPageInitialTeamCreation.Controls.Add(this.comboBoxSimple);
-      this.tabPageInitialTeamCreation.Controls.Add(this.labelCreationDouble);
-      this.tabPageInitialTeamCreation.Controls.Add(this.labelCreateSimple);
-      this.tabPageInitialTeamCreation.Controls.Add(this.textBoxLastName);
-      this.tabPageInitialTeamCreation.Controls.Add(this.labelLastName);
-      this.tabPageInitialTeamCreation.Controls.Add(this.textBoxFirstName);
-      this.tabPageInitialTeamCreation.Controls.Add(this.labelFirstName);
-      this.tabPageInitialTeamCreation.Location = new System.Drawing.Point(4, 25);
-      this.tabPageInitialTeamCreation.Name = "tabPageInitialTeamCreation";
-      this.tabPageInitialTeamCreation.Padding = new System.Windows.Forms.Padding(3);
-      this.tabPageInitialTeamCreation.Size = new System.Drawing.Size(903, 477);
-      this.tabPageInitialTeamCreation.TabIndex = 0;
-      this.tabPageInitialTeamCreation.Text = "Creation initial team";
-      this.tabPageInitialTeamCreation.UseVisualStyleBackColor = true;
+      this.tabPageAddPlayer.Controls.Add(this.buttonAddPlayer);
+      this.tabPageAddPlayer.Controls.Add(this.comboBoxSex);
+      this.tabPageAddPlayer.Controls.Add(this.labelSex);
+      this.tabPageAddPlayer.Controls.Add(this.comboBoxMixed);
+      this.tabPageAddPlayer.Controls.Add(this.labelMixed);
+      this.tabPageAddPlayer.Controls.Add(this.comboBoxDouble);
+      this.tabPageAddPlayer.Controls.Add(this.comboBoxSimple);
+      this.tabPageAddPlayer.Controls.Add(this.labelCreationDouble);
+      this.tabPageAddPlayer.Controls.Add(this.labelCreateSimple);
+      this.tabPageAddPlayer.Controls.Add(this.textBoxLastName);
+      this.tabPageAddPlayer.Controls.Add(this.labelLastName);
+      this.tabPageAddPlayer.Controls.Add(this.textBoxFirstName);
+      this.tabPageAddPlayer.Controls.Add(this.labelFirstName);
+      this.tabPageAddPlayer.Location = new System.Drawing.Point(4, 25);
+      this.tabPageAddPlayer.Name = "tabPageAddPlayer";
+      this.tabPageAddPlayer.Padding = new System.Windows.Forms.Padding(3);
+      this.tabPageAddPlayer.Size = new System.Drawing.Size(903, 477);
+      this.tabPageAddPlayer.TabIndex = 0;
+      this.tabPageAddPlayer.Text = "Add Player";
+      this.tabPageAddPlayer.UseVisualStyleBackColor = true;
       // 
       // tabPageVisualizeTeam
       // 
@@ -551,6 +553,16 @@
       this.comboBoxSex.TabIndex = 12;
       this.comboBoxSex.Text = "Select a gender";
       // 
+      // buttonAddPlayer
+      // 
+      this.buttonAddPlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.buttonAddPlayer.Location = new System.Drawing.Point(138, 264);
+      this.buttonAddPlayer.Name = "buttonAddPlayer";
+      this.buttonAddPlayer.Size = new System.Drawing.Size(143, 31);
+      this.buttonAddPlayer.TabIndex = 13;
+      this.buttonAddPlayer.Text = "Add Player";
+      this.buttonAddPlayer.UseVisualStyleBackColor = true;
+      // 
       // FormMain
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -568,8 +580,8 @@
       this.menuStrip1.ResumeLayout(false);
       this.menuStrip1.PerformLayout();
       this.tabControlMain.ResumeLayout(false);
-      this.tabPageInitialTeamCreation.ResumeLayout(false);
-      this.tabPageInitialTeamCreation.PerformLayout();
+      this.tabPageAddPlayer.ResumeLayout(false);
+      this.tabPageAddPlayer.PerformLayout();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -615,7 +627,7 @@
     private System.Windows.Forms.ToolStripMenuItem MediumToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem LargeToolStripMenuItem;
     private System.Windows.Forms.TabControl tabControlMain;
-    private System.Windows.Forms.TabPage tabPageInitialTeamCreation;
+    private System.Windows.Forms.TabPage tabPageAddPlayer;
     private System.Windows.Forms.TabPage tabPageVisualizeTeam;
     private System.Windows.Forms.TabPage tabPageCreateTeam;
     private System.Windows.Forms.ComboBox comboBoxSex;
@@ -630,5 +642,6 @@
     private System.Windows.Forms.Label labelLastName;
     private System.Windows.Forms.TextBox textBoxFirstName;
     private System.Windows.Forms.Label labelFirstName;
+    private System.Windows.Forms.Button buttonAddPlayer;
   }
 }
