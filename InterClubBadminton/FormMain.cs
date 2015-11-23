@@ -41,6 +41,7 @@ namespace InterClubBadminton
     public readonly Dictionary<string, string> _languageDicoFr = new Dictionary<string, string>();
     private string _currentLanguage = "english";
     private ConfigurationOptions _configurationOptions = new ConfigurationOptions();
+    private bool _teamMembersCreated = false;
 
     private void QuitToolStripMenuItem_Click(object sender, EventArgs e)
     {
@@ -72,6 +73,16 @@ namespace InterClubBadminton
       GetWindowValue();
       LoadLanguages();
       SetLanguage(Settings.Default.LastLanguageUsed);
+      LoadCombobox(comboBoxSex, Enum.GetNames(typeof (Gender)));
+    }
+
+    private static void LoadCombobox(ComboBox cb, IEnumerable<string> collectionStrings)
+    {
+      cb.Items.Clear();
+      foreach (string item in collectionStrings)
+      {
+        cb.Items.Add(item);
+      }
     }
 
     private void LoadConfigurationOptions()
@@ -702,6 +713,12 @@ namespace InterClubBadminton
       {
         // do something
       }
+    }
+
+    public enum Gender
+    {
+      Male,
+      Female
     }
   }
 }

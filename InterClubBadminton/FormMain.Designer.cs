@@ -66,11 +66,24 @@
       this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
       this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.tabControlMain = new System.Windows.Forms.TabControl();
-      this.tabPageTeamCreation = new System.Windows.Forms.TabPage();
+      this.tabPageInitialTeamCreation = new System.Windows.Forms.TabPage();
       this.tabPageVisualizeTeam = new System.Windows.Forms.TabPage();
       this.tabPageCreateTeam = new System.Windows.Forms.TabPage();
+      this.labelFirstName = new System.Windows.Forms.Label();
+      this.textBoxFirstName = new System.Windows.Forms.TextBox();
+      this.textBoxLastName = new System.Windows.Forms.TextBox();
+      this.labelLastName = new System.Windows.Forms.Label();
+      this.labelCreationDouble = new System.Windows.Forms.Label();
+      this.labelCreateSimple = new System.Windows.Forms.Label();
+      this.comboBoxSimple = new System.Windows.Forms.ComboBox();
+      this.comboBoxDouble = new System.Windows.Forms.ComboBox();
+      this.comboBoxMixed = new System.Windows.Forms.ComboBox();
+      this.labelMixed = new System.Windows.Forms.Label();
+      this.labelSex = new System.Windows.Forms.Label();
+      this.comboBoxSex = new System.Windows.Forms.ComboBox();
       this.menuStrip1.SuspendLayout();
       this.tabControlMain.SuspendLayout();
+      this.tabPageInitialTeamCreation.SuspendLayout();
       this.SuspendLayout();
       // 
       // menuStrip1
@@ -371,7 +384,7 @@
       // 
       // tabControlMain
       // 
-      this.tabControlMain.Controls.Add(this.tabPageTeamCreation);
+      this.tabControlMain.Controls.Add(this.tabPageInitialTeamCreation);
       this.tabControlMain.Controls.Add(this.tabPageVisualizeTeam);
       this.tabControlMain.Controls.Add(this.tabPageCreateTeam);
       this.tabControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -381,15 +394,27 @@
       this.tabControlMain.Size = new System.Drawing.Size(911, 506);
       this.tabControlMain.TabIndex = 2;
       // 
-      // tabPageTeamCreation
+      // tabPageInitialTeamCreation
       // 
-      this.tabPageTeamCreation.Location = new System.Drawing.Point(4, 25);
-      this.tabPageTeamCreation.Name = "tabPageTeamCreation";
-      this.tabPageTeamCreation.Padding = new System.Windows.Forms.Padding(3);
-      this.tabPageTeamCreation.Size = new System.Drawing.Size(903, 477);
-      this.tabPageTeamCreation.TabIndex = 0;
-      this.tabPageTeamCreation.Text = "Création équipe";
-      this.tabPageTeamCreation.UseVisualStyleBackColor = true;
+      this.tabPageInitialTeamCreation.Controls.Add(this.comboBoxSex);
+      this.tabPageInitialTeamCreation.Controls.Add(this.labelSex);
+      this.tabPageInitialTeamCreation.Controls.Add(this.comboBoxMixed);
+      this.tabPageInitialTeamCreation.Controls.Add(this.labelMixed);
+      this.tabPageInitialTeamCreation.Controls.Add(this.comboBoxDouble);
+      this.tabPageInitialTeamCreation.Controls.Add(this.comboBoxSimple);
+      this.tabPageInitialTeamCreation.Controls.Add(this.labelCreationDouble);
+      this.tabPageInitialTeamCreation.Controls.Add(this.labelCreateSimple);
+      this.tabPageInitialTeamCreation.Controls.Add(this.textBoxLastName);
+      this.tabPageInitialTeamCreation.Controls.Add(this.labelLastName);
+      this.tabPageInitialTeamCreation.Controls.Add(this.textBoxFirstName);
+      this.tabPageInitialTeamCreation.Controls.Add(this.labelFirstName);
+      this.tabPageInitialTeamCreation.Location = new System.Drawing.Point(4, 25);
+      this.tabPageInitialTeamCreation.Name = "tabPageInitialTeamCreation";
+      this.tabPageInitialTeamCreation.Padding = new System.Windows.Forms.Padding(3);
+      this.tabPageInitialTeamCreation.Size = new System.Drawing.Size(903, 477);
+      this.tabPageInitialTeamCreation.TabIndex = 0;
+      this.tabPageInitialTeamCreation.Text = "Creation initial team";
+      this.tabPageInitialTeamCreation.UseVisualStyleBackColor = true;
       // 
       // tabPageVisualizeTeam
       // 
@@ -410,6 +435,122 @@
       this.tabPageCreateTeam.Text = "Create team";
       this.tabPageCreateTeam.UseVisualStyleBackColor = true;
       // 
+      // labelFirstName
+      // 
+      this.labelFirstName.AutoSize = true;
+      this.labelFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.labelFirstName.Location = new System.Drawing.Point(29, 41);
+      this.labelFirstName.Name = "labelFirstName";
+      this.labelFirstName.Size = new System.Drawing.Size(92, 20);
+      this.labelFirstName.TabIndex = 0;
+      this.labelFirstName.Text = "First Name";
+      // 
+      // textBoxFirstName
+      // 
+      this.textBoxFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.textBoxFirstName.Location = new System.Drawing.Point(138, 41);
+      this.textBoxFirstName.Name = "textBoxFirstName";
+      this.textBoxFirstName.Size = new System.Drawing.Size(143, 26);
+      this.textBoxFirstName.TabIndex = 1;
+      // 
+      // textBoxLastName
+      // 
+      this.textBoxLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.textBoxLastName.Location = new System.Drawing.Point(138, 69);
+      this.textBoxLastName.Name = "textBoxLastName";
+      this.textBoxLastName.Size = new System.Drawing.Size(143, 26);
+      this.textBoxLastName.TabIndex = 3;
+      // 
+      // labelLastName
+      // 
+      this.labelLastName.AutoSize = true;
+      this.labelLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.labelLastName.Location = new System.Drawing.Point(29, 69);
+      this.labelLastName.Name = "labelLastName";
+      this.labelLastName.Size = new System.Drawing.Size(91, 20);
+      this.labelLastName.TabIndex = 2;
+      this.labelLastName.Text = "Last Name";
+      // 
+      // labelCreationDouble
+      // 
+      this.labelCreationDouble.AutoSize = true;
+      this.labelCreationDouble.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.labelCreationDouble.Location = new System.Drawing.Point(29, 176);
+      this.labelCreationDouble.Name = "labelCreationDouble";
+      this.labelCreationDouble.Size = new System.Drawing.Size(62, 20);
+      this.labelCreationDouble.TabIndex = 6;
+      this.labelCreationDouble.Text = "Double";
+      // 
+      // labelCreateSimple
+      // 
+      this.labelCreateSimple.AutoSize = true;
+      this.labelCreateSimple.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.labelCreateSimple.Location = new System.Drawing.Point(29, 143);
+      this.labelCreateSimple.Name = "labelCreateSimple";
+      this.labelCreateSimple.Size = new System.Drawing.Size(60, 20);
+      this.labelCreateSimple.TabIndex = 4;
+      this.labelCreateSimple.Text = "Simple";
+      // 
+      // comboBoxSimple
+      // 
+      this.comboBoxSimple.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.comboBoxSimple.FormattingEnabled = true;
+      this.comboBoxSimple.Location = new System.Drawing.Point(138, 139);
+      this.comboBoxSimple.Name = "comboBoxSimple";
+      this.comboBoxSimple.Size = new System.Drawing.Size(143, 28);
+      this.comboBoxSimple.TabIndex = 7;
+      this.comboBoxSimple.Text = "Select a level";
+      // 
+      // comboBoxDouble
+      // 
+      this.comboBoxDouble.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.comboBoxDouble.FormattingEnabled = true;
+      this.comboBoxDouble.Location = new System.Drawing.Point(138, 173);
+      this.comboBoxDouble.Name = "comboBoxDouble";
+      this.comboBoxDouble.Size = new System.Drawing.Size(143, 28);
+      this.comboBoxDouble.TabIndex = 8;
+      this.comboBoxDouble.Text = "Select a level";
+      // 
+      // comboBoxMixed
+      // 
+      this.comboBoxMixed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.comboBoxMixed.FormattingEnabled = true;
+      this.comboBoxMixed.Location = new System.Drawing.Point(138, 207);
+      this.comboBoxMixed.Name = "comboBoxMixed";
+      this.comboBoxMixed.Size = new System.Drawing.Size(143, 28);
+      this.comboBoxMixed.TabIndex = 10;
+      this.comboBoxMixed.Text = "Select a level";
+      // 
+      // labelMixed
+      // 
+      this.labelMixed.AutoSize = true;
+      this.labelMixed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.labelMixed.Location = new System.Drawing.Point(29, 210);
+      this.labelMixed.Name = "labelMixed";
+      this.labelMixed.Size = new System.Drawing.Size(53, 20);
+      this.labelMixed.TabIndex = 9;
+      this.labelMixed.Text = "Mixed";
+      // 
+      // labelSex
+      // 
+      this.labelSex.AutoSize = true;
+      this.labelSex.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.labelSex.Location = new System.Drawing.Point(29, 105);
+      this.labelSex.Name = "labelSex";
+      this.labelSex.Size = new System.Drawing.Size(37, 20);
+      this.labelSex.TabIndex = 11;
+      this.labelSex.Text = "Sex";
+      // 
+      // comboBoxSex
+      // 
+      this.comboBoxSex.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.comboBoxSex.FormattingEnabled = true;
+      this.comboBoxSex.Location = new System.Drawing.Point(138, 105);
+      this.comboBoxSex.Name = "comboBoxSex";
+      this.comboBoxSex.Size = new System.Drawing.Size(143, 28);
+      this.comboBoxSex.TabIndex = 12;
+      this.comboBoxSex.Text = "Select a gender";
+      // 
       // FormMain
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -427,6 +568,8 @@
       this.menuStrip1.ResumeLayout(false);
       this.menuStrip1.PerformLayout();
       this.tabControlMain.ResumeLayout(false);
+      this.tabPageInitialTeamCreation.ResumeLayout(false);
+      this.tabPageInitialTeamCreation.PerformLayout();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -472,8 +615,20 @@
     private System.Windows.Forms.ToolStripMenuItem MediumToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem LargeToolStripMenuItem;
     private System.Windows.Forms.TabControl tabControlMain;
-    private System.Windows.Forms.TabPage tabPageTeamCreation;
+    private System.Windows.Forms.TabPage tabPageInitialTeamCreation;
     private System.Windows.Forms.TabPage tabPageVisualizeTeam;
     private System.Windows.Forms.TabPage tabPageCreateTeam;
+    private System.Windows.Forms.ComboBox comboBoxSex;
+    private System.Windows.Forms.Label labelSex;
+    private System.Windows.Forms.ComboBox comboBoxMixed;
+    private System.Windows.Forms.Label labelMixed;
+    private System.Windows.Forms.ComboBox comboBoxDouble;
+    private System.Windows.Forms.ComboBox comboBoxSimple;
+    private System.Windows.Forms.Label labelCreationDouble;
+    private System.Windows.Forms.Label labelCreateSimple;
+    private System.Windows.Forms.TextBox textBoxLastName;
+    private System.Windows.Forms.Label labelLastName;
+    private System.Windows.Forms.TextBox textBoxFirstName;
+    private System.Windows.Forms.Label labelFirstName;
   }
 }
