@@ -454,6 +454,7 @@
       this.textBoxFirstName.Name = "textBoxFirstName";
       this.textBoxFirstName.Size = new System.Drawing.Size(143, 26);
       this.textBoxFirstName.TabIndex = 1;
+      this.textBoxFirstName.TextChanged += new System.EventHandler(this.textBoxFirstName_TextChanged);
       // 
       // textBoxLastName
       // 
@@ -462,6 +463,7 @@
       this.textBoxLastName.Name = "textBoxLastName";
       this.textBoxLastName.Size = new System.Drawing.Size(143, 26);
       this.textBoxLastName.TabIndex = 3;
+      this.textBoxLastName.TextChanged += new System.EventHandler(this.textBoxLastName_TextChanged);
       // 
       // labelLastName
       // 
@@ -502,6 +504,7 @@
       this.comboBoxSimple.Size = new System.Drawing.Size(143, 28);
       this.comboBoxSimple.TabIndex = 7;
       this.comboBoxSimple.Text = "Select a level";
+      this.comboBoxSimple.SelectedIndexChanged += new System.EventHandler(this.comboBoxSimple_SelectedIndexChanged);
       // 
       // comboBoxDouble
       // 
@@ -512,6 +515,7 @@
       this.comboBoxDouble.Size = new System.Drawing.Size(143, 28);
       this.comboBoxDouble.TabIndex = 8;
       this.comboBoxDouble.Text = "Select a level";
+      this.comboBoxDouble.SelectedIndexChanged += new System.EventHandler(this.comboBoxDouble_SelectedIndexChanged);
       // 
       // comboBoxMixed
       // 
@@ -522,6 +526,7 @@
       this.comboBoxMixed.Size = new System.Drawing.Size(143, 28);
       this.comboBoxMixed.TabIndex = 10;
       this.comboBoxMixed.Text = "Select a level";
+      this.comboBoxMixed.SelectedIndexChanged += new System.EventHandler(this.comboBoxMixed_SelectedIndexChanged);
       // 
       // labelMixed
       // 
@@ -552,9 +557,11 @@
       this.comboBoxSex.Size = new System.Drawing.Size(143, 28);
       this.comboBoxSex.TabIndex = 12;
       this.comboBoxSex.Text = "Select a gender";
+      this.comboBoxSex.SelectedIndexChanged += new System.EventHandler(this.comboBoxSex_SelectedIndexChanged);
       // 
       // buttonAddPlayer
       // 
+      this.buttonAddPlayer.Enabled = false;
       this.buttonAddPlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.buttonAddPlayer.Location = new System.Drawing.Point(138, 264);
       this.buttonAddPlayer.Name = "buttonAddPlayer";
@@ -562,6 +569,7 @@
       this.buttonAddPlayer.TabIndex = 13;
       this.buttonAddPlayer.Text = "Add Player";
       this.buttonAddPlayer.UseVisualStyleBackColor = true;
+      this.buttonAddPlayer.Click += new System.EventHandler(this.buttonAddPlayer_Click);
       // 
       // FormMain
       // 

@@ -142,5 +142,17 @@ namespace InterClubBadminton.Properties {
                 this["_teamMembersCreated"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Players.xml")]
+        public string PlayersFileName {
+            get {
+                return ((string)(this["PlayersFileName"]));
+            }
+            set {
+                this["PlayersFileName"] = value;
+            }
+        }
     }
 }

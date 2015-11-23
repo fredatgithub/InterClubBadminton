@@ -73,10 +73,12 @@ namespace InterClubBadminton
       GetWindowValue();
       LoadLanguages();
       SetLanguage(Settings.Default.LastLanguageUsed);
-      LoadCombobox(comboBoxSex, Enum.GetNames(typeof (Gender)));
+      LoadCombobox(comboBoxSex, Enum.GetNames(typeof(Gender)));
       LoadComboboxWithXmlFile(comboBoxSimple, "Resources/Points.xml", "point", "name", "value");
       LoadComboboxWithXmlFile(comboBoxDouble, "Resources/Points.xml", "point", "name", "value");
       LoadComboboxWithXmlFile(comboBoxMixed, "Resources/Points.xml", "point", "name", "value");
+      SetButtonEnabled(buttonAddPlayer, textBoxFirstName, textBoxLastName, comboBoxSex, comboBoxSimple,
+        comboBoxDouble, comboBoxMixed);
     }
 
     private static void LoadCombobox(ComboBox cb, IEnumerable<string> collectionStrings)
@@ -164,8 +166,8 @@ namespace InterClubBadminton
       }
       catch (Exception exception)
       {
-        MessageBox.Show(Resources.Error_while_loading_the + Punctuation.OneSpace + 
-          Settings.Default.LanguageFileName + Punctuation.OneSpace +  
+        MessageBox.Show(Resources.Error_while_loading_the + Punctuation.OneSpace +
+          Settings.Default.LanguageFileName + Punctuation.OneSpace +
           Resources.xml_file + Punctuation.OneSpace + exception.Message);
         CreateLanguageFile();
         return;
@@ -192,7 +194,7 @@ namespace InterClubBadminton
         }
         else
         {
-          MessageBox.Show(Resources.Your_XML_file_has_duplicate_like + 
+          MessageBox.Show(Resources.Your_XML_file_has_duplicate_like +
             Punctuation.Colon + Punctuation.OneSpace + i.name);
         }
 
@@ -525,7 +527,7 @@ namespace InterClubBadminton
 
     private void cutToolStripMenuItem_Click(object sender, EventArgs e)
     {
-      Control focusedControl = FindFocusedControl(new List<Control> { }); 
+      Control focusedControl = FindFocusedControl(new List<Control> { });
       var tb = focusedControl as TextBox;
       if (tb != null)
       {
@@ -535,7 +537,7 @@ namespace InterClubBadminton
 
     private void copyToolStripMenuItem_Click(object sender, EventArgs e)
     {
-      Control focusedControl = FindFocusedControl(new List<Control> { }); 
+      Control focusedControl = FindFocusedControl(new List<Control> { });
       var tb = focusedControl as TextBox;
       if (tb != null)
       {
@@ -545,7 +547,7 @@ namespace InterClubBadminton
 
     private void pasteToolStripMenuItem_Click(object sender, EventArgs e)
     {
-      Control focusedControl = FindFocusedControl(new List<Control> { }); 
+      Control focusedControl = FindFocusedControl(new List<Control> { });
       var tb = focusedControl as TextBox;
       if (tb != null)
       {
@@ -555,7 +557,7 @@ namespace InterClubBadminton
 
     private void selectAllToolStripMenuItem_Click(object sender, EventArgs e)
     {
-      Control focusedControl = FindFocusedControl(new List<Control> { }); 
+      Control focusedControl = FindFocusedControl(new List<Control> { });
       TextBox control = focusedControl as TextBox;
       if (control != null) control.SelectAll();
     }
@@ -743,23 +745,37 @@ namespace InterClubBadminton
       }
     }
 
-    private static void SetButtonEnabled(Button button, params TextBox[] textBoxes)
+    private static void SetButtonEnabled(Button button, params Control[] controls)
     {
       bool result = true;
-      foreach (TextBox box in textBoxes.Where(box => box.Text.Length == 0))
+      foreach (Control ctrl in controls)
       {
-        result = false;
-      }
+        if (ctrl.GetType() == typeof(TextBox))
+        {
+          if (((TextBox)ctrl).Text == string.Empty)
+          {
+            result = false;
+            break;
+          }
+        }
 
-      button.Enabled = result;
-    }
+        if (ctrl.GetType() == typeof(ListView))
+        {
+          if (((ListView)ctrl).Items.Count == 0)
+          {
+            result = false;
+            break;
+          }
+        }
 
-    private static void SetButtonEnabled(Button button, params ListView[] listViews)
-    {
-      bool result = true;
-      foreach (ListView view in listViews.Where(view => view.Items.Count == 0))
-      {
-        result = false;
+        if (ctrl.GetType() == typeof(ComboBox))
+        {
+          if (((ComboBox)ctrl).SelectedIndex == -1)
+          {
+            result = false;
+            break;
+          }
+        }
       }
 
       button.Enabled = result;
@@ -777,6 +793,86 @@ namespace InterClubBadminton
     {
       Male,
       Female
+    }
+
+    private void buttonAddPlayer_Click(object sender, EventArgs e)
+    {
+      // Check if the player is not already in
+      if (!File.Exists(Settings.Default.PlayersFileName))
+      {
+        CreateRootXmlFile(Settings.Default.LanguageFileName, "players");
+      }
+
+      // add one player
+
+    }
+
+    private bool CreateRootXmlFile(string fileName, string rootTagName = "root")
+    {
+      bool result = false;
+      List<string> minimumVersion = new List<string>
+      {
+        "<?xml version=\"1.0\" encoding=\"utf-8\" ?>",
+        "<" + rootTagName + ">",
+        "</" + rootTagName + ">"
+      };
+      try
+      {
+        StreamWriter sw = new StreamWriter(fileName);
+        foreach (string item in minimumVersion)
+        {
+          sw.WriteLine(item);
+        }
+
+        sw.Close();
+        result = true;
+      }
+      catch (Exception exception)
+      {
+        MessageBox.Show(Translate("Error while writing the XML file") + Punctuation.OneSpace +
+          Punctuation.Colon + Punctuation.OneSpace + Settings.Default.LanguageFileName +
+          Punctuation.OneSpace + Punctuation.CrLf + Translate("The error is") +
+          Punctuation.OneSpace + exception.Message);
+        result = false;
+      }
+
+      return result;
+    }
+
+    private void textBoxFirstName_TextChanged(object sender, EventArgs e)
+    {
+      SetButtonEnabled(buttonAddPlayer, textBoxFirstName, textBoxLastName, comboBoxSex, comboBoxSimple,
+        comboBoxDouble, comboBoxMixed);
+    }
+
+    private void textBoxLastName_TextChanged(object sender, EventArgs e)
+    {
+      SetButtonEnabled(buttonAddPlayer, textBoxFirstName, textBoxLastName, comboBoxSex, comboBoxSimple,
+        comboBoxDouble, comboBoxMixed);
+    }
+
+    private void comboBoxSex_SelectedIndexChanged(object sender, EventArgs e)
+    {
+      SetButtonEnabled(buttonAddPlayer, textBoxFirstName, textBoxLastName, comboBoxSex, comboBoxSimple,
+        comboBoxDouble, comboBoxMixed);
+    }
+
+    private void comboBoxSimple_SelectedIndexChanged(object sender, EventArgs e)
+    {
+      SetButtonEnabled(buttonAddPlayer, textBoxFirstName, textBoxLastName, comboBoxSex, comboBoxSimple,
+        comboBoxDouble, comboBoxMixed);
+    }
+
+    private void comboBoxDouble_SelectedIndexChanged(object sender, EventArgs e)
+    {
+      SetButtonEnabled(buttonAddPlayer, textBoxFirstName, textBoxLastName, comboBoxSex, comboBoxSimple,
+        comboBoxDouble, comboBoxMixed);
+    }
+
+    private void comboBoxMixed_SelectedIndexChanged(object sender, EventArgs e)
+    {
+      SetButtonEnabled(buttonAddPlayer, textBoxFirstName, textBoxLastName, comboBoxSex, comboBoxSimple,
+        comboBoxDouble, comboBoxMixed);
     }
   }
 }
