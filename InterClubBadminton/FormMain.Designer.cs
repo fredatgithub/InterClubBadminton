@@ -68,6 +68,7 @@
       this.tabControlMain = new System.Windows.Forms.TabControl();
       this.tabPageTeamCreation = new System.Windows.Forms.TabPage();
       this.tabPageVisualizeTeam = new System.Windows.Forms.TabPage();
+      this.tabPageCreateTeam = new System.Windows.Forms.TabPage();
       this.menuStrip1.SuspendLayout();
       this.tabControlMain.SuspendLayout();
       this.SuspendLayout();
@@ -372,6 +373,7 @@
       // 
       this.tabControlMain.Controls.Add(this.tabPageTeamCreation);
       this.tabControlMain.Controls.Add(this.tabPageVisualizeTeam);
+      this.tabControlMain.Controls.Add(this.tabPageCreateTeam);
       this.tabControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
       this.tabControlMain.Location = new System.Drawing.Point(0, 28);
       this.tabControlMain.Name = "tabControlMain";
@@ -394,10 +396,19 @@
       this.tabPageVisualizeTeam.Location = new System.Drawing.Point(4, 25);
       this.tabPageVisualizeTeam.Name = "tabPageVisualizeTeam";
       this.tabPageVisualizeTeam.Padding = new System.Windows.Forms.Padding(3);
-      this.tabPageVisualizeTeam.Size = new System.Drawing.Size(192, 71);
+      this.tabPageVisualizeTeam.Size = new System.Drawing.Size(903, 477);
       this.tabPageVisualizeTeam.TabIndex = 1;
       this.tabPageVisualizeTeam.Text = "Visualize team";
       this.tabPageVisualizeTeam.UseVisualStyleBackColor = true;
+      // 
+      // tabPageCreateTeam
+      // 
+      this.tabPageCreateTeam.Location = new System.Drawing.Point(4, 25);
+      this.tabPageCreateTeam.Name = "tabPageCreateTeam";
+      this.tabPageCreateTeam.Size = new System.Drawing.Size(903, 477);
+      this.tabPageCreateTeam.TabIndex = 2;
+      this.tabPageCreateTeam.Text = "Create team";
+      this.tabPageCreateTeam.UseVisualStyleBackColor = true;
       // 
       // FormMain
       // 
@@ -463,5 +474,6 @@
     private System.Windows.Forms.TabControl tabControlMain;
     private System.Windows.Forms.TabPage tabPageTeamCreation;
     private System.Windows.Forms.TabPage tabPageVisualizeTeam;
+    private System.Windows.Forms.TabPage tabPageCreateTeam;
   }
 }

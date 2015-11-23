@@ -456,7 +456,7 @@ namespace InterClubBadminton
 
     private void cutToolStripMenuItem_Click(object sender, EventArgs e)
     {
-      Control focusedControl = FindFocusedControl(new List<Control> { }); // add your controls in the List
+      Control focusedControl = FindFocusedControl(new List<Control> { }); 
       var tb = focusedControl as TextBox;
       if (tb != null)
       {
@@ -466,7 +466,7 @@ namespace InterClubBadminton
 
     private void copyToolStripMenuItem_Click(object sender, EventArgs e)
     {
-      Control focusedControl = FindFocusedControl(new List<Control> { }); // add your controls in the List
+      Control focusedControl = FindFocusedControl(new List<Control> { }); 
       var tb = focusedControl as TextBox;
       if (tb != null)
       {
@@ -476,7 +476,7 @@ namespace InterClubBadminton
 
     private void pasteToolStripMenuItem_Click(object sender, EventArgs e)
     {
-      Control focusedControl = FindFocusedControl(new List<Control> { }); // add your controls in the List
+      Control focusedControl = FindFocusedControl(new List<Control> { }); 
       var tb = focusedControl as TextBox;
       if (tb != null)
       {
@@ -486,7 +486,7 @@ namespace InterClubBadminton
 
     private void selectAllToolStripMenuItem_Click(object sender, EventArgs e)
     {
-      Control focusedControl = FindFocusedControl(new List<Control> { }); // add your controls in the List
+      Control focusedControl = FindFocusedControl(new List<Control> { }); 
       TextBox control = focusedControl as TextBox;
       if (control != null) control.SelectAll();
     }
