@@ -25,6 +25,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
+using System.Xml;
 using System.Xml.Linq;
 using InterClubBadminton.Properties;
 using Tools;
@@ -797,14 +798,33 @@ namespace InterClubBadminton
 
     private void buttonAddPlayer_Click(object sender, EventArgs e)
     {
-      // Check if the player is not already in
       if (!File.Exists(Settings.Default.PlayersFileName))
       {
         CreateRootXmlFile(Settings.Default.LanguageFileName, "players");
       }
 
+      // Check if the player is not already in
       // add one player
 
+    }
+
+    private void SaveToXmlFile(string fileName, params string[] xmlTags)
+    {
+      XmlDocument doc = new XmlDocument();
+      doc.Load(fileName);
+      XmlNode root = doc.DocumentElement;
+      XmlElement newQuote = doc.CreateElement(xmlTags[0]);
+      XmlElement newAuthor = doc.CreateElement(xmlTags[1]);
+      newAuthor.InnerText = xmlTags[2]; // value
+      XmlElement newLanguage = doc.CreateElement(xmlTags[3]);
+      newLanguage.InnerText = xmlTags[4];
+      XmlElement newQuoteValue = doc.CreateElement(xmlTags[5]);
+      newQuoteValue.InnerText = xmlTags[6];
+      newQuote.AppendChild(newAuthor);
+      newQuote.AppendChild(newLanguage);
+      newQuote.AppendChild(newQuoteValue);
+      root.AppendChild(newQuote);
+      doc.Save(fileName);
     }
 
     private bool CreateRootXmlFile(string fileName, string rootTagName = "root")
