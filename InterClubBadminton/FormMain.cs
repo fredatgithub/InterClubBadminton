@@ -793,8 +793,8 @@ namespace InterClubBadminton
     private void buttonAddPlayer_Click(object sender, EventArgs e)
     {
       Player newPlayer = new Player(textBoxFirstName.Text, textBoxLastName.Text,
-        (Gender)comboBoxSex.SelectedItem, (PlayLevel)comboBoxSimple.SelectedItem,
-        (PlayLevel)comboBoxDouble.SelectedItem, (PlayLevel)comboBoxMixed.SelectedItem);
+        (Gender)comboBoxSex.SelectedItem, (RankLevel)comboBoxSimple.SelectedItem,
+        (RankLevel)comboBoxDouble.SelectedItem, (RankLevel)comboBoxMixed.SelectedItem);
       if (!File.Exists(Settings.Default.PlayersFileName))
       {
         if (!CreateRootXmlFile(Settings.Default.PlayersFileName, "players"))

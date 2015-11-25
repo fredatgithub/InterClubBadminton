@@ -1,6 +1,6 @@
 ﻿namespace InterClubBadminton
 {
-  internal enum PlayLevel
+  internal enum RankLevel
   {
     NC,
     P3,

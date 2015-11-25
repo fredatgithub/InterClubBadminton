@@ -7,15 +7,15 @@ namespace InterClubBadminton
     public string FirstName { get; set; }
     public string LastName { get; set; }
     public Gender SexGender { get; set; }
-    public PlayLevel SimpleLevel { get; set; }
-    public PlayLevel DoubleLevel { get; set; }
-    public PlayLevel MixedLevel { get; set; }
+    public RankLevel SimpleLevel { get; set; }
+    public RankLevel DoubleLevel { get; set; }
+    public RankLevel MixedLevel { get; set; }
     public List<TypePlayer> WishList { get; set; }
     public List<TypePlayer> RefusalList { get; set; }
 
     public Player(string firstName = "no first name", string lastName = "no last name",
-      Gender sexGender = Gender.Male, PlayLevel simpleLevel = PlayLevel.NC,
-      PlayLevel doubleLevel = PlayLevel.NC, PlayLevel mixedLevel = PlayLevel.NC)
+      Gender sexGender = Gender.Male, RankLevel simpleLevel = RankLevel.NC,
+      RankLevel doubleLevel = RankLevel.NC, RankLevel mixedLevel = RankLevel.NC)
     {
       FirstName = firstName;
       LastName = lastName;
