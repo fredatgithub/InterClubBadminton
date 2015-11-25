@@ -789,20 +789,17 @@ namespace InterClubBadminton
         // do something
       }
     }
-
-    public enum Gender
-    {
-      Male,
-      Female
-    }
-
+    
     private void buttonAddPlayer_Click(object sender, EventArgs e)
     {
+      Player newPlayer = new Player(textBoxFirstName.Text, textBoxLastName.Text,
+        (Gender)comboBoxSex.SelectedItem, (PlayLevel)comboBoxSimple.SelectedItem,
+        (PlayLevel)comboBoxDouble.SelectedItem, (PlayLevel)comboBoxMixed.SelectedItem);
       if (!File.Exists(Settings.Default.PlayersFileName))
       {
         if (!CreateRootXmlFile(Settings.Default.PlayersFileName, "players"))
         {
-          MessageBox.Show("Error while trying to create the file" + Punctuation.OneSpace +
+          MessageBox.Show(Resources.Error_while_trying_to_create_the_file + Punctuation.OneSpace +
             Settings.Default.PlayersFileName);
           return;
         }
@@ -810,7 +807,7 @@ namespace InterClubBadminton
 
       // Check if the player is not already in
       // add one player
-      SaveToXmlFile(Settings.Default.PlayersFileName);
+      SaveToXmlFile(Settings.Default.PlayersFileName, "player");
     }
 
     private static void SaveToXmlFile(string fileName, params string[] xmlTags)

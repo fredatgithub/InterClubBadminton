@@ -70,6 +70,15 @@ namespace InterClubBadminton.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Error while trying to create the file.
+        /// </summary>
+        internal static string Error_while_trying_to_create_the_file {
+            get {
+                return ResourceManager.GetString("Error_while_trying_to_create_the_file", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à xml file.
         /// </summary>
         internal static string xml_file {
