@@ -800,15 +800,20 @@ namespace InterClubBadminton
     {
       if (!File.Exists(Settings.Default.PlayersFileName))
       {
-        CreateRootXmlFile(Settings.Default.LanguageFileName, "players");
+        if (!CreateRootXmlFile(Settings.Default.PlayersFileName, "players"))
+        {
+          MessageBox.Show("Error while trying to create the file" + Punctuation.OneSpace +
+            Settings.Default.PlayersFileName);
+          return;
+        }
       }
 
       // Check if the player is not already in
       // add one player
-
+      SaveToXmlFile(Settings.Default.PlayersFileName);
     }
 
-    private void SaveToXmlFile(string fileName, params string[] xmlTags)
+    private static void SaveToXmlFile(string fileName, params string[] xmlTags)
     {
       XmlDocument doc = new XmlDocument();
       doc.Load(fileName);
