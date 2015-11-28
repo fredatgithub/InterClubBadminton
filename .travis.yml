@@ -1,0 +1,10 @@
+
+language: csharp
+solution: InterClubBadminton.sln
+install:
+  - nuget install xunit.runners -Version 1.9.2 -OutputDirectory testrunner
+script:
+  - xbuild /p:Configuration=Release FonctionsUtiles.Fred.Csharp/FunctionsUseful.Fred.Csharp.csproj
+
+notifications:
+  email: false
