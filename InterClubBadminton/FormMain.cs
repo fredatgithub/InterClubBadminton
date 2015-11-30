@@ -89,6 +89,8 @@ namespace InterClubBadminton
       {
         cb.Items.Add(item);
       }
+
+      cb.SelectedIndex = 0;
     }
 
     private void LoadComboboxWithXmlFile(ComboBox cb, string filename, params string[] tags)
@@ -138,6 +140,8 @@ namespace InterClubBadminton
         }
 #endif
       }
+
+      cb.SelectedIndex = 0;
     }
 
     private void LoadConfigurationOptions()
@@ -792,9 +796,14 @@ namespace InterClubBadminton
     
     private void buttonAddPlayer_Click(object sender, EventArgs e)
     {
+      string tmp1 = textBoxFirstName.Text;
+      string tmp2 = textBoxLastName.Text;
+      Gender tmp3 = (Gender)comboBoxSex.SelectedIndex;
+        
+      RankLevel tmp4 = (RankLevel) comboBoxSimple.SelectedIndex;
       Player newPlayer = new Player(textBoxFirstName.Text, textBoxLastName.Text,
-        (Gender)comboBoxSex.SelectedItem, (RankLevel)comboBoxSimple.SelectedItem,
-        (RankLevel)comboBoxDouble.SelectedItem, (RankLevel)comboBoxMixed.SelectedItem);
+        (Gender)comboBoxSex.SelectedIndex, (RankLevel)comboBoxSimple.SelectedIndex,
+        (RankLevel)comboBoxDouble.SelectedIndex, (RankLevel)comboBoxMixed.SelectedIndex);
       if (!File.Exists(Settings.Default.PlayersFileName))
       {
         if (!CreateRootXmlFile(Settings.Default.PlayersFileName, "players"))

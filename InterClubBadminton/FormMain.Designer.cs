@@ -432,13 +432,13 @@
       // 
       // comboBoxSex
       // 
+      this.comboBoxSex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.comboBoxSex.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.comboBoxSex.FormattingEnabled = true;
       this.comboBoxSex.Location = new System.Drawing.Point(138, 105);
       this.comboBoxSex.Name = "comboBoxSex";
       this.comboBoxSex.Size = new System.Drawing.Size(143, 28);
       this.comboBoxSex.TabIndex = 3;
-      this.comboBoxSex.Text = "Select a gender";
       this.comboBoxSex.SelectedIndexChanged += new System.EventHandler(this.comboBoxSex_SelectedIndexChanged);
       // 
       // labelSex
@@ -453,13 +453,13 @@
       // 
       // comboBoxMixed
       // 
+      this.comboBoxMixed.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.comboBoxMixed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.comboBoxMixed.FormattingEnabled = true;
       this.comboBoxMixed.Location = new System.Drawing.Point(138, 207);
       this.comboBoxMixed.Name = "comboBoxMixed";
       this.comboBoxMixed.Size = new System.Drawing.Size(143, 28);
       this.comboBoxMixed.TabIndex = 6;
-      this.comboBoxMixed.Text = "Select a level";
       this.comboBoxMixed.SelectedIndexChanged += new System.EventHandler(this.comboBoxMixed_SelectedIndexChanged);
       // 
       // labelMixed
@@ -474,24 +474,24 @@
       // 
       // comboBoxDouble
       // 
+      this.comboBoxDouble.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.comboBoxDouble.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.comboBoxDouble.FormattingEnabled = true;
       this.comboBoxDouble.Location = new System.Drawing.Point(138, 173);
       this.comboBoxDouble.Name = "comboBoxDouble";
       this.comboBoxDouble.Size = new System.Drawing.Size(143, 28);
       this.comboBoxDouble.TabIndex = 5;
-      this.comboBoxDouble.Text = "Select a level";
       this.comboBoxDouble.SelectedIndexChanged += new System.EventHandler(this.comboBoxDouble_SelectedIndexChanged);
       // 
       // comboBoxSimple
       // 
+      this.comboBoxSimple.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.comboBoxSimple.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.comboBoxSimple.FormattingEnabled = true;
       this.comboBoxSimple.Location = new System.Drawing.Point(138, 139);
       this.comboBoxSimple.Name = "comboBoxSimple";
       this.comboBoxSimple.Size = new System.Drawing.Size(143, 28);
       this.comboBoxSimple.TabIndex = 4;
-      this.comboBoxSimple.Text = "Select a level";
       this.comboBoxSimple.SelectedIndexChanged += new System.EventHandler(this.comboBoxSimple_SelectedIndexChanged);
       // 
       // labelCreationDouble
@@ -521,6 +521,7 @@
       this.textBoxLastName.Name = "textBoxLastName";
       this.textBoxLastName.Size = new System.Drawing.Size(143, 26);
       this.textBoxLastName.TabIndex = 2;
+      this.textBoxLastName.Text = "a";
       this.textBoxLastName.TextChanged += new System.EventHandler(this.textBoxLastName_TextChanged);
       // 
       // labelLastName
@@ -540,6 +541,7 @@
       this.textBoxFirstName.Name = "textBoxFirstName";
       this.textBoxFirstName.Size = new System.Drawing.Size(143, 26);
       this.textBoxFirstName.TabIndex = 1;
+      this.textBoxFirstName.Text = "a";
       this.textBoxFirstName.TextChanged += new System.EventHandler(this.textBoxFirstName_TextChanged);
       // 
       // labelFirstName
