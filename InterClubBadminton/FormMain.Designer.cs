@@ -67,21 +67,21 @@
       this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.tabControlMain = new System.Windows.Forms.TabControl();
       this.tabPageAddPlayer = new System.Windows.Forms.TabPage();
-      this.tabPageVisualizeTeam = new System.Windows.Forms.TabPage();
-      this.tabPageCreateTeam = new System.Windows.Forms.TabPage();
-      this.labelFirstName = new System.Windows.Forms.Label();
-      this.textBoxFirstName = new System.Windows.Forms.TextBox();
-      this.textBoxLastName = new System.Windows.Forms.TextBox();
-      this.labelLastName = new System.Windows.Forms.Label();
-      this.labelCreationDouble = new System.Windows.Forms.Label();
-      this.labelCreateSimple = new System.Windows.Forms.Label();
-      this.comboBoxSimple = new System.Windows.Forms.ComboBox();
-      this.comboBoxDouble = new System.Windows.Forms.ComboBox();
+      this.buttonAddPlayer = new System.Windows.Forms.Button();
+      this.comboBoxSex = new System.Windows.Forms.ComboBox();
+      this.labelSex = new System.Windows.Forms.Label();
       this.comboBoxMixed = new System.Windows.Forms.ComboBox();
       this.labelMixed = new System.Windows.Forms.Label();
-      this.labelSex = new System.Windows.Forms.Label();
-      this.comboBoxSex = new System.Windows.Forms.ComboBox();
-      this.buttonAddPlayer = new System.Windows.Forms.Button();
+      this.comboBoxDouble = new System.Windows.Forms.ComboBox();
+      this.comboBoxSimple = new System.Windows.Forms.ComboBox();
+      this.labelCreationDouble = new System.Windows.Forms.Label();
+      this.labelCreateSimple = new System.Windows.Forms.Label();
+      this.textBoxLastName = new System.Windows.Forms.TextBox();
+      this.labelLastName = new System.Windows.Forms.Label();
+      this.textBoxFirstName = new System.Windows.Forms.TextBox();
+      this.labelFirstName = new System.Windows.Forms.Label();
+      this.tabPageVisualizeTeam = new System.Windows.Forms.TabPage();
+      this.tabPageCreateTeam = new System.Windows.Forms.TabPage();
       this.menuStrip1.SuspendLayout();
       this.tabControlMain.SuspendLayout();
       this.tabPageAddPlayer.SuspendLayout();
@@ -418,62 +418,81 @@
       this.tabPageAddPlayer.Text = "Add Player";
       this.tabPageAddPlayer.UseVisualStyleBackColor = true;
       // 
-      // tabPageVisualizeTeam
+      // buttonAddPlayer
       // 
-      this.tabPageVisualizeTeam.Location = new System.Drawing.Point(4, 25);
-      this.tabPageVisualizeTeam.Name = "tabPageVisualizeTeam";
-      this.tabPageVisualizeTeam.Padding = new System.Windows.Forms.Padding(3);
-      this.tabPageVisualizeTeam.Size = new System.Drawing.Size(903, 477);
-      this.tabPageVisualizeTeam.TabIndex = 1;
-      this.tabPageVisualizeTeam.Text = "Visualize team";
-      this.tabPageVisualizeTeam.UseVisualStyleBackColor = true;
+      this.buttonAddPlayer.Enabled = false;
+      this.buttonAddPlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.buttonAddPlayer.Location = new System.Drawing.Point(138, 264);
+      this.buttonAddPlayer.Name = "buttonAddPlayer";
+      this.buttonAddPlayer.Size = new System.Drawing.Size(143, 31);
+      this.buttonAddPlayer.TabIndex = 7;
+      this.buttonAddPlayer.Text = "Add Player";
+      this.buttonAddPlayer.UseVisualStyleBackColor = true;
+      this.buttonAddPlayer.Click += new System.EventHandler(this.buttonAddPlayer_Click);
       // 
-      // tabPageCreateTeam
+      // comboBoxSex
       // 
-      this.tabPageCreateTeam.Location = new System.Drawing.Point(4, 25);
-      this.tabPageCreateTeam.Name = "tabPageCreateTeam";
-      this.tabPageCreateTeam.Size = new System.Drawing.Size(903, 477);
-      this.tabPageCreateTeam.TabIndex = 2;
-      this.tabPageCreateTeam.Text = "Create team";
-      this.tabPageCreateTeam.UseVisualStyleBackColor = true;
+      this.comboBoxSex.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.comboBoxSex.FormattingEnabled = true;
+      this.comboBoxSex.Location = new System.Drawing.Point(138, 105);
+      this.comboBoxSex.Name = "comboBoxSex";
+      this.comboBoxSex.Size = new System.Drawing.Size(143, 28);
+      this.comboBoxSex.TabIndex = 3;
+      this.comboBoxSex.Text = "Select a gender";
+      this.comboBoxSex.SelectedIndexChanged += new System.EventHandler(this.comboBoxSex_SelectedIndexChanged);
       // 
-      // labelFirstName
+      // labelSex
       // 
-      this.labelFirstName.AutoSize = true;
-      this.labelFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.labelFirstName.Location = new System.Drawing.Point(29, 41);
-      this.labelFirstName.Name = "labelFirstName";
-      this.labelFirstName.Size = new System.Drawing.Size(92, 20);
-      this.labelFirstName.TabIndex = 0;
-      this.labelFirstName.Text = "First Name";
+      this.labelSex.AutoSize = true;
+      this.labelSex.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.labelSex.Location = new System.Drawing.Point(29, 105);
+      this.labelSex.Name = "labelSex";
+      this.labelSex.Size = new System.Drawing.Size(37, 20);
+      this.labelSex.TabIndex = 11;
+      this.labelSex.Text = "Sex";
       // 
-      // textBoxFirstName
+      // comboBoxMixed
       // 
-      this.textBoxFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.textBoxFirstName.Location = new System.Drawing.Point(138, 41);
-      this.textBoxFirstName.Name = "textBoxFirstName";
-      this.textBoxFirstName.Size = new System.Drawing.Size(143, 26);
-      this.textBoxFirstName.TabIndex = 1;
-      this.textBoxFirstName.TextChanged += new System.EventHandler(this.textBoxFirstName_TextChanged);
+      this.comboBoxMixed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.comboBoxMixed.FormattingEnabled = true;
+      this.comboBoxMixed.Location = new System.Drawing.Point(138, 207);
+      this.comboBoxMixed.Name = "comboBoxMixed";
+      this.comboBoxMixed.Size = new System.Drawing.Size(143, 28);
+      this.comboBoxMixed.TabIndex = 6;
+      this.comboBoxMixed.Text = "Select a level";
+      this.comboBoxMixed.SelectedIndexChanged += new System.EventHandler(this.comboBoxMixed_SelectedIndexChanged);
       // 
-      // textBoxLastName
+      // labelMixed
       // 
-      this.textBoxLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.textBoxLastName.Location = new System.Drawing.Point(138, 69);
-      this.textBoxLastName.Name = "textBoxLastName";
-      this.textBoxLastName.Size = new System.Drawing.Size(143, 26);
-      this.textBoxLastName.TabIndex = 3;
-      this.textBoxLastName.TextChanged += new System.EventHandler(this.textBoxLastName_TextChanged);
+      this.labelMixed.AutoSize = true;
+      this.labelMixed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.labelMixed.Location = new System.Drawing.Point(29, 210);
+      this.labelMixed.Name = "labelMixed";
+      this.labelMixed.Size = new System.Drawing.Size(53, 20);
+      this.labelMixed.TabIndex = 9;
+      this.labelMixed.Text = "Mixed";
       // 
-      // labelLastName
+      // comboBoxDouble
       // 
-      this.labelLastName.AutoSize = true;
-      this.labelLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.labelLastName.Location = new System.Drawing.Point(29, 69);
-      this.labelLastName.Name = "labelLastName";
-      this.labelLastName.Size = new System.Drawing.Size(91, 20);
-      this.labelLastName.TabIndex = 2;
-      this.labelLastName.Text = "Last Name";
+      this.comboBoxDouble.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.comboBoxDouble.FormattingEnabled = true;
+      this.comboBoxDouble.Location = new System.Drawing.Point(138, 173);
+      this.comboBoxDouble.Name = "comboBoxDouble";
+      this.comboBoxDouble.Size = new System.Drawing.Size(143, 28);
+      this.comboBoxDouble.TabIndex = 5;
+      this.comboBoxDouble.Text = "Select a level";
+      this.comboBoxDouble.SelectedIndexChanged += new System.EventHandler(this.comboBoxDouble_SelectedIndexChanged);
+      // 
+      // comboBoxSimple
+      // 
+      this.comboBoxSimple.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.comboBoxSimple.FormattingEnabled = true;
+      this.comboBoxSimple.Location = new System.Drawing.Point(138, 139);
+      this.comboBoxSimple.Name = "comboBoxSimple";
+      this.comboBoxSimple.Size = new System.Drawing.Size(143, 28);
+      this.comboBoxSimple.TabIndex = 4;
+      this.comboBoxSimple.Text = "Select a level";
+      this.comboBoxSimple.SelectedIndexChanged += new System.EventHandler(this.comboBoxSimple_SelectedIndexChanged);
       // 
       // labelCreationDouble
       // 
@@ -495,81 +514,62 @@
       this.labelCreateSimple.TabIndex = 4;
       this.labelCreateSimple.Text = "Simple";
       // 
-      // comboBoxSimple
+      // textBoxLastName
       // 
-      this.comboBoxSimple.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.comboBoxSimple.FormattingEnabled = true;
-      this.comboBoxSimple.Location = new System.Drawing.Point(138, 139);
-      this.comboBoxSimple.Name = "comboBoxSimple";
-      this.comboBoxSimple.Size = new System.Drawing.Size(143, 28);
-      this.comboBoxSimple.TabIndex = 7;
-      this.comboBoxSimple.Text = "Select a level";
-      this.comboBoxSimple.SelectedIndexChanged += new System.EventHandler(this.comboBoxSimple_SelectedIndexChanged);
+      this.textBoxLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.textBoxLastName.Location = new System.Drawing.Point(138, 69);
+      this.textBoxLastName.Name = "textBoxLastName";
+      this.textBoxLastName.Size = new System.Drawing.Size(143, 26);
+      this.textBoxLastName.TabIndex = 2;
+      this.textBoxLastName.TextChanged += new System.EventHandler(this.textBoxLastName_TextChanged);
       // 
-      // comboBoxDouble
+      // labelLastName
       // 
-      this.comboBoxDouble.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.comboBoxDouble.FormattingEnabled = true;
-      this.comboBoxDouble.Location = new System.Drawing.Point(138, 173);
-      this.comboBoxDouble.Name = "comboBoxDouble";
-      this.comboBoxDouble.Size = new System.Drawing.Size(143, 28);
-      this.comboBoxDouble.TabIndex = 8;
-      this.comboBoxDouble.Text = "Select a level";
-      this.comboBoxDouble.SelectedIndexChanged += new System.EventHandler(this.comboBoxDouble_SelectedIndexChanged);
+      this.labelLastName.AutoSize = true;
+      this.labelLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.labelLastName.Location = new System.Drawing.Point(29, 69);
+      this.labelLastName.Name = "labelLastName";
+      this.labelLastName.Size = new System.Drawing.Size(91, 20);
+      this.labelLastName.TabIndex = 2;
+      this.labelLastName.Text = "Last Name";
       // 
-      // comboBoxMixed
+      // textBoxFirstName
       // 
-      this.comboBoxMixed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.comboBoxMixed.FormattingEnabled = true;
-      this.comboBoxMixed.Location = new System.Drawing.Point(138, 207);
-      this.comboBoxMixed.Name = "comboBoxMixed";
-      this.comboBoxMixed.Size = new System.Drawing.Size(143, 28);
-      this.comboBoxMixed.TabIndex = 10;
-      this.comboBoxMixed.Text = "Select a level";
-      this.comboBoxMixed.SelectedIndexChanged += new System.EventHandler(this.comboBoxMixed_SelectedIndexChanged);
+      this.textBoxFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.textBoxFirstName.Location = new System.Drawing.Point(138, 41);
+      this.textBoxFirstName.Name = "textBoxFirstName";
+      this.textBoxFirstName.Size = new System.Drawing.Size(143, 26);
+      this.textBoxFirstName.TabIndex = 1;
+      this.textBoxFirstName.TextChanged += new System.EventHandler(this.textBoxFirstName_TextChanged);
       // 
-      // labelMixed
+      // labelFirstName
       // 
-      this.labelMixed.AutoSize = true;
-      this.labelMixed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.labelMixed.Location = new System.Drawing.Point(29, 210);
-      this.labelMixed.Name = "labelMixed";
-      this.labelMixed.Size = new System.Drawing.Size(53, 20);
-      this.labelMixed.TabIndex = 9;
-      this.labelMixed.Text = "Mixed";
+      this.labelFirstName.AutoSize = true;
+      this.labelFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.labelFirstName.Location = new System.Drawing.Point(29, 41);
+      this.labelFirstName.Name = "labelFirstName";
+      this.labelFirstName.Size = new System.Drawing.Size(92, 20);
+      this.labelFirstName.TabIndex = 0;
+      this.labelFirstName.Text = "First Name";
       // 
-      // labelSex
+      // tabPageVisualizeTeam
       // 
-      this.labelSex.AutoSize = true;
-      this.labelSex.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.labelSex.Location = new System.Drawing.Point(29, 105);
-      this.labelSex.Name = "labelSex";
-      this.labelSex.Size = new System.Drawing.Size(37, 20);
-      this.labelSex.TabIndex = 11;
-      this.labelSex.Text = "Sex";
+      this.tabPageVisualizeTeam.Location = new System.Drawing.Point(4, 25);
+      this.tabPageVisualizeTeam.Name = "tabPageVisualizeTeam";
+      this.tabPageVisualizeTeam.Padding = new System.Windows.Forms.Padding(3);
+      this.tabPageVisualizeTeam.Size = new System.Drawing.Size(903, 477);
+      this.tabPageVisualizeTeam.TabIndex = 1;
+      this.tabPageVisualizeTeam.Text = "Visualize team";
+      this.tabPageVisualizeTeam.UseVisualStyleBackColor = true;
       // 
-      // comboBoxSex
+      // tabPageCreateTeam
       // 
-      this.comboBoxSex.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.comboBoxSex.FormattingEnabled = true;
-      this.comboBoxSex.Location = new System.Drawing.Point(138, 105);
-      this.comboBoxSex.Name = "comboBoxSex";
-      this.comboBoxSex.Size = new System.Drawing.Size(143, 28);
-      this.comboBoxSex.TabIndex = 12;
-      this.comboBoxSex.Text = "Select a gender";
-      this.comboBoxSex.SelectedIndexChanged += new System.EventHandler(this.comboBoxSex_SelectedIndexChanged);
-      // 
-      // buttonAddPlayer
-      // 
-      this.buttonAddPlayer.Enabled = false;
-      this.buttonAddPlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.buttonAddPlayer.Location = new System.Drawing.Point(138, 264);
-      this.buttonAddPlayer.Name = "buttonAddPlayer";
-      this.buttonAddPlayer.Size = new System.Drawing.Size(143, 31);
-      this.buttonAddPlayer.TabIndex = 13;
-      this.buttonAddPlayer.Text = "Add Player";
-      this.buttonAddPlayer.UseVisualStyleBackColor = true;
-      this.buttonAddPlayer.Click += new System.EventHandler(this.buttonAddPlayer_Click);
+      this.tabPageCreateTeam.Location = new System.Drawing.Point(4, 25);
+      this.tabPageCreateTeam.Name = "tabPageCreateTeam";
+      this.tabPageCreateTeam.Size = new System.Drawing.Size(903, 477);
+      this.tabPageCreateTeam.TabIndex = 2;
+      this.tabPageCreateTeam.Text = "Create team";
+      this.tabPageCreateTeam.UseVisualStyleBackColor = true;
       // 
       // FormMain
       // 
@@ -638,7 +638,6 @@
     private System.Windows.Forms.TabPage tabPageAddPlayer;
     private System.Windows.Forms.TabPage tabPageVisualizeTeam;
     private System.Windows.Forms.TabPage tabPageCreateTeam;
-    private System.Windows.Forms.ComboBox comboBoxSex;
     private System.Windows.Forms.Label labelSex;
     private System.Windows.Forms.ComboBox comboBoxMixed;
     private System.Windows.Forms.Label labelMixed;
@@ -651,5 +650,6 @@
     private System.Windows.Forms.TextBox textBoxFirstName;
     private System.Windows.Forms.Label labelFirstName;
     private System.Windows.Forms.Button buttonAddPlayer;
+    private System.Windows.Forms.ComboBox comboBoxSex;
   }
 }
