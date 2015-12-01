@@ -830,7 +830,7 @@ namespace InterClubBadminton
       XmlDocument doc = new XmlDocument();
       doc.Load(fileName);
       XmlNode root = doc.DocumentElement;
-      XmlElement newNode = doc.CreateElement(xmlTags[0]); // player
+      XmlElement newNode = doc.CreateElement(xmlTags[0]);
       var listOfProperties = new List<XmlElement>();
       for (int i = 1; i < xmlTags.Length - 1; i = i + 2)
       {
