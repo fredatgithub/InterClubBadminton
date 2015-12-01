@@ -824,13 +824,13 @@ namespace InterClubBadminton
       XmlDocument doc = new XmlDocument();
       doc.Load(fileName);
       XmlNode root = doc.DocumentElement;
-      XmlElement newQuote = doc.CreateElement(xmlTags[0]);
-      XmlElement newAuthor = doc.CreateElement(xmlTags[1]);
-      newAuthor.InnerText = xmlTags[2]; // value
-      XmlElement newLanguage = doc.CreateElement(xmlTags[3]);
-      newLanguage.InnerText = xmlTags[4];
-      XmlElement newQuoteValue = doc.CreateElement(xmlTags[5]);
-      newQuoteValue.InnerText = xmlTags[6];
+      XmlElement newQuote = doc.CreateElement(xmlTags[0]); // quote
+      XmlElement newAuthor = doc.CreateElement(xmlTags[1]); // author prop1
+      newAuthor.InnerText = xmlTags[2]; // author value
+      XmlElement newLanguage = doc.CreateElement(xmlTags[3]); // language
+      newLanguage.InnerText = xmlTags[4]; //  language value
+      XmlElement newQuoteValue = doc.CreateElement(xmlTags[5]); // quote
+      newQuoteValue.InnerText = xmlTags[6]; //  quote value
       newQuote.AppendChild(newAuthor);
       newQuote.AppendChild(newLanguage);
       newQuote.AppendChild(newQuoteValue);
