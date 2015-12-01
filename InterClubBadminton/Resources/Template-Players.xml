@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<players>
+  <player>
+    <firstname>Lin</firstname>
+    <lastname>Dan</lastname>
+    <gender>Male</gender>
+    <simplelevel>N1</simplelevel>
+    <doublelevel>N1</doublelevel>
+    <mixedlevel>N1</mixedlevel>
+  </player>
+</players>

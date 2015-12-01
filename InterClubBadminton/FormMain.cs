@@ -816,7 +816,13 @@ namespace InterClubBadminton
 
       // Check if the player is not already in
       // add one player
-      SaveToXmlFile(Settings.Default.PlayersFileName, "player");
+      SaveToXmlFile(Settings.Default.PlayersFileName, "player",
+        "firstname", newPlayer.FirstName,
+        "lastname", newPlayer.LastName,
+        "gender", newPlayer.SexGender.ToString(),
+        "simplelevel", newPlayer.SimpleLevel.ToString(),
+        "doublelevel", newPlayer.DoubleLevel.ToString(),
+        "mixedlevel", newPlayer.MixedLevel.ToString());
     }
 
     private static void SaveToXmlFile(string fileName, params string[] xmlTags)
@@ -824,17 +830,21 @@ namespace InterClubBadminton
       XmlDocument doc = new XmlDocument();
       doc.Load(fileName);
       XmlNode root = doc.DocumentElement;
-      XmlElement newQuote = doc.CreateElement(xmlTags[0]); // quote
-      XmlElement newAuthor = doc.CreateElement(xmlTags[1]); // author prop1
-      newAuthor.InnerText = xmlTags[2]; // author value
-      XmlElement newLanguage = doc.CreateElement(xmlTags[3]); // language
-      newLanguage.InnerText = xmlTags[4]; //  language value
-      XmlElement newQuoteValue = doc.CreateElement(xmlTags[5]); // quote
-      newQuoteValue.InnerText = xmlTags[6]; //  quote value
-      newQuote.AppendChild(newAuthor);
-      newQuote.AppendChild(newLanguage);
-      newQuote.AppendChild(newQuoteValue);
-      root.AppendChild(newQuote);
+      XmlElement newNode = doc.CreateElement(xmlTags[0]); // player
+      var listOfProperties = new List<XmlElement>();
+      for (int i = 1; i < xmlTags.Length - 1; i = i + 2)
+      {
+        XmlElement newProperty = doc.CreateElement(xmlTags[i]);
+        newProperty.InnerText = xmlTags[i+1];
+        listOfProperties.Add(newProperty);
+      }
+
+      foreach (XmlElement element in listOfProperties)
+      {
+        newNode.AppendChild(element);
+      }
+      
+      root.AppendChild(newNode);
       doc.Save(fileName);
     }
 
