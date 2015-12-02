@@ -43,6 +43,7 @@ namespace InterClubBadminton
     private string _currentLanguage = "english";
     private ConfigurationOptions _configurationOptions = new ConfigurationOptions();
     private bool _teamMembersCreated;
+    private bool _visualizeTeamLoaded = false;
 
     private void QuitToolStripMenuItem_Click(object sender, EventArgs e)
     {
@@ -79,6 +80,7 @@ namespace InterClubBadminton
         "Resources/Points.xml", "point", "name", "value");
       SetButtonEnabled(buttonAddPlayer, textBoxFirstName, textBoxLastName, comboBoxSex, comboBoxSimple,
         comboBoxDouble, comboBoxMixed);
+
     }
 
     private static void LoadCombobox(ComboBox cb, IEnumerable<string> collectionStrings)
@@ -803,7 +805,7 @@ namespace InterClubBadminton
         // do something
       }
     }
-    
+
     private void buttonAddPlayer_Click(object sender, EventArgs e)
     {
       Player newPlayer = new Player(textBoxFirstName.Text, textBoxLastName.Text,
@@ -842,7 +844,7 @@ namespace InterClubBadminton
       for (int i = 1; i < xmlTags.Length - 1; i = i + 2)
       {
         XmlElement newProperty = doc.CreateElement(xmlTags[i]);
-        newProperty.InnerText = xmlTags[i+1];
+        newProperty.InnerText = xmlTags[i + 1];
         listOfProperties.Add(newProperty);
       }
 
@@ -850,7 +852,7 @@ namespace InterClubBadminton
       {
         newNode.AppendChild(element);
       }
-      
+
       root.AppendChild(newNode);
       doc.Save(fileName);
     }
@@ -925,7 +927,123 @@ namespace InterClubBadminton
 
     private void tabPageVisualizeTeam_Enter(object sender, EventArgs e)
     {
-      
+      if (!_visualizeTeamLoaded)
+      {
+        var listOfPlayers = LoadXmlIntoList(Settings.Default.PlayersFileName,
+          "player",
+          "firstname",
+          "lastname",
+          "gender",
+          "simplelevel",
+          "doublelevel",
+          "mixedlevel");
+        LoadListView(listViewVisualizeTeam, listOfPlayers);
+        _visualizeTeamLoaded = true;
+      }
+
+    }
+
+    private void LoadListView(ListView lv, IEnumerable<Player> listOfPlayers)
+    {
+      lv.Items.Clear();
+      lv.Columns.Add(Translate("Number"), 200, HorizontalAlignment.Left);
+      lv.Columns.Add(Translate("First name"), 240, HorizontalAlignment.Left);
+      lv.Columns.Add(Translate("Last name"), 240, HorizontalAlignment.Left);
+      lv.Columns.Add(Translate("Gender"), 240, HorizontalAlignment.Left);
+      lv.Columns.Add(Translate("Simple level"), 240, HorizontalAlignment.Left);
+      lv.Columns.Add(Translate("double level"), 240, HorizontalAlignment.Left);
+      lv.Columns.Add(Translate("Mixed level"), 240, HorizontalAlignment.Left);
+      lv.View = View.Details;
+      lv.LabelEdit = false;
+      lv.AllowColumnReorder = true;
+      lv.CheckBoxes = true;
+      lv.FullRowSelect = true;
+      lv.GridLines = true;
+      lv.Sorting = SortOrder.None;
+      int playerCount = 0;
+      foreach (Player player in listOfPlayers)
+      {
+        ListViewItem item1 = new ListViewItem("Player " + playerCount) { Checked = false };
+        item1.SubItems.Add(player.FirstName);
+        item1.SubItems.Add(player.LastName);
+        item1.SubItems.Add(player.SexGender.ToString());
+        item1.SubItems.Add(player.SimpleLevel.ToString());
+        item1.SubItems.Add(player.DoubleLevel.ToString());
+        item1.SubItems.Add(player.MixedLevel.ToString());
+        lv.Items.Add(item1);
+        playerCount++;
+        Application.DoEvents();
+      }
+    }
+
+    private static bool IsInlistView(ListView listView, ListViewItem lviItem, int columnNumber)
+    {
+      bool result = false;
+      foreach (ListViewItem item in listView.Items)
+      {
+        if (item.SubItems[columnNumber].Text == lviItem.SubItems[columnNumber].Text)
+        {
+          result = true;
+          break;
+        }
+      }
+
+      return result;
+    }
+
+    private static IEnumerable<Player> LoadXmlIntoList(string fileName, params string[] tags)
+    {
+      List<Player> result = new List<Player>();
+      if (!File.Exists(fileName))
+      {
+        return result;
+      }
+
+      XDocument xDoc;
+      try
+      {
+        xDoc = XDocument.Load(fileName);
+      }
+      catch (Exception exception)
+      {
+        MessageBox.Show(Resources.Error_while_loading_the + Punctuation.OneSpace +
+          Settings.Default.PlayersFileName + Punctuation.OneSpace +
+          Resources.xml_file + Punctuation.OneSpace + exception.Message);
+        return result;
+      }
+      var result2 = from node in xDoc.Descendants(tags[0])
+                    where node.HasElements
+                    let xElementFirstName = node.Element(tags[1])
+                    where xElementFirstName != null
+                    let xElementLastName = node.Element(tags[2])
+                    where xElementLastName != null
+                    let xElementGender = node.Element(tags[3])
+                    where xElementGender != null
+                    let xElementSimpleLevel = node.Element(tags[4])
+                    where xElementSimpleLevel != null
+                    let xElementDoubleLevel = node.Element(tags[5])
+                    where xElementDoubleLevel != null
+                    let xElementMixedLevel = node.Element(tags[6])
+                    where xElementMixedLevel != null
+                    select new
+                    {
+                      NodeValue1 = xElementFirstName.Value,
+                      NodeValue2 = xElementLastName.Value,
+                      NodeValue3 = xElementGender.Value,
+                      NodeValue4 = xElementSimpleLevel.Value,
+                      NodeValue5 = xElementDoubleLevel.Value,
+                      NodeValue6 = xElementMixedLevel.Value
+                    };
+      foreach (var i in result2)
+      {
+        result.Add(new Player(i.NodeValue1, i.NodeValue2, 
+            (Gender)Enum.Parse(typeof(Gender), i.NodeValue3),
+            (RankLevel)Enum.Parse(typeof(RankLevel), i.NodeValue4),
+            (RankLevel)Enum.Parse(typeof(RankLevel), i.NodeValue5),
+            (RankLevel)Enum.Parse(typeof(RankLevel), i.NodeValue6)));
+      }
+
+      return result;
     }
   }
 }

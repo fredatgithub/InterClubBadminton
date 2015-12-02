@@ -81,8 +81,8 @@
       this.textBoxFirstName = new System.Windows.Forms.TextBox();
       this.labelFirstName = new System.Windows.Forms.Label();
       this.tabPageVisualizeTeam = new System.Windows.Forms.TabPage();
+      this.listViewVisualizeTeam = new System.Windows.Forms.ListView();
       this.tabPageCreateTeam = new System.Windows.Forms.TabPage();
-      this.listView1 = new System.Windows.Forms.ListView();
       this.menuStrip1.SuspendLayout();
       this.tabControlMain.SuspendLayout();
       this.tabPageAddPlayer.SuspendLayout();
@@ -558,7 +558,7 @@
       // 
       // tabPageVisualizeTeam
       // 
-      this.tabPageVisualizeTeam.Controls.Add(this.listView1);
+      this.tabPageVisualizeTeam.Controls.Add(this.listViewVisualizeTeam);
       this.tabPageVisualizeTeam.Location = new System.Drawing.Point(4, 25);
       this.tabPageVisualizeTeam.Name = "tabPageVisualizeTeam";
       this.tabPageVisualizeTeam.Padding = new System.Windows.Forms.Padding(3);
@@ -568,6 +568,15 @@
       this.tabPageVisualizeTeam.UseVisualStyleBackColor = true;
       this.tabPageVisualizeTeam.Enter += new System.EventHandler(this.tabPageVisualizeTeam_Enter);
       // 
+      // listViewVisualizeTeam
+      // 
+      this.listViewVisualizeTeam.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.listViewVisualizeTeam.Location = new System.Drawing.Point(3, 3);
+      this.listViewVisualizeTeam.Name = "listViewVisualizeTeam";
+      this.listViewVisualizeTeam.Size = new System.Drawing.Size(897, 471);
+      this.listViewVisualizeTeam.TabIndex = 0;
+      this.listViewVisualizeTeam.UseCompatibleStateImageBehavior = false;
+      // 
       // tabPageCreateTeam
       // 
       this.tabPageCreateTeam.Location = new System.Drawing.Point(4, 25);
@@ -576,15 +585,6 @@
       this.tabPageCreateTeam.TabIndex = 2;
       this.tabPageCreateTeam.Text = "Create team";
       this.tabPageCreateTeam.UseVisualStyleBackColor = true;
-      // 
-      // listView1
-      // 
-      this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.listView1.Location = new System.Drawing.Point(3, 3);
-      this.listView1.Name = "listView1";
-      this.listView1.Size = new System.Drawing.Size(897, 471);
-      this.listView1.TabIndex = 0;
-      this.listView1.UseCompatibleStateImageBehavior = false;
       // 
       // FormMain
       // 
@@ -667,6 +667,6 @@
     private System.Windows.Forms.Label labelFirstName;
     private System.Windows.Forms.Button buttonAddPlayer;
     private System.Windows.Forms.ComboBox comboBoxSex;
-    private System.Windows.Forms.ListView listView1;
+    private System.Windows.Forms.ListView listViewVisualizeTeam;
   }
 }
