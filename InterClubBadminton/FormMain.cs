@@ -796,11 +796,6 @@ namespace InterClubBadminton
     
     private void buttonAddPlayer_Click(object sender, EventArgs e)
     {
-      string tmp1 = textBoxFirstName.Text;
-      string tmp2 = textBoxLastName.Text;
-      Gender tmp3 = (Gender)comboBoxSex.SelectedIndex;
-        
-      RankLevel tmp4 = (RankLevel) comboBoxSimple.SelectedIndex;
       Player newPlayer = new Player(textBoxFirstName.Text, textBoxLastName.Text,
         (Gender)comboBoxSex.SelectedIndex, (RankLevel)comboBoxSimple.SelectedIndex,
         (RankLevel)comboBoxDouble.SelectedIndex, (RankLevel)comboBoxMixed.SelectedIndex);
