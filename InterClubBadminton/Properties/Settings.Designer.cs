@@ -154,5 +154,17 @@ namespace InterClubBadminton.Properties {
                 this["PlayersFileName"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int LastTabUsed {
+            get {
+                return ((int)(this["LastTabUsed"]));
+            }
+            set {
+                this["LastTabUsed"] = value;
+            }
+        }
     }
 }

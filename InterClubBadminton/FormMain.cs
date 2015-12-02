@@ -75,9 +75,8 @@ namespace InterClubBadminton
       LoadLanguages();
       SetLanguage(Settings.Default.LastLanguageUsed);
       LoadCombobox(comboBoxSex, Enum.GetNames(typeof(Gender)));
-      LoadComboboxWithXmlFile(comboBoxSimple, "Resources/Points.xml", "point", "name", "value");
-      LoadComboboxWithXmlFile(comboBoxDouble, "Resources/Points.xml", "point", "name", "value");
-      LoadComboboxWithXmlFile(comboBoxMixed, "Resources/Points.xml", "point", "name", "value");
+      LoadSeveralComboBoxesWithXmlFile(new List<ComboBox> { comboBoxSimple, comboBoxDouble, comboBoxMixed },
+        "Resources/Points.xml", "point", "name", "value");
       SetButtonEnabled(buttonAddPlayer, textBoxFirstName, textBoxLastName, comboBoxSex, comboBoxSimple,
         comboBoxDouble, comboBoxMixed);
     }
@@ -91,6 +90,15 @@ namespace InterClubBadminton
       }
 
       cb.SelectedIndex = 0;
+    }
+
+    private void LoadSeveralComboBoxesWithXmlFile(IEnumerable<ComboBox> listOfComboBoxs,
+      string filename, params string[] tags)
+    {
+      foreach (ComboBox comboBox in listOfComboBoxs)
+      {
+        LoadComboboxWithXmlFile(comboBox, filename, tags);
+      }
     }
 
     private void LoadComboboxWithXmlFile(ComboBox cb, string filename, params string[] tags)
@@ -371,6 +379,7 @@ namespace InterClubBadminton
       SetDisplayOption(Settings.Default.DisplayToolStripMenuItem);
       LoadConfigurationOptions();
       _teamMembersCreated = Settings.Default._teamMembersCreated;
+      tabControlMain.SelectedIndex = Settings.Default.LastTabUsed;
     }
 
     private void SaveWindowValue()
@@ -383,6 +392,7 @@ namespace InterClubBadminton
       Settings.Default.DisplayToolStripMenuItem = GetDisplayOption();
       SaveConfigurationOptions();
       Settings.Default._teamMembersCreated = _teamMembersCreated;
+      Settings.Default.LastTabUsed = tabControlMain.SelectedIndex;
       Settings.Default.Save();
     }
 
@@ -818,6 +828,8 @@ namespace InterClubBadminton
         "simplelevel", newPlayer.SimpleLevel.ToString(),
         "doublelevel", newPlayer.DoubleLevel.ToString(),
         "mixedlevel", newPlayer.MixedLevel.ToString());
+      textBoxFirstName.Text = string.Empty;
+      textBoxLastName.Text = string.Empty;
     }
 
     private static void SaveToXmlFile(string fileName, params string[] xmlTags)
@@ -909,6 +921,11 @@ namespace InterClubBadminton
     {
       SetButtonEnabled(buttonAddPlayer, textBoxFirstName, textBoxLastName, comboBoxSex, comboBoxSimple,
         comboBoxDouble, comboBoxMixed);
+    }
+
+    private void tabPageVisualizeTeam_Enter(object sender, EventArgs e)
+    {
+      
     }
   }
 }
