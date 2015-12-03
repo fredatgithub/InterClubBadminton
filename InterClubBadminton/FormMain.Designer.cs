@@ -83,6 +83,8 @@
       this.tabPageVisualizeTeam = new System.Windows.Forms.TabPage();
       this.listViewVisualizeTeam = new System.Windows.Forms.ListView();
       this.tabPageCreateTeam = new System.Windows.Forms.TabPage();
+      this.textBoxLicenseNumber = new System.Windows.Forms.TextBox();
+      this.labelLicenseNumber = new System.Windows.Forms.Label();
       this.menuStrip1.SuspendLayout();
       this.tabControlMain.SuspendLayout();
       this.tabPageAddPlayer.SuspendLayout();
@@ -399,6 +401,8 @@
       // 
       // tabPageAddPlayer
       // 
+      this.tabPageAddPlayer.Controls.Add(this.textBoxLicenseNumber);
+      this.tabPageAddPlayer.Controls.Add(this.labelLicenseNumber);
       this.tabPageAddPlayer.Controls.Add(this.buttonAddPlayer);
       this.tabPageAddPlayer.Controls.Add(this.comboBoxSex);
       this.tabPageAddPlayer.Controls.Add(this.labelSex);
@@ -424,7 +428,7 @@
       // 
       this.buttonAddPlayer.Enabled = false;
       this.buttonAddPlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.buttonAddPlayer.Location = new System.Drawing.Point(138, 264);
+      this.buttonAddPlayer.Location = new System.Drawing.Point(184, 291);
       this.buttonAddPlayer.Name = "buttonAddPlayer";
       this.buttonAddPlayer.Size = new System.Drawing.Size(143, 31);
       this.buttonAddPlayer.TabIndex = 7;
@@ -437,7 +441,7 @@
       this.comboBoxSex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.comboBoxSex.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.comboBoxSex.FormattingEnabled = true;
-      this.comboBoxSex.Location = new System.Drawing.Point(138, 105);
+      this.comboBoxSex.Location = new System.Drawing.Point(184, 105);
       this.comboBoxSex.Name = "comboBoxSex";
       this.comboBoxSex.Size = new System.Drawing.Size(143, 28);
       this.comboBoxSex.TabIndex = 3;
@@ -458,7 +462,7 @@
       this.comboBoxMixed.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.comboBoxMixed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.comboBoxMixed.FormattingEnabled = true;
-      this.comboBoxMixed.Location = new System.Drawing.Point(138, 207);
+      this.comboBoxMixed.Location = new System.Drawing.Point(184, 207);
       this.comboBoxMixed.Name = "comboBoxMixed";
       this.comboBoxMixed.Size = new System.Drawing.Size(143, 28);
       this.comboBoxMixed.TabIndex = 6;
@@ -479,7 +483,7 @@
       this.comboBoxDouble.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.comboBoxDouble.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.comboBoxDouble.FormattingEnabled = true;
-      this.comboBoxDouble.Location = new System.Drawing.Point(138, 173);
+      this.comboBoxDouble.Location = new System.Drawing.Point(184, 173);
       this.comboBoxDouble.Name = "comboBoxDouble";
       this.comboBoxDouble.Size = new System.Drawing.Size(143, 28);
       this.comboBoxDouble.TabIndex = 5;
@@ -490,7 +494,7 @@
       this.comboBoxSimple.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.comboBoxSimple.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.comboBoxSimple.FormattingEnabled = true;
-      this.comboBoxSimple.Location = new System.Drawing.Point(138, 139);
+      this.comboBoxSimple.Location = new System.Drawing.Point(184, 139);
       this.comboBoxSimple.Name = "comboBoxSimple";
       this.comboBoxSimple.Size = new System.Drawing.Size(143, 28);
       this.comboBoxSimple.TabIndex = 4;
@@ -519,7 +523,7 @@
       // textBoxLastName
       // 
       this.textBoxLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.textBoxLastName.Location = new System.Drawing.Point(138, 69);
+      this.textBoxLastName.Location = new System.Drawing.Point(184, 69);
       this.textBoxLastName.Name = "textBoxLastName";
       this.textBoxLastName.Size = new System.Drawing.Size(143, 26);
       this.textBoxLastName.TabIndex = 2;
@@ -539,7 +543,7 @@
       // textBoxFirstName
       // 
       this.textBoxFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.textBoxFirstName.Location = new System.Drawing.Point(138, 41);
+      this.textBoxFirstName.Location = new System.Drawing.Point(184, 41);
       this.textBoxFirstName.Name = "textBoxFirstName";
       this.textBoxFirstName.Size = new System.Drawing.Size(143, 26);
       this.textBoxFirstName.TabIndex = 1;
@@ -585,6 +589,26 @@
       this.tabPageCreateTeam.TabIndex = 2;
       this.tabPageCreateTeam.Text = "Create team";
       this.tabPageCreateTeam.UseVisualStyleBackColor = true;
+      // 
+      // textBoxLicenseNumber
+      // 
+      this.textBoxLicenseNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.textBoxLicenseNumber.Location = new System.Drawing.Point(184, 250);
+      this.textBoxLicenseNumber.Name = "textBoxLicenseNumber";
+      this.textBoxLicenseNumber.Size = new System.Drawing.Size(143, 26);
+      this.textBoxLicenseNumber.TabIndex = 13;
+      this.textBoxLicenseNumber.Text = "0";
+      this.textBoxLicenseNumber.TextChanged += new System.EventHandler(this.textBoxLicenseNumber_TextChanged);
+      // 
+      // labelLicenseNumber
+      // 
+      this.labelLicenseNumber.AutoSize = true;
+      this.labelLicenseNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.labelLicenseNumber.Location = new System.Drawing.Point(29, 250);
+      this.labelLicenseNumber.Name = "labelLicenseNumber";
+      this.labelLicenseNumber.Size = new System.Drawing.Size(129, 20);
+      this.labelLicenseNumber.TabIndex = 12;
+      this.labelLicenseNumber.Text = "License number";
       // 
       // FormMain
       // 
@@ -668,5 +692,7 @@
     private System.Windows.Forms.Button buttonAddPlayer;
     private System.Windows.Forms.ComboBox comboBoxSex;
     private System.Windows.Forms.ListView listViewVisualizeTeam;
+    private System.Windows.Forms.TextBox textBoxLicenseNumber;
+    private System.Windows.Forms.Label labelLicenseNumber;
   }
 }
