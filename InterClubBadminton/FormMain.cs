@@ -832,6 +832,10 @@ namespace InterClubBadminton
         "mixedlevel", newPlayer.MixedLevel.ToString());
       textBoxFirstName.Text = string.Empty;
       textBoxLastName.Text = string.Empty;
+      // reload list of players with new player and switch over to visualization
+      LoadPlayers();
+      tabControlMain.SelectedIndex = 1;
+
     }
 
     private static void SaveToXmlFile(string fileName, params string[] xmlTags)
@@ -929,7 +933,13 @@ namespace InterClubBadminton
     {
       if (!_visualizeTeamLoaded)
       {
-        var listOfPlayers = LoadXmlIntoList(Settings.Default.PlayersFileName,
+        LoadPlayers();
+      }
+    }
+
+    private void LoadPlayers()
+    {
+      var listOfPlayers = LoadXmlIntoList(Settings.Default.PlayersFileName,
           "player",
           "firstname",
           "lastname",
@@ -937,10 +947,8 @@ namespace InterClubBadminton
           "simplelevel",
           "doublelevel",
           "mixedlevel");
-        LoadListView(listViewVisualizeTeam, listOfPlayers);
-        _visualizeTeamLoaded = true;
-      }
-
+      LoadListView(listViewVisualizeTeam, listOfPlayers);
+      _visualizeTeamLoaded = true;
     }
 
     private void LoadListView(ListView lv, IEnumerable<Player> listOfPlayers)
@@ -960,7 +968,7 @@ namespace InterClubBadminton
       lv.FullRowSelect = true;
       lv.GridLines = true;
       lv.Sorting = SortOrder.None;
-      int playerCount = 0;
+      int playerCount = 1;
       foreach (Player player in listOfPlayers)
       {
         ListViewItem item1 = new ListViewItem("Player " + playerCount) { Checked = false };
