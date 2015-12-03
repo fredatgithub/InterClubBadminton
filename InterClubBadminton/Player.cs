@@ -12,10 +12,12 @@ namespace InterClubBadminton
     public RankLevel MixedLevel { get; set; }
     public List<TypePlayer> WishList { get; set; }
     public List<TypePlayer> RefusalList { get; set; }
+    public int LicenseNumber { get; set; }
 
     public Player(string firstName = "no first name", string lastName = "no last name",
       Gender sexGender = Gender.Male, RankLevel simpleLevel = RankLevel.NC,
-      RankLevel doubleLevel = RankLevel.NC, RankLevel mixedLevel = RankLevel.NC)
+      RankLevel doubleLevel = RankLevel.NC, RankLevel mixedLevel = RankLevel.NC,
+      int licenseNumber = 0)
     {
       FirstName = firstName;
       LastName = lastName;
@@ -25,6 +27,7 @@ namespace InterClubBadminton
       MixedLevel = mixedLevel;
       WishList = new List<TypePlayer>();
       RefusalList = new List<TypePlayer>();
+      LicenseNumber = licenseNumber;
     }
   }
 }

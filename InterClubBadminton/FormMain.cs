@@ -496,8 +496,15 @@ namespace InterClubBadminton
           SmallToolStripMenuItem.Text = _languageDicoEn["Small"];
           MediumToolStripMenuItem.Text = _languageDicoEn["Medium"];
           LargeToolStripMenuItem.Text = _languageDicoEn["Large"];
-
-
+          listViewVisualizeTeam.Columns[0].Text = _languageDicoEn["Player number"];
+          listViewVisualizeTeam.Columns[1].Text = _languageDicoEn["First name"];
+          listViewVisualizeTeam.Columns[2].Text = _languageDicoEn["Last name"];
+          listViewVisualizeTeam.Columns[3].Text = _languageDicoEn["Gender"];
+          listViewVisualizeTeam.Columns[4].Text = _languageDicoEn["Simple level"];
+          listViewVisualizeTeam.Columns[5].Text = _languageDicoEn["double level"];
+          listViewVisualizeTeam.Columns[6].Text = _languageDicoEn["Mixed level"];
+          listViewVisualizeTeam.Columns[7].Text = _languageDicoEn["License number"];
+          
           _currentLanguage = "English";
           break;
         case "French":
@@ -533,7 +540,15 @@ namespace InterClubBadminton
           SmallToolStripMenuItem.Text = _languageDicoFr["Small"];
           MediumToolStripMenuItem.Text = _languageDicoFr["Medium"];
           LargeToolStripMenuItem.Text = _languageDicoFr["Large"];
-
+          listViewVisualizeTeam.Columns[0].Text = _languageDicoFr["Player number"];
+          listViewVisualizeTeam.Columns[1].Text = _languageDicoFr["First name"];
+          listViewVisualizeTeam.Columns[2].Text = _languageDicoFr["Last name"];
+          listViewVisualizeTeam.Columns[3].Text = _languageDicoFr["Gender"];
+          listViewVisualizeTeam.Columns[4].Text = _languageDicoFr["Simple level"];
+          listViewVisualizeTeam.Columns[5].Text = _languageDicoFr["double level"];
+          listViewVisualizeTeam.Columns[6].Text = _languageDicoFr["Mixed level"];
+          listViewVisualizeTeam.Columns[7].Text = _languageDicoFr["License number"];
+          
           _currentLanguage = "French";
           break;
         default:
@@ -954,13 +969,14 @@ namespace InterClubBadminton
     private void LoadListView(ListView lv, IEnumerable<Player> listOfPlayers)
     {
       lv.Items.Clear();
-      lv.Columns.Add(Translate("Number"), 200, HorizontalAlignment.Left);
+      lv.Columns.Add(Translate("Player number"), 200, HorizontalAlignment.Left);
       lv.Columns.Add(Translate("First name"), 240, HorizontalAlignment.Left);
       lv.Columns.Add(Translate("Last name"), 240, HorizontalAlignment.Left);
       lv.Columns.Add(Translate("Gender"), 240, HorizontalAlignment.Left);
       lv.Columns.Add(Translate("Simple level"), 240, HorizontalAlignment.Left);
       lv.Columns.Add(Translate("double level"), 240, HorizontalAlignment.Left);
       lv.Columns.Add(Translate("Mixed level"), 240, HorizontalAlignment.Left);
+      lv.Columns.Add(Translate("License number"), 240, HorizontalAlignment.Left);
       lv.View = View.Details;
       lv.LabelEdit = false;
       lv.AllowColumnReorder = true;
@@ -978,6 +994,7 @@ namespace InterClubBadminton
         item1.SubItems.Add(player.SimpleLevel.ToString());
         item1.SubItems.Add(player.DoubleLevel.ToString());
         item1.SubItems.Add(player.MixedLevel.ToString());
+        item1.SubItems.Add(player.LicenseNumber.ToString());
         lv.Items.Add(item1);
         playerCount++;
         Application.DoEvents();
