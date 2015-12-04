@@ -80,7 +80,6 @@ namespace InterClubBadminton
         "Resources/Points.xml", "point", "name", "value");
       SetButtonEnabled(buttonAddPlayer, textBoxFirstName, textBoxLastName, comboBoxGender, comboBoxSimple,
         comboBoxDouble, comboBoxMixed);
-
     }
 
     private static void LoadCombobox(ComboBox cb, IEnumerable<string> collectionStrings)
@@ -503,9 +502,10 @@ namespace InterClubBadminton
             listViewVisualizeTeam.Columns[2].Text = _languageDicoEn["Last name"];
             listViewVisualizeTeam.Columns[3].Text = _languageDicoEn["Gender"];
             listViewVisualizeTeam.Columns[4].Text = _languageDicoEn["Simple level"];
-            listViewVisualizeTeam.Columns[5].Text = _languageDicoEn["double level"];
+            listViewVisualizeTeam.Columns[5].Text = _languageDicoEn["Double level"];
             listViewVisualizeTeam.Columns[6].Text = _languageDicoEn["Mixed level"];
             listViewVisualizeTeam.Columns[7].Text = _languageDicoEn["License number"];
+            ResizeListViewColumns(listViewVisualizeTeam);
           }
           
           
@@ -551,9 +551,10 @@ namespace InterClubBadminton
             listViewVisualizeTeam.Columns[2].Text = _languageDicoFr["Last name"];
             listViewVisualizeTeam.Columns[3].Text = _languageDicoFr["Gender"];
             listViewVisualizeTeam.Columns[4].Text = _languageDicoFr["Simple level"];
-            listViewVisualizeTeam.Columns[5].Text = _languageDicoFr["double level"];
+            listViewVisualizeTeam.Columns[5].Text = _languageDicoFr["Double level"];
             listViewVisualizeTeam.Columns[6].Text = _languageDicoFr["Mixed level"];
             listViewVisualizeTeam.Columns[7].Text = _languageDicoFr["License number"];
+            ResizeListViewColumns(listViewVisualizeTeam);
           }
           
           _currentLanguage = "French";
@@ -563,7 +564,7 @@ namespace InterClubBadminton
           break;
       }
     }
-
+    
     private void cutToolStripMenuItem_Click(object sender, EventArgs e)
     {
       Control focusedControl = FindFocusedControl(new List<Control> { });
@@ -1019,19 +1020,19 @@ namespace InterClubBadminton
 
       for (int i = 0; i < lv.Columns.Count - 1; i++)
       {
-        lv.AutoResizeColumn(i, GetLongestString(lv.Columns[i].Text, lv));
+        lv.AutoResizeColumn(i, GetLongestString(lv.Columns[i].Text, lv, i));
       }
     }
 
-    private static ColumnHeaderAutoResizeStyle GetLongestString(string headerText, ListView lv)
+    private static ColumnHeaderAutoResizeStyle GetLongestString(string headerText, ListView lv, int columnNumber)
     {
-      return headerText.Length > MaxString(lv.Items).Length ? ColumnHeaderAutoResizeStyle.HeaderSize : ColumnHeaderAutoResizeStyle.ColumnContent;
+      return headerText.Length > MaxString(lv.Items, columnNumber).Length ? ColumnHeaderAutoResizeStyle.HeaderSize : ColumnHeaderAutoResizeStyle.ColumnContent;
     }
 
-    private static string MaxString(ListView.ListViewItemCollection items)
+    private static string MaxString(ListView.ListViewItemCollection items, int columnNumber)
     {
       string longest = string.Empty;
-      foreach (ListViewItem item in items)
+      foreach (ListViewItem item in items) // items[columnNumber].SubItems
       {
         if (item.ToString().Length > longest.Length)
         {
@@ -1126,7 +1127,6 @@ namespace InterClubBadminton
     {
       SetButtonEnabled(buttonAddPlayer, textBoxFirstName, textBoxLastName, comboBoxGender, comboBoxSimple,
         comboBoxDouble, comboBoxMixed, textBoxLicenseNumber);
-      // accept only numbers
       AcceptOnlyNumbers(textBoxLicenseNumber);
     }
   }
