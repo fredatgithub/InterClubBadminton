@@ -981,7 +981,7 @@ namespace InterClubBadminton
       lv.Columns.Add(Translate("Last name"), 240, HorizontalAlignment.Left);
       lv.Columns.Add(Translate("Gender"), 240, HorizontalAlignment.Left);
       lv.Columns.Add(Translate("Simple level"), 240, HorizontalAlignment.Left);
-      lv.Columns.Add(Translate("double level"), 240, HorizontalAlignment.Left);
+      lv.Columns.Add(Translate("Double level"), 240, HorizontalAlignment.Left);
       lv.Columns.Add(Translate("Mixed level"), 240, HorizontalAlignment.Left);
       lv.Columns.Add(Translate("License number"), 240, HorizontalAlignment.Left);
       lv.View = View.Details;
@@ -1031,11 +1031,11 @@ namespace InterClubBadminton
     private static string MaxString(ListView.ListViewItemCollection items)
     {
       string longest = string.Empty;
-      foreach (var item in items)
+      foreach (ListViewItem item in items)
       {
         if (item.ToString().Length > longest.Length)
         {
-          longest = item.ToString();
+          longest = item.Text;
         }
       }
 
