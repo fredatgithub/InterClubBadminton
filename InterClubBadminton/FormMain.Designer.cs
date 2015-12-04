@@ -68,7 +68,7 @@
       this.tabControlMain = new System.Windows.Forms.TabControl();
       this.tabPageAddPlayer = new System.Windows.Forms.TabPage();
       this.buttonAddPlayer = new System.Windows.Forms.Button();
-      this.comboBoxSex = new System.Windows.Forms.ComboBox();
+      this.comboBoxGender = new System.Windows.Forms.ComboBox();
       this.labelSex = new System.Windows.Forms.Label();
       this.comboBoxMixed = new System.Windows.Forms.ComboBox();
       this.labelMixed = new System.Windows.Forms.Label();
@@ -404,7 +404,7 @@
       this.tabPageAddPlayer.Controls.Add(this.textBoxLicenseNumber);
       this.tabPageAddPlayer.Controls.Add(this.labelLicenseNumber);
       this.tabPageAddPlayer.Controls.Add(this.buttonAddPlayer);
-      this.tabPageAddPlayer.Controls.Add(this.comboBoxSex);
+      this.tabPageAddPlayer.Controls.Add(this.comboBoxGender);
       this.tabPageAddPlayer.Controls.Add(this.labelSex);
       this.tabPageAddPlayer.Controls.Add(this.comboBoxMixed);
       this.tabPageAddPlayer.Controls.Add(this.labelMixed);
@@ -438,14 +438,14 @@
       // 
       // comboBoxSex
       // 
-      this.comboBoxSex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-      this.comboBoxSex.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.comboBoxSex.FormattingEnabled = true;
-      this.comboBoxSex.Location = new System.Drawing.Point(184, 105);
-      this.comboBoxSex.Name = "comboBoxSex";
-      this.comboBoxSex.Size = new System.Drawing.Size(143, 28);
-      this.comboBoxSex.TabIndex = 3;
-      this.comboBoxSex.SelectedIndexChanged += new System.EventHandler(this.comboBoxSex_SelectedIndexChanged);
+      this.comboBoxGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.comboBoxGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.comboBoxGender.FormattingEnabled = true;
+      this.comboBoxGender.Location = new System.Drawing.Point(184, 105);
+      this.comboBoxGender.Name = "comboBoxGender";
+      this.comboBoxGender.Size = new System.Drawing.Size(143, 28);
+      this.comboBoxGender.TabIndex = 3;
+      this.comboBoxGender.SelectedIndexChanged += new System.EventHandler(this.comboBoxSex_SelectedIndexChanged);
       // 
       // labelSex
       // 
@@ -690,7 +690,7 @@
     private System.Windows.Forms.TextBox textBoxFirstName;
     private System.Windows.Forms.Label labelFirstName;
     private System.Windows.Forms.Button buttonAddPlayer;
-    private System.Windows.Forms.ComboBox comboBoxSex;
+    private System.Windows.Forms.ComboBox comboBoxGender;
     private System.Windows.Forms.ListView listViewVisualizeTeam;
     private System.Windows.Forms.TextBox textBoxLicenseNumber;
     private System.Windows.Forms.Label labelLicenseNumber;

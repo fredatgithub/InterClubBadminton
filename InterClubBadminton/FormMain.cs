@@ -75,10 +75,10 @@ namespace InterClubBadminton
       GetWindowValue();
       LoadLanguages();
       SetLanguage(Settings.Default.LastLanguageUsed);
-      LoadCombobox(comboBoxSex, Enum.GetNames(typeof(Gender)));
+      LoadCombobox(comboBoxGender, Enum.GetNames(typeof(Gender)));
       LoadSeveralComboBoxesWithXmlFile(new List<ComboBox> { comboBoxSimple, comboBoxDouble, comboBoxMixed },
         "Resources/Points.xml", "point", "name", "value");
-      SetButtonEnabled(buttonAddPlayer, textBoxFirstName, textBoxLastName, comboBoxSex, comboBoxSimple,
+      SetButtonEnabled(buttonAddPlayer, textBoxFirstName, textBoxLastName, comboBoxGender, comboBoxSimple,
         comboBoxDouble, comboBoxMixed);
 
     }
@@ -831,7 +831,7 @@ namespace InterClubBadminton
     private void buttonAddPlayer_Click(object sender, EventArgs e)
     {
       Player newPlayer = new Player(textBoxFirstName.Text, textBoxLastName.Text,
-        (Gender)comboBoxSex.SelectedIndex, (RankLevel)comboBoxSimple.SelectedIndex,
+        (Gender)comboBoxGender.SelectedIndex, (RankLevel)comboBoxSimple.SelectedIndex,
         (RankLevel)comboBoxDouble.SelectedIndex, (RankLevel)comboBoxMixed.SelectedIndex);
       if (!File.Exists(Settings.Default.PlayersFileName))
       {
@@ -917,37 +917,37 @@ namespace InterClubBadminton
 
     private void textBoxFirstName_TextChanged(object sender, EventArgs e)
     {
-      SetButtonEnabled(buttonAddPlayer, textBoxFirstName, textBoxLastName, comboBoxSex, comboBoxSimple,
+      SetButtonEnabled(buttonAddPlayer, textBoxFirstName, textBoxLastName, comboBoxGender, comboBoxSimple,
         comboBoxDouble, comboBoxMixed, textBoxLicenseNumber);
     }
 
     private void textBoxLastName_TextChanged(object sender, EventArgs e)
     {
-      SetButtonEnabled(buttonAddPlayer, textBoxFirstName, textBoxLastName, comboBoxSex, comboBoxSimple,
+      SetButtonEnabled(buttonAddPlayer, textBoxFirstName, textBoxLastName, comboBoxGender, comboBoxSimple,
         comboBoxDouble, comboBoxMixed, textBoxLicenseNumber);
     }
 
     private void comboBoxSex_SelectedIndexChanged(object sender, EventArgs e)
     {
-      SetButtonEnabled(buttonAddPlayer, textBoxFirstName, textBoxLastName, comboBoxSex, comboBoxSimple,
+      SetButtonEnabled(buttonAddPlayer, textBoxFirstName, textBoxLastName, comboBoxGender, comboBoxSimple,
         comboBoxDouble, comboBoxMixed, textBoxLicenseNumber);
     }
 
     private void comboBoxSimple_SelectedIndexChanged(object sender, EventArgs e)
     {
-      SetButtonEnabled(buttonAddPlayer, textBoxFirstName, textBoxLastName, comboBoxSex, comboBoxSimple,
+      SetButtonEnabled(buttonAddPlayer, textBoxFirstName, textBoxLastName, comboBoxGender, comboBoxSimple,
         comboBoxDouble, comboBoxMixed, textBoxLicenseNumber);
     }
 
     private void comboBoxDouble_SelectedIndexChanged(object sender, EventArgs e)
     {
-      SetButtonEnabled(buttonAddPlayer, textBoxFirstName, textBoxLastName, comboBoxSex, comboBoxSimple,
+      SetButtonEnabled(buttonAddPlayer, textBoxFirstName, textBoxLastName, comboBoxGender, comboBoxSimple,
         comboBoxDouble, comboBoxMixed, textBoxLicenseNumber);
     }
 
     private void comboBoxMixed_SelectedIndexChanged(object sender, EventArgs e)
     {
-      SetButtonEnabled(buttonAddPlayer, textBoxFirstName, textBoxLastName, comboBoxSex, comboBoxSimple,
+      SetButtonEnabled(buttonAddPlayer, textBoxFirstName, textBoxLastName, comboBoxGender, comboBoxSimple,
         comboBoxDouble, comboBoxMixed, textBoxLicenseNumber);
     }
 
@@ -1124,7 +1124,7 @@ namespace InterClubBadminton
 
     private void textBoxLicenseNumber_TextChanged(object sender, EventArgs e)
     {
-      SetButtonEnabled(buttonAddPlayer, textBoxFirstName, textBoxLastName, comboBoxSex, comboBoxSimple,
+      SetButtonEnabled(buttonAddPlayer, textBoxFirstName, textBoxLastName, comboBoxGender, comboBoxSimple,
         comboBoxDouble, comboBoxMixed, textBoxLicenseNumber);
       // accept only numbers
       AcceptOnlyNumbers(textBoxLicenseNumber);

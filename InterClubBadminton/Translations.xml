@@ -1611,14 +1611,14 @@
     <frenchValue>Niveau en simple</frenchValue>
   </term>
   <term>
-    <name>double level</name>
-    <englishValue>double level</englishValue>
+    <name>Double level</name>
+    <englishValue>Double level</englishValue>
     <frenchValue>Niveau en double</frenchValue>
   </term>
   <term>
     <name>Mixed level</name>
     <englishValue>Mixed level</englishValue>
-    <frenchValue>Niveau en mixe</frenchValue>
+    <frenchValue>Niveau en mixte</frenchValue>
   </term>
   <term>
     <name>Player number</name>
