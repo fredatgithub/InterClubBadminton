@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Tools;
 
 namespace InterClubBadminton
 {
@@ -28,6 +29,11 @@ namespace InterClubBadminton
       WishList = new List<TypePlayer>();
       RefusalList = new List<TypePlayer>();
       LicenseNumber = licenseNumber;
+    }
+    
+    public override string ToString()
+    {
+      return FirstName + Punctuation.OneSpace + LastName;
     }
   }
 }
