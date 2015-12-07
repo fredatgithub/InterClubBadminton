@@ -1129,5 +1129,22 @@ namespace InterClubBadminton
         comboBoxDouble, comboBoxMixed, textBoxLicenseNumber);
       AcceptOnlyNumbers(textBoxLicenseNumber);
     }
+
+    private void tabPageCreateTeam_Enter(object sender, EventArgs e)
+    {
+      var listOfPlayers = LoadXmlIntoList(Settings.Default.PlayersFileName,
+          "player",
+          "firstname",
+          "lastname",
+          "gender",
+          "simplelevel",
+          "doublelevel",
+          "mixedlevel");
+      foreach (Player player in listOfPlayers)
+      {
+          
+      }
+
+    }
   }
 }
