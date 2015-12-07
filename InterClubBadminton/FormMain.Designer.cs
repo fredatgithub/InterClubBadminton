@@ -67,6 +67,8 @@
       this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.tabControlMain = new System.Windows.Forms.TabControl();
       this.tabPageAddPlayer = new System.Windows.Forms.TabPage();
+      this.textBoxLicenseNumber = new System.Windows.Forms.TextBox();
+      this.labelLicenseNumber = new System.Windows.Forms.Label();
       this.buttonAddPlayer = new System.Windows.Forms.Button();
       this.comboBoxGender = new System.Windows.Forms.ComboBox();
       this.labelSex = new System.Windows.Forms.Label();
@@ -83,12 +85,13 @@
       this.tabPageVisualizeTeam = new System.Windows.Forms.TabPage();
       this.listViewVisualizeTeam = new System.Windows.Forms.ListView();
       this.tabPageCreateTeam = new System.Windows.Forms.TabPage();
-      this.textBoxLicenseNumber = new System.Windows.Forms.TextBox();
-      this.labelLicenseNumber = new System.Windows.Forms.Label();
+      this.comboBoxCreateTeamPlayer = new System.Windows.Forms.ComboBox();
+      this.labelCreateTeamPlayer = new System.Windows.Forms.Label();
       this.menuStrip1.SuspendLayout();
       this.tabControlMain.SuspendLayout();
       this.tabPageAddPlayer.SuspendLayout();
       this.tabPageVisualizeTeam.SuspendLayout();
+      this.tabPageCreateTeam.SuspendLayout();
       this.SuspendLayout();
       // 
       // menuStrip1
@@ -424,6 +427,26 @@
       this.tabPageAddPlayer.Text = "Add Player";
       this.tabPageAddPlayer.UseVisualStyleBackColor = true;
       // 
+      // textBoxLicenseNumber
+      // 
+      this.textBoxLicenseNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.textBoxLicenseNumber.Location = new System.Drawing.Point(184, 250);
+      this.textBoxLicenseNumber.Name = "textBoxLicenseNumber";
+      this.textBoxLicenseNumber.Size = new System.Drawing.Size(143, 26);
+      this.textBoxLicenseNumber.TabIndex = 13;
+      this.textBoxLicenseNumber.Text = "0";
+      this.textBoxLicenseNumber.TextChanged += new System.EventHandler(this.textBoxLicenseNumber_TextChanged);
+      // 
+      // labelLicenseNumber
+      // 
+      this.labelLicenseNumber.AutoSize = true;
+      this.labelLicenseNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.labelLicenseNumber.Location = new System.Drawing.Point(29, 250);
+      this.labelLicenseNumber.Name = "labelLicenseNumber";
+      this.labelLicenseNumber.Size = new System.Drawing.Size(129, 20);
+      this.labelLicenseNumber.TabIndex = 12;
+      this.labelLicenseNumber.Text = "License number";
+      // 
       // buttonAddPlayer
       // 
       this.buttonAddPlayer.Enabled = false;
@@ -436,7 +459,7 @@
       this.buttonAddPlayer.UseVisualStyleBackColor = true;
       this.buttonAddPlayer.Click += new System.EventHandler(this.buttonAddPlayer_Click);
       // 
-      // comboBoxSex
+      // comboBoxGender
       // 
       this.comboBoxGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.comboBoxGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -583,6 +606,8 @@
       // 
       // tabPageCreateTeam
       // 
+      this.tabPageCreateTeam.Controls.Add(this.comboBoxCreateTeamPlayer);
+      this.tabPageCreateTeam.Controls.Add(this.labelCreateTeamPlayer);
       this.tabPageCreateTeam.Location = new System.Drawing.Point(4, 25);
       this.tabPageCreateTeam.Name = "tabPageCreateTeam";
       this.tabPageCreateTeam.Size = new System.Drawing.Size(903, 477);
@@ -590,25 +615,25 @@
       this.tabPageCreateTeam.Text = "Create team";
       this.tabPageCreateTeam.UseVisualStyleBackColor = true;
       // 
-      // textBoxLicenseNumber
+      // comboBoxCreateTeamPlayer
       // 
-      this.textBoxLicenseNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.textBoxLicenseNumber.Location = new System.Drawing.Point(184, 250);
-      this.textBoxLicenseNumber.Name = "textBoxLicenseNumber";
-      this.textBoxLicenseNumber.Size = new System.Drawing.Size(143, 26);
-      this.textBoxLicenseNumber.TabIndex = 13;
-      this.textBoxLicenseNumber.Text = "0";
-      this.textBoxLicenseNumber.TextChanged += new System.EventHandler(this.textBoxLicenseNumber_TextChanged);
+      this.comboBoxCreateTeamPlayer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.comboBoxCreateTeamPlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.comboBoxCreateTeamPlayer.FormattingEnabled = true;
+      this.comboBoxCreateTeamPlayer.Location = new System.Drawing.Point(120, 64);
+      this.comboBoxCreateTeamPlayer.Name = "comboBoxCreateTeamPlayer";
+      this.comboBoxCreateTeamPlayer.Size = new System.Drawing.Size(143, 28);
+      this.comboBoxCreateTeamPlayer.TabIndex = 12;
       // 
-      // labelLicenseNumber
+      // labelCreateTeamPlayer
       // 
-      this.labelLicenseNumber.AutoSize = true;
-      this.labelLicenseNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.labelLicenseNumber.Location = new System.Drawing.Point(29, 250);
-      this.labelLicenseNumber.Name = "labelLicenseNumber";
-      this.labelLicenseNumber.Size = new System.Drawing.Size(129, 20);
-      this.labelLicenseNumber.TabIndex = 12;
-      this.labelLicenseNumber.Text = "License number";
+      this.labelCreateTeamPlayer.AutoSize = true;
+      this.labelCreateTeamPlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.labelCreateTeamPlayer.Location = new System.Drawing.Point(34, 64);
+      this.labelCreateTeamPlayer.Name = "labelCreateTeamPlayer";
+      this.labelCreateTeamPlayer.Size = new System.Drawing.Size(56, 20);
+      this.labelCreateTeamPlayer.TabIndex = 13;
+      this.labelCreateTeamPlayer.Text = "Player";
       // 
       // FormMain
       // 
@@ -630,6 +655,8 @@
       this.tabPageAddPlayer.ResumeLayout(false);
       this.tabPageAddPlayer.PerformLayout();
       this.tabPageVisualizeTeam.ResumeLayout(false);
+      this.tabPageCreateTeam.ResumeLayout(false);
+      this.tabPageCreateTeam.PerformLayout();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -694,5 +721,7 @@
     private System.Windows.Forms.ListView listViewVisualizeTeam;
     private System.Windows.Forms.TextBox textBoxLicenseNumber;
     private System.Windows.Forms.Label labelLicenseNumber;
+    private System.Windows.Forms.ComboBox comboBoxCreateTeamPlayer;
+    private System.Windows.Forms.Label labelCreateTeamPlayer;
   }
 }
