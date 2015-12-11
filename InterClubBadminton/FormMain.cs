@@ -172,7 +172,6 @@ namespace InterClubBadminton
         CreateLanguageFile();
       }
 
-      // read the translation file and feed the language
       XDocument xDoc;
       try
       {
@@ -226,7 +225,7 @@ namespace InterClubBadminton
 
     private static void CreateLanguageFile()
     {
-      List<string> minimumVersion = new List<string>
+      var minimumVersion = new List<string>
       {
         "<?xml version=\"1.0\" encoding=\"utf-8\" ?>",
         "<terms>",
@@ -887,7 +886,7 @@ namespace InterClubBadminton
     private bool CreateRootXmlFile(string fileName, string rootTagName = "root")
     {
       bool result = false;
-      List<string> minimumVersion = new List<string>
+      var minimumVersion = new List<string>
       {
         "<?xml version=\"1.0\" encoding=\"utf-8\" ?>",
         "<" + rootTagName + ">",
