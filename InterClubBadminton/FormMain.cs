@@ -1154,11 +1154,17 @@ namespace InterClubBadminton
       textBoxCreateTeamFirstName.Text = player.Split(' ')[0];
       textBoxCreateTeamLastName.Text = player.Substring(player.IndexOf(player.Split(' ')[0], 
         StringComparison.CurrentCulture) + 1 + player.Split(' ')[0].Length);
-      //textBoxCreateTeamGender.Text = player.SexGender.ToString();
-      //textBoxCreateTeamSimpleLevel.Text = player.SimpleLevel.ToString();
-      //textBoxCreateTeamDoubleLevel.Text = player.DoubleLevel.ToString();
-      //textBoxCreateTeamMixedLevel.Text = player.MixedLevel.ToString();
-      //textBoxCreateTeamLicenseNumber.Text = player.LicenseNumber.ToString();
+      textBoxCreateTeamGender.Text = "";
+      textBoxCreateTeamSimpleLevel.Text = "";
+      textBoxCreateTeamDoubleLevel.Text = "";
+      textBoxCreateTeamMixedLevel.Text = "";
+      textBoxCreateTeamLicenseNumber.Text = "";
+      SetButtonEnabled(buttonCreateTeamCopy, comboBoxPlayType, comboBoxCreateTeamPlayer);
+    }
+
+    private void comboBoxPlayType_SelectedIndexChanged(object sender, EventArgs e)
+    {
+      SetButtonEnabled(buttonCreateTeamCopy, comboBoxPlayType, comboBoxCreateTeamPlayer);
     }
   }
 }

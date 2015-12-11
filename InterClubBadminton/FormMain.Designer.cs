@@ -85,6 +85,9 @@
       this.tabPageVisualizeTeam = new System.Windows.Forms.TabPage();
       this.listViewVisualizeTeam = new System.Windows.Forms.ListView();
       this.tabPageCreateTeam = new System.Windows.Forms.TabPage();
+      this.listView1 = new System.Windows.Forms.ListView();
+      this.comboBoxPlayType = new System.Windows.Forms.ComboBox();
+      this.labelPlayType = new System.Windows.Forms.Label();
       this.labelCreateTeamTeam = new System.Windows.Forms.Label();
       this.buttonCreateTeamCopy = new System.Windows.Forms.Button();
       this.textBoxCreateTeamMixedLevel = new System.Windows.Forms.TextBox();
@@ -103,9 +106,6 @@
       this.labelCreateTeamFirstName = new System.Windows.Forms.Label();
       this.comboBoxCreateTeamPlayer = new System.Windows.Forms.ComboBox();
       this.labelCreateTeamPlayer = new System.Windows.Forms.Label();
-      this.comboBoxPlayType = new System.Windows.Forms.ComboBox();
-      this.labelPlayType = new System.Windows.Forms.Label();
-      this.listView1 = new System.Windows.Forms.ListView();
       this.menuStrip1.SuspendLayout();
       this.tabControlMain.SuspendLayout();
       this.tabPageAddPlayer.SuspendLayout();
@@ -416,7 +416,7 @@
       this.tabControlMain.Controls.Add(this.tabPageCreateTeam);
       this.tabControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
       this.tabControlMain.Location = new System.Drawing.Point(0, 24);
-      this.tabControlMain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+      this.tabControlMain.Margin = new System.Windows.Forms.Padding(2);
       this.tabControlMain.Name = "tabControlMain";
       this.tabControlMain.SelectedIndex = 0;
       this.tabControlMain.Size = new System.Drawing.Size(1076, 453);
@@ -440,10 +440,10 @@
       this.tabPageAddPlayer.Controls.Add(this.textBoxFirstName);
       this.tabPageAddPlayer.Controls.Add(this.labelFirstName);
       this.tabPageAddPlayer.Location = new System.Drawing.Point(4, 22);
-      this.tabPageAddPlayer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+      this.tabPageAddPlayer.Margin = new System.Windows.Forms.Padding(2);
       this.tabPageAddPlayer.Name = "tabPageAddPlayer";
-      this.tabPageAddPlayer.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-      this.tabPageAddPlayer.Size = new System.Drawing.Size(772, 384);
+      this.tabPageAddPlayer.Padding = new System.Windows.Forms.Padding(2);
+      this.tabPageAddPlayer.Size = new System.Drawing.Size(1068, 427);
       this.tabPageAddPlayer.TabIndex = 0;
       this.tabPageAddPlayer.Text = "Add Player";
       this.tabPageAddPlayer.UseVisualStyleBackColor = true;
@@ -452,7 +452,7 @@
       // 
       this.textBoxLicenseNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.textBoxLicenseNumber.Location = new System.Drawing.Point(138, 203);
-      this.textBoxLicenseNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+      this.textBoxLicenseNumber.Margin = new System.Windows.Forms.Padding(2);
       this.textBoxLicenseNumber.Name = "textBoxLicenseNumber";
       this.textBoxLicenseNumber.Size = new System.Drawing.Size(108, 23);
       this.textBoxLicenseNumber.TabIndex = 13;
@@ -475,7 +475,7 @@
       this.buttonAddPlayer.Enabled = false;
       this.buttonAddPlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.buttonAddPlayer.Location = new System.Drawing.Point(138, 236);
-      this.buttonAddPlayer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+      this.buttonAddPlayer.Margin = new System.Windows.Forms.Padding(2);
       this.buttonAddPlayer.Name = "buttonAddPlayer";
       this.buttonAddPlayer.Size = new System.Drawing.Size(107, 25);
       this.buttonAddPlayer.TabIndex = 7;
@@ -489,7 +489,7 @@
       this.comboBoxGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.comboBoxGender.FormattingEnabled = true;
       this.comboBoxGender.Location = new System.Drawing.Point(138, 85);
-      this.comboBoxGender.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+      this.comboBoxGender.Margin = new System.Windows.Forms.Padding(2);
       this.comboBoxGender.Name = "comboBoxGender";
       this.comboBoxGender.Size = new System.Drawing.Size(108, 24);
       this.comboBoxGender.TabIndex = 3;
@@ -512,7 +512,7 @@
       this.comboBoxMixed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.comboBoxMixed.FormattingEnabled = true;
       this.comboBoxMixed.Location = new System.Drawing.Point(138, 168);
-      this.comboBoxMixed.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+      this.comboBoxMixed.Margin = new System.Windows.Forms.Padding(2);
       this.comboBoxMixed.Name = "comboBoxMixed";
       this.comboBoxMixed.Size = new System.Drawing.Size(108, 24);
       this.comboBoxMixed.TabIndex = 6;
@@ -535,7 +535,7 @@
       this.comboBoxDouble.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.comboBoxDouble.FormattingEnabled = true;
       this.comboBoxDouble.Location = new System.Drawing.Point(138, 141);
-      this.comboBoxDouble.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+      this.comboBoxDouble.Margin = new System.Windows.Forms.Padding(2);
       this.comboBoxDouble.Name = "comboBoxDouble";
       this.comboBoxDouble.Size = new System.Drawing.Size(108, 24);
       this.comboBoxDouble.TabIndex = 5;
@@ -547,7 +547,7 @@
       this.comboBoxSimple.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.comboBoxSimple.FormattingEnabled = true;
       this.comboBoxSimple.Location = new System.Drawing.Point(138, 113);
-      this.comboBoxSimple.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+      this.comboBoxSimple.Margin = new System.Windows.Forms.Padding(2);
       this.comboBoxSimple.Name = "comboBoxSimple";
       this.comboBoxSimple.Size = new System.Drawing.Size(108, 24);
       this.comboBoxSimple.TabIndex = 4;
@@ -579,7 +579,7 @@
       // 
       this.textBoxLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.textBoxLastName.Location = new System.Drawing.Point(138, 56);
-      this.textBoxLastName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+      this.textBoxLastName.Margin = new System.Windows.Forms.Padding(2);
       this.textBoxLastName.Name = "textBoxLastName";
       this.textBoxLastName.Size = new System.Drawing.Size(108, 23);
       this.textBoxLastName.TabIndex = 2;
@@ -601,7 +601,7 @@
       // 
       this.textBoxFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.textBoxFirstName.Location = new System.Drawing.Point(138, 33);
-      this.textBoxFirstName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+      this.textBoxFirstName.Margin = new System.Windows.Forms.Padding(2);
       this.textBoxFirstName.Name = "textBoxFirstName";
       this.textBoxFirstName.Size = new System.Drawing.Size(108, 23);
       this.textBoxFirstName.TabIndex = 1;
@@ -623,10 +623,10 @@
       // 
       this.tabPageVisualizeTeam.Controls.Add(this.listViewVisualizeTeam);
       this.tabPageVisualizeTeam.Location = new System.Drawing.Point(4, 22);
-      this.tabPageVisualizeTeam.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+      this.tabPageVisualizeTeam.Margin = new System.Windows.Forms.Padding(2);
       this.tabPageVisualizeTeam.Name = "tabPageVisualizeTeam";
-      this.tabPageVisualizeTeam.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-      this.tabPageVisualizeTeam.Size = new System.Drawing.Size(772, 385);
+      this.tabPageVisualizeTeam.Padding = new System.Windows.Forms.Padding(2);
+      this.tabPageVisualizeTeam.Size = new System.Drawing.Size(1068, 427);
       this.tabPageVisualizeTeam.TabIndex = 1;
       this.tabPageVisualizeTeam.Text = "Visualize team";
       this.tabPageVisualizeTeam.UseVisualStyleBackColor = true;
@@ -636,9 +636,9 @@
       // 
       this.listViewVisualizeTeam.Dock = System.Windows.Forms.DockStyle.Fill;
       this.listViewVisualizeTeam.Location = new System.Drawing.Point(2, 2);
-      this.listViewVisualizeTeam.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+      this.listViewVisualizeTeam.Margin = new System.Windows.Forms.Padding(2);
       this.listViewVisualizeTeam.Name = "listViewVisualizeTeam";
-      this.listViewVisualizeTeam.Size = new System.Drawing.Size(768, 381);
+      this.listViewVisualizeTeam.Size = new System.Drawing.Size(1064, 423);
       this.listViewVisualizeTeam.TabIndex = 0;
       this.listViewVisualizeTeam.UseCompatibleStateImageBehavior = false;
       // 
@@ -666,13 +666,44 @@
       this.tabPageCreateTeam.Controls.Add(this.comboBoxCreateTeamPlayer);
       this.tabPageCreateTeam.Controls.Add(this.labelCreateTeamPlayer);
       this.tabPageCreateTeam.Location = new System.Drawing.Point(4, 22);
-      this.tabPageCreateTeam.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+      this.tabPageCreateTeam.Margin = new System.Windows.Forms.Padding(2);
       this.tabPageCreateTeam.Name = "tabPageCreateTeam";
       this.tabPageCreateTeam.Size = new System.Drawing.Size(1068, 427);
       this.tabPageCreateTeam.TabIndex = 2;
       this.tabPageCreateTeam.Text = "Create team";
       this.tabPageCreateTeam.UseVisualStyleBackColor = true;
       this.tabPageCreateTeam.Enter += new System.EventHandler(this.tabPageCreateTeam_Enter);
+      // 
+      // listView1
+      // 
+      this.listView1.Location = new System.Drawing.Point(397, 52);
+      this.listView1.Name = "listView1";
+      this.listView1.Size = new System.Drawing.Size(632, 328);
+      this.listView1.TabIndex = 32;
+      this.listView1.UseCompatibleStateImageBehavior = false;
+      // 
+      // comboBoxPlayType
+      // 
+      this.comboBoxPlayType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.comboBoxPlayType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.comboBoxPlayType.FormattingEnabled = true;
+      this.comboBoxPlayType.Location = new System.Drawing.Point(142, 313);
+      this.comboBoxPlayType.Margin = new System.Windows.Forms.Padding(2);
+      this.comboBoxPlayType.Name = "comboBoxPlayType";
+      this.comboBoxPlayType.Size = new System.Drawing.Size(198, 24);
+      this.comboBoxPlayType.TabIndex = 30;
+      this.comboBoxPlayType.SelectedIndexChanged += new System.EventHandler(this.comboBoxPlayType_SelectedIndexChanged);
+      // 
+      // labelPlayType
+      // 
+      this.labelPlayType.AutoSize = true;
+      this.labelPlayType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.labelPlayType.Location = new System.Drawing.Point(26, 313);
+      this.labelPlayType.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+      this.labelPlayType.Name = "labelPlayType";
+      this.labelPlayType.Size = new System.Drawing.Size(66, 17);
+      this.labelPlayType.TabIndex = 31;
+      this.labelPlayType.Text = "Play type";
       // 
       // labelCreateTeamTeam
       // 
@@ -688,7 +719,7 @@
       // buttonCreateTeamCopy
       // 
       this.buttonCreateTeamCopy.Location = new System.Drawing.Point(142, 352);
-      this.buttonCreateTeamCopy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+      this.buttonCreateTeamCopy.Margin = new System.Windows.Forms.Padding(2);
       this.buttonCreateTeamCopy.Name = "buttonCreateTeamCopy";
       this.buttonCreateTeamCopy.Size = new System.Drawing.Size(198, 28);
       this.buttonCreateTeamCopy.TabIndex = 28;
@@ -699,7 +730,7 @@
       // 
       this.textBoxCreateTeamMixedLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.textBoxCreateTeamMixedLevel.Location = new System.Drawing.Point(142, 228);
-      this.textBoxCreateTeamMixedLevel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+      this.textBoxCreateTeamMixedLevel.Margin = new System.Windows.Forms.Padding(2);
       this.textBoxCreateTeamMixedLevel.Name = "textBoxCreateTeamMixedLevel";
       this.textBoxCreateTeamMixedLevel.ReadOnly = true;
       this.textBoxCreateTeamMixedLevel.Size = new System.Drawing.Size(108, 23);
@@ -721,7 +752,7 @@
       // 
       this.textBoxCreateTeamDoubleLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.textBoxCreateTeamDoubleLevel.Location = new System.Drawing.Point(142, 205);
-      this.textBoxCreateTeamDoubleLevel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+      this.textBoxCreateTeamDoubleLevel.Margin = new System.Windows.Forms.Padding(2);
       this.textBoxCreateTeamDoubleLevel.Name = "textBoxCreateTeamDoubleLevel";
       this.textBoxCreateTeamDoubleLevel.ReadOnly = true;
       this.textBoxCreateTeamDoubleLevel.Size = new System.Drawing.Size(108, 23);
@@ -743,7 +774,7 @@
       // 
       this.textBoxCreateTeamSimpleLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.textBoxCreateTeamSimpleLevel.Location = new System.Drawing.Point(142, 176);
-      this.textBoxCreateTeamSimpleLevel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+      this.textBoxCreateTeamSimpleLevel.Margin = new System.Windows.Forms.Padding(2);
       this.textBoxCreateTeamSimpleLevel.Name = "textBoxCreateTeamSimpleLevel";
       this.textBoxCreateTeamSimpleLevel.ReadOnly = true;
       this.textBoxCreateTeamSimpleLevel.Size = new System.Drawing.Size(108, 23);
@@ -765,7 +796,7 @@
       // 
       this.textBoxCreateTeamGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.textBoxCreateTeamGender.Location = new System.Drawing.Point(142, 151);
-      this.textBoxCreateTeamGender.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+      this.textBoxCreateTeamGender.Margin = new System.Windows.Forms.Padding(2);
       this.textBoxCreateTeamGender.Name = "textBoxCreateTeamGender";
       this.textBoxCreateTeamGender.ReadOnly = true;
       this.textBoxCreateTeamGender.Size = new System.Drawing.Size(108, 23);
@@ -787,7 +818,7 @@
       // 
       this.textBoxCreateTeamLicenseNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.textBoxCreateTeamLicenseNumber.Location = new System.Drawing.Point(142, 262);
-      this.textBoxCreateTeamLicenseNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+      this.textBoxCreateTeamLicenseNumber.Margin = new System.Windows.Forms.Padding(2);
       this.textBoxCreateTeamLicenseNumber.Name = "textBoxCreateTeamLicenseNumber";
       this.textBoxCreateTeamLicenseNumber.ReadOnly = true;
       this.textBoxCreateTeamLicenseNumber.Size = new System.Drawing.Size(108, 23);
@@ -809,7 +840,7 @@
       // 
       this.textBoxCreateTeamLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.textBoxCreateTeamLastName.Location = new System.Drawing.Point(142, 124);
-      this.textBoxCreateTeamLastName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+      this.textBoxCreateTeamLastName.Margin = new System.Windows.Forms.Padding(2);
       this.textBoxCreateTeamLastName.Name = "textBoxCreateTeamLastName";
       this.textBoxCreateTeamLastName.ReadOnly = true;
       this.textBoxCreateTeamLastName.Size = new System.Drawing.Size(198, 23);
@@ -831,12 +862,13 @@
       // 
       this.textBoxCreateTeamFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.textBoxCreateTeamFirstName.Location = new System.Drawing.Point(142, 98);
-      this.textBoxCreateTeamFirstName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+      this.textBoxCreateTeamFirstName.Margin = new System.Windows.Forms.Padding(2);
       this.textBoxCreateTeamFirstName.Name = "textBoxCreateTeamFirstName";
       this.textBoxCreateTeamFirstName.ReadOnly = true;
       this.textBoxCreateTeamFirstName.Size = new System.Drawing.Size(198, 23);
       this.textBoxCreateTeamFirstName.TabIndex = 15;
       this.textBoxCreateTeamFirstName.Text = "a";
+      
       // 
       // labelCreateTeamFirstName
       // 
@@ -855,7 +887,7 @@
       this.comboBoxCreateTeamPlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.comboBoxCreateTeamPlayer.FormattingEnabled = true;
       this.comboBoxCreateTeamPlayer.Location = new System.Drawing.Point(142, 52);
-      this.comboBoxCreateTeamPlayer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+      this.comboBoxCreateTeamPlayer.Margin = new System.Windows.Forms.Padding(2);
       this.comboBoxCreateTeamPlayer.Name = "comboBoxCreateTeamPlayer";
       this.comboBoxCreateTeamPlayer.Size = new System.Drawing.Size(198, 24);
       this.comboBoxCreateTeamPlayer.TabIndex = 12;
@@ -872,36 +904,6 @@
       this.labelCreateTeamPlayer.TabIndex = 13;
       this.labelCreateTeamPlayer.Text = "Player";
       // 
-      // comboBoxPlayType
-      // 
-      this.comboBoxPlayType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-      this.comboBoxPlayType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.comboBoxPlayType.FormattingEnabled = true;
-      this.comboBoxPlayType.Location = new System.Drawing.Point(142, 313);
-      this.comboBoxPlayType.Margin = new System.Windows.Forms.Padding(2);
-      this.comboBoxPlayType.Name = "comboBoxPlayType";
-      this.comboBoxPlayType.Size = new System.Drawing.Size(198, 24);
-      this.comboBoxPlayType.TabIndex = 30;
-      // 
-      // labelPlayType
-      // 
-      this.labelPlayType.AutoSize = true;
-      this.labelPlayType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.labelPlayType.Location = new System.Drawing.Point(26, 313);
-      this.labelPlayType.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-      this.labelPlayType.Name = "labelPlayType";
-      this.labelPlayType.Size = new System.Drawing.Size(66, 17);
-      this.labelPlayType.TabIndex = 31;
-      this.labelPlayType.Text = "Play type";
-      // 
-      // listView1
-      // 
-      this.listView1.Location = new System.Drawing.Point(397, 52);
-      this.listView1.Name = "listView1";
-      this.listView1.Size = new System.Drawing.Size(632, 328);
-      this.listView1.TabIndex = 32;
-      this.listView1.UseCompatibleStateImageBehavior = false;
-      // 
       // FormMain
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -910,7 +912,7 @@
       this.Controls.Add(this.tabControlMain);
       this.Controls.Add(this.menuStrip1);
       this.MainMenuStrip = this.menuStrip1;
-      this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+      this.Margin = new System.Windows.Forms.Padding(2);
       this.Name = "FormMain";
       this.ShowIcon = false;
       this.Text = "InterClub Badminton";
