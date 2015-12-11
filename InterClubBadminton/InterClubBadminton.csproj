@@ -69,6 +69,7 @@
     <Compile Include="Gender.cs" />
     <Compile Include="Language.cs" />
     <Compile Include="Player.cs" />
+    <Compile Include="PlayType.cs" />
     <Compile Include="RankLevel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

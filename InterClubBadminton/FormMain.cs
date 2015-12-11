@@ -76,6 +76,7 @@ namespace InterClubBadminton
       LoadLanguages();
       SetLanguage(Settings.Default.LastLanguageUsed);
       LoadCombobox(comboBoxGender, Enum.GetNames(typeof(Gender)));
+      LoadCombobox(comboBoxPlayType, Enum.GetNames(typeof(PlayType)));
       LoadSeveralComboBoxesWithXmlFile(new List<ComboBox> { comboBoxSimple, comboBoxDouble, comboBoxMixed },
         "Resources/Points.xml", "point", "name", "value");
       SetButtonEnabled(buttonAddPlayer, textBoxFirstName, textBoxLastName, comboBoxGender, comboBoxSimple,
@@ -1145,7 +1146,6 @@ namespace InterClubBadminton
         comboBoxCreateTeamPlayer.Items.Add(player.ToString());
         
       }
-
     }
 
     private void comboBoxCreateTeamPlayer_SelectedIndexChanged(object sender, EventArgs e)
