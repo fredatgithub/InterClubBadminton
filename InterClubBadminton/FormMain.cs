@@ -82,6 +82,32 @@ namespace InterClubBadminton
         "Resources/Points.xml", "point", "name", "value");
       SetButtonEnabled(buttonAddPlayer, textBoxFirstName, textBoxLastName, comboBoxGender, comboBoxSimple,
         comboBoxDouble, comboBoxMixed);
+      LoadTeamIfExists();
+    }
+
+    private void LoadTeamIfExists()
+    {
+      if (!File.Exists(Settings.Default.PlayersFileName))
+      {
+        _visualizeTeamLoaded = false;
+        _teamMembersCreated = false;
+        return;
+      }
+
+      var listOfPlayers = LoadXmlIntoList(Settings.Default.PlayersFileName,
+          "player",
+          "firstname",
+          "lastname",
+          "gender",
+          "simplelevel",
+          "doublelevel",
+          "mixedlevel");
+      foreach (Player player in listOfPlayers)
+      {
+        _listOfPlayers.Add(player);
+      }
+
+      _visualizeTeamLoaded = true;
     }
 
     private static void LoadCombobox(ComboBox cb, IEnumerable<string> collectionStrings)
