@@ -882,6 +882,7 @@ namespace InterClubBadminton
         "mixedlevel", newPlayer.MixedLevel.ToString());
       textBoxFirstName.Text = string.Empty;
       textBoxLastName.Text = string.Empty;
+      _listOfPlayers.Add(newPlayer);
       // reload list of players with new player and switch over to visualization
       LoadPlayers();
       tabControlMain.SelectedIndex = 1;
@@ -1176,34 +1177,60 @@ namespace InterClubBadminton
 
     private void comboBoxCreateTeamPlayer_SelectedIndexChanged(object sender, EventArgs e)
     {
-      string player = comboBoxCreateTeamPlayer.SelectedItem.ToString();
-      textBoxCreateTeamFirstName.Text = player.Split(' ')[0];
-      textBoxCreateTeamLastName.Text = player.Substring(player.IndexOf(player.Split(' ')[0],
-        StringComparison.CurrentCulture) + 1 + player.Split(' ')[0].Length);
-      textBoxCreateTeamGender.Text = "";
-      textBoxCreateTeamSimpleLevel.Text = "";
-      textBoxCreateTeamDoubleLevel.Text = "";
-      textBoxCreateTeamMixedLevel.Text = "";
-      textBoxCreateTeamLicenseNumber.Text = "";
+      string playerName = comboBoxCreateTeamPlayer.SelectedItem.ToString();
+      Player player = GetPlayerFromName(playerName);
+      if (player != null)
+      {
+        //textBoxCreateTeamFirstName.Text = playerName.Split(' ')[0];
+        //textBoxCreateTeamLastName.Text = playerName.Substring(playerName.IndexOf(playerName.Split(' ')[0],
+        //  StringComparison.CurrentCulture) + 1 + playerName.Split(' ')[0].Length);
+        textBoxCreateTeamFirstName.Text = player.FirstName;
+        textBoxCreateTeamLastName.Text = player.LastName;
+        textBoxCreateTeamGender.Text = player.SexGender.ToString();
+        textBoxCreateTeamSimpleLevel.Text = player.SimpleLevel.ToString();
+        textBoxCreateTeamDoubleLevel.Text = player.DoubleLevel.ToString();
+        textBoxCreateTeamMixedLevel.Text = player.MixedLevel.ToString();
+        textBoxCreateTeamLicenseNumber.Text = player.LicenseNumber.ToString();
+        RemoveWrongPlayTypes(comboBoxPlayType, player.SexGender);
+      }
+      else
+      {
+        MessageBox.Show("There is an error while searching for the player");
+      }
+
       SetButtonEnabled(buttonCreateTeamCopy, comboBoxPlayType, comboBoxCreateTeamPlayer);
-      RemoveWrongPlayType(comboBoxPlayType, Gender.Female);
     }
 
-    private static void RemoveWrongPlayType(ComboBox cb, Gender gender)
+    private Player GetPlayerFromName(string playerName)
+    {
+      Player resultPlayer = null;
+      foreach (Player player in _listOfPlayers)
+      {
+        if (player.FirstName + " " + player.LastName == playerName)
+        {
+          resultPlayer = player;
+          break;
+        }
+      }
+
+      return resultPlayer;
+    }
+
+    private static void RemoveWrongPlayTypes(ComboBox cb, Gender gender)
     {
       cb.Items.Clear();
       LoadCombobox(cb, Enum.GetNames(typeof(PlayType)));
       if (gender == Gender.Male)
       {
-        // remove male types
-        cb.Items.Remove(PlayType.DoubleMen);
-        cb.Items.Remove(PlayType.SimpleMan);
-      }
-      else
-      {
         // remove female types
         cb.Items.Remove(PlayType.DoubleWomen.ToString());
         cb.Items.Remove(PlayType.SimpleWoman.ToString());
+      }
+      else
+      {
+        // remove male types
+        cb.Items.Remove(PlayType.DoubleMen.ToString());
+        cb.Items.Remove(PlayType.SimpleMan.ToString());
       }
     }
 
