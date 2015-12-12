@@ -43,7 +43,8 @@ namespace InterClubBadminton
     private string _currentLanguage = "english";
     private ConfigurationOptions _configurationOptions = new ConfigurationOptions();
     private bool _teamMembersCreated;
-    private bool _visualizeTeamLoaded = false;
+    private bool _visualizeTeamLoaded;
+    private List<Player> _listOfPlayers = new List<Player>();
 
     private void QuitToolStripMenuItem_Click(object sender, EventArgs e)
     {
@@ -507,8 +508,8 @@ namespace InterClubBadminton
             listViewVisualizeTeam.Columns[7].Text = _languageDicoEn["License number"];
             ResizeListViewColumns(listViewVisualizeTeam);
           }
-          
-          
+
+
           _currentLanguage = "English";
           break;
         case "French":
@@ -556,7 +557,7 @@ namespace InterClubBadminton
             listViewVisualizeTeam.Columns[7].Text = _languageDicoFr["License number"];
             ResizeListViewColumns(listViewVisualizeTeam);
           }
-          
+
           _currentLanguage = "French";
           break;
         default:
@@ -564,7 +565,7 @@ namespace InterClubBadminton
           break;
       }
     }
-    
+
     private void cutToolStripMenuItem_Click(object sender, EventArgs e)
     {
       Control focusedControl = FindFocusedControl(new List<Control> { });
@@ -1103,7 +1104,7 @@ namespace InterClubBadminton
                     };
       foreach (var i in result2)
       {
-        result.Add(new Player(i.NodeValue1, i.NodeValue2, 
+        result.Add(new Player(i.NodeValue1, i.NodeValue2,
             (Gender)Enum.Parse(typeof(Gender), i.NodeValue3),
             (RankLevel)Enum.Parse(typeof(RankLevel), i.NodeValue4),
             (RankLevel)Enum.Parse(typeof(RankLevel), i.NodeValue5),
@@ -1144,7 +1145,6 @@ namespace InterClubBadminton
       foreach (Player player in listOfPlayers)
       {
         comboBoxCreateTeamPlayer.Items.Add(player.ToString());
-        
       }
     }
 
@@ -1152,7 +1152,7 @@ namespace InterClubBadminton
     {
       string player = comboBoxCreateTeamPlayer.SelectedItem.ToString();
       textBoxCreateTeamFirstName.Text = player.Split(' ')[0];
-      textBoxCreateTeamLastName.Text = player.Substring(player.IndexOf(player.Split(' ')[0], 
+      textBoxCreateTeamLastName.Text = player.Substring(player.IndexOf(player.Split(' ')[0],
         StringComparison.CurrentCulture) + 1 + player.Split(' ')[0].Length);
       textBoxCreateTeamGender.Text = "";
       textBoxCreateTeamSimpleLevel.Text = "";
@@ -1160,6 +1160,25 @@ namespace InterClubBadminton
       textBoxCreateTeamMixedLevel.Text = "";
       textBoxCreateTeamLicenseNumber.Text = "";
       SetButtonEnabled(buttonCreateTeamCopy, comboBoxPlayType, comboBoxCreateTeamPlayer);
+      RemoveWrongPlayType(comboBoxPlayType, Gender.Female);
+    }
+
+    private static void RemoveWrongPlayType(ComboBox cb, Gender gender)
+    {
+      cb.Items.Clear();
+      LoadCombobox(cb, Enum.GetNames(typeof(PlayType)));
+      if (gender == Gender.Male)
+      {
+        // remove male types
+        cb.Items.Remove(PlayType.DoubleMen);
+        cb.Items.Remove(PlayType.SimpleMan);
+      }
+      else
+      {
+        // remove female types
+        cb.Items.Remove(PlayType.DoubleWomen.ToString());
+        cb.Items.Remove(PlayType.SimpleWoman.ToString());
+      }
     }
 
     private void comboBoxPlayType_SelectedIndexChanged(object sender, EventArgs e)

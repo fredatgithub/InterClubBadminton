@@ -30,10 +30,15 @@ namespace InterClubBadminton
       RefusalList = new List<TypePlayer>();
       LicenseNumber = licenseNumber;
     }
-    
+
     public override string ToString()
     {
       return FirstName + Punctuation.OneSpace + LastName;
+    }
+
+    public Gender GetplayerGender()
+    {
+      return SexGender;
     }
   }
 }
