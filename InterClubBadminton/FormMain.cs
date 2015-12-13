@@ -982,10 +982,7 @@ namespace InterClubBadminton
 
     private void tabPageVisualizeTeam_Enter(object sender, EventArgs e)
     {
-      if (!_visualizeTeamLoaded)
-      {
-        LoadPlayers();
-      }
+      LoadPlayers();
     }
 
     private void LoadPlayers()
