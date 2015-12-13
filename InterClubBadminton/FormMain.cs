@@ -797,7 +797,7 @@ namespace InterClubBadminton
       }
     }
 
-    private void AdjustAllControls()
+    private static void AdjustAllControls()
     {
       AdjustControls(); // insert here all labels, textboxes and buttons, one method per line of controls
     }
