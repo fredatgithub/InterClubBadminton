@@ -1001,6 +1001,14 @@ namespace InterClubBadminton
 
     private void LoadListView(ListView lv, IEnumerable<Player> listOfPlayers)
     {
+      if (lv.Columns.Count != 0)
+      {
+        for (int i = lv.Columns.Count - 1; i >= 0; i--) 
+        {
+          lv.Columns.RemoveAt(i);
+        }
+      }
+
       lv.Items.Clear();
       lv.Columns.Add(Translate("Player number"), 200, HorizontalAlignment.Left);
       lv.Columns.Add(Translate("First name"), 240, HorizontalAlignment.Left);
