@@ -725,6 +725,7 @@
       this.buttonCreateTeamCopy.TabIndex = 28;
       this.buttonCreateTeamCopy.Text = "Add to team ->";
       this.buttonCreateTeamCopy.UseVisualStyleBackColor = true;
+      this.buttonCreateTeamCopy.Click += new System.EventHandler(this.buttonCreateTeamCopy_Click);
       // 
       // textBoxCreateTeamMixedLevel
       // 
@@ -868,7 +869,6 @@
       this.textBoxCreateTeamFirstName.Size = new System.Drawing.Size(198, 23);
       this.textBoxCreateTeamFirstName.TabIndex = 15;
       this.textBoxCreateTeamFirstName.Text = "a";
-      
       // 
       // labelCreateTeamFirstName
       // 

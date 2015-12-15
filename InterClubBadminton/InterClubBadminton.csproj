@@ -68,6 +68,7 @@
     </Compile>
     <Compile Include="Gender.cs" />
     <Compile Include="Language.cs" />
+    <Compile Include="OneDayTeam.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="PlayType.cs" />
     <Compile Include="RankLevel.cs" />

@@ -1243,5 +1243,17 @@ namespace InterClubBadminton
     {
       SetButtonEnabled(buttonCreateTeamCopy, comboBoxPlayType, comboBoxCreateTeamPlayer);
     }
+
+    private void buttonCreateTeamCopy_Click(object sender, EventArgs e)
+    {
+      // check if player is not already in, if so ask to replace it
+
+      UpdateOneDayTeam();
+    }
+
+    private void UpdateOneDayTeam()
+    {
+      
+    }
   }
 }
