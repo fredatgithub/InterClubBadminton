@@ -85,7 +85,7 @@
       this.tabPageVisualizeTeam = new System.Windows.Forms.TabPage();
       this.listViewVisualizeTeam = new System.Windows.Forms.ListView();
       this.tabPageCreateTeam = new System.Windows.Forms.TabPage();
-      this.listView1 = new System.Windows.Forms.ListView();
+      this.listViewCreateTeam = new System.Windows.Forms.ListView();
       this.comboBoxPlayType = new System.Windows.Forms.ComboBox();
       this.labelPlayType = new System.Windows.Forms.Label();
       this.labelCreateTeamTeam = new System.Windows.Forms.Label();
@@ -106,6 +106,8 @@
       this.labelCreateTeamFirstName = new System.Windows.Forms.Label();
       this.comboBoxCreateTeamPlayer = new System.Windows.Forms.ComboBox();
       this.labelCreateTeamPlayer = new System.Windows.Forms.Label();
+      this.labelCreateTeamDateToPlay = new System.Windows.Forms.Label();
+      this.dateTimePickerCreateTeamDateToPlay = new System.Windows.Forms.DateTimePicker();
       this.menuStrip1.SuspendLayout();
       this.tabControlMain.SuspendLayout();
       this.tabPageAddPlayer.SuspendLayout();
@@ -419,7 +421,7 @@
       this.tabControlMain.Margin = new System.Windows.Forms.Padding(2);
       this.tabControlMain.Name = "tabControlMain";
       this.tabControlMain.SelectedIndex = 0;
-      this.tabControlMain.Size = new System.Drawing.Size(1076, 453);
+      this.tabControlMain.Size = new System.Drawing.Size(1076, 582);
       this.tabControlMain.TabIndex = 2;
       // 
       // tabPageAddPlayer
@@ -644,7 +646,9 @@
       // 
       // tabPageCreateTeam
       // 
-      this.tabPageCreateTeam.Controls.Add(this.listView1);
+      this.tabPageCreateTeam.Controls.Add(this.dateTimePickerCreateTeamDateToPlay);
+      this.tabPageCreateTeam.Controls.Add(this.labelCreateTeamDateToPlay);
+      this.tabPageCreateTeam.Controls.Add(this.listViewCreateTeam);
       this.tabPageCreateTeam.Controls.Add(this.comboBoxPlayType);
       this.tabPageCreateTeam.Controls.Add(this.labelPlayType);
       this.tabPageCreateTeam.Controls.Add(this.labelCreateTeamTeam);
@@ -668,26 +672,28 @@
       this.tabPageCreateTeam.Location = new System.Drawing.Point(4, 22);
       this.tabPageCreateTeam.Margin = new System.Windows.Forms.Padding(2);
       this.tabPageCreateTeam.Name = "tabPageCreateTeam";
-      this.tabPageCreateTeam.Size = new System.Drawing.Size(1068, 427);
+      this.tabPageCreateTeam.Size = new System.Drawing.Size(1068, 556);
       this.tabPageCreateTeam.TabIndex = 2;
       this.tabPageCreateTeam.Text = "Create team";
       this.tabPageCreateTeam.UseVisualStyleBackColor = true;
       this.tabPageCreateTeam.Enter += new System.EventHandler(this.tabPageCreateTeam_Enter);
       // 
-      // listView1
+      // listViewCreateTeam
       // 
-      this.listView1.Location = new System.Drawing.Point(397, 52);
-      this.listView1.Name = "listView1";
-      this.listView1.Size = new System.Drawing.Size(632, 328);
-      this.listView1.TabIndex = 32;
-      this.listView1.UseCompatibleStateImageBehavior = false;
+      this.listViewCreateTeam.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+      this.listViewCreateTeam.Location = new System.Drawing.Point(397, 52);
+      this.listViewCreateTeam.Name = "listViewCreateTeam";
+      this.listViewCreateTeam.Size = new System.Drawing.Size(632, 470);
+      this.listViewCreateTeam.TabIndex = 32;
+      this.listViewCreateTeam.UseCompatibleStateImageBehavior = false;
       // 
       // comboBoxPlayType
       // 
       this.comboBoxPlayType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.comboBoxPlayType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.comboBoxPlayType.FormattingEnabled = true;
-      this.comboBoxPlayType.Location = new System.Drawing.Point(142, 313);
+      this.comboBoxPlayType.Location = new System.Drawing.Point(142, 352);
       this.comboBoxPlayType.Margin = new System.Windows.Forms.Padding(2);
       this.comboBoxPlayType.Name = "comboBoxPlayType";
       this.comboBoxPlayType.Size = new System.Drawing.Size(198, 24);
@@ -698,7 +704,7 @@
       // 
       this.labelPlayType.AutoSize = true;
       this.labelPlayType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.labelPlayType.Location = new System.Drawing.Point(26, 313);
+      this.labelPlayType.Location = new System.Drawing.Point(26, 352);
       this.labelPlayType.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
       this.labelPlayType.Name = "labelPlayType";
       this.labelPlayType.Size = new System.Drawing.Size(66, 17);
@@ -718,7 +724,7 @@
       // 
       // buttonCreateTeamCopy
       // 
-      this.buttonCreateTeamCopy.Location = new System.Drawing.Point(142, 352);
+      this.buttonCreateTeamCopy.Location = new System.Drawing.Point(142, 391);
       this.buttonCreateTeamCopy.Margin = new System.Windows.Forms.Padding(2);
       this.buttonCreateTeamCopy.Name = "buttonCreateTeamCopy";
       this.buttonCreateTeamCopy.Size = new System.Drawing.Size(198, 28);
@@ -904,11 +910,29 @@
       this.labelCreateTeamPlayer.TabIndex = 13;
       this.labelCreateTeamPlayer.Text = "Player";
       // 
+      // labelCreateTeamDateToPlay
+      // 
+      this.labelCreateTeamDateToPlay.AutoSize = true;
+      this.labelCreateTeamDateToPlay.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.labelCreateTeamDateToPlay.Location = new System.Drawing.Point(26, 304);
+      this.labelCreateTeamDateToPlay.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+      this.labelCreateTeamDateToPlay.Name = "labelCreateTeamDateToPlay";
+      this.labelCreateTeamDateToPlay.Size = new System.Drawing.Size(84, 17);
+      this.labelCreateTeamDateToPlay.TabIndex = 33;
+      this.labelCreateTeamDateToPlay.Text = "Date to play";
+      // 
+      // dateTimePickerCreateTeamDateToPlay
+      // 
+      this.dateTimePickerCreateTeamDateToPlay.Location = new System.Drawing.Point(142, 304);
+      this.dateTimePickerCreateTeamDateToPlay.Name = "dateTimePickerCreateTeamDateToPlay";
+      this.dateTimePickerCreateTeamDateToPlay.Size = new System.Drawing.Size(200, 20);
+      this.dateTimePickerCreateTeamDateToPlay.TabIndex = 34;
+      // 
       // FormMain
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(1076, 477);
+      this.ClientSize = new System.Drawing.Size(1076, 606);
       this.Controls.Add(this.tabControlMain);
       this.Controls.Add(this.menuStrip1);
       this.MainMenuStrip = this.menuStrip1;
@@ -1010,6 +1034,8 @@
     private System.Windows.Forms.Label labelCreateTeamFirstName;
     private System.Windows.Forms.ComboBox comboBoxPlayType;
     private System.Windows.Forms.Label labelPlayType;
-    private System.Windows.Forms.ListView listView1;
+    private System.Windows.Forms.ListView listViewCreateTeam;
+    private System.Windows.Forms.DateTimePicker dateTimePickerCreateTeamDateToPlay;
+    private System.Windows.Forms.Label labelCreateTeamDateToPlay;
   }
 }

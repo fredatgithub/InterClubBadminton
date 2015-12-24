@@ -18,6 +18,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+using System;
 using System.Collections.Generic;
 
 namespace InterClubBadminton
@@ -32,6 +33,7 @@ namespace InterClubBadminton
     public List<Player> SimpleDoubleMen { get; set; }
     public List<Player> SimpleDoubleWomen { get; set; }
     public List<Player> SimpleDoubleMixed { get; set; }
+    public DateTime DateToPlay { get; set; }
 
     public OneDayTeam()
     {

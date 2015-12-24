@@ -1003,7 +1003,7 @@ namespace InterClubBadminton
     {
       if (lv.Columns.Count != 0)
       {
-        for (int i = lv.Columns.Count - 1; i >= 0; i--) 
+        for (int i = lv.Columns.Count - 1; i >= 0; i--)
         {
           lv.Columns.RemoveAt(i);
         }
@@ -1253,7 +1253,7 @@ namespace InterClubBadminton
 
     private void UpdateOneDayTeam()
     {
-      
+
     }
   }
 }
