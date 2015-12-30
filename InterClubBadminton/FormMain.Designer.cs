@@ -85,6 +85,8 @@
       this.tabPageVisualizeTeam = new System.Windows.Forms.TabPage();
       this.listViewVisualizeTeam = new System.Windows.Forms.ListView();
       this.tabPageCreateTeam = new System.Windows.Forms.TabPage();
+      this.dateTimePickerCreateTeamDateToPlay = new System.Windows.Forms.DateTimePicker();
+      this.labelCreateTeamDateToPlay = new System.Windows.Forms.Label();
       this.listViewCreateTeam = new System.Windows.Forms.ListView();
       this.comboBoxPlayType = new System.Windows.Forms.ComboBox();
       this.labelPlayType = new System.Windows.Forms.Label();
@@ -106,8 +108,7 @@
       this.labelCreateTeamFirstName = new System.Windows.Forms.Label();
       this.comboBoxCreateTeamPlayer = new System.Windows.Forms.ComboBox();
       this.labelCreateTeamPlayer = new System.Windows.Forms.Label();
-      this.labelCreateTeamDateToPlay = new System.Windows.Forms.Label();
-      this.dateTimePickerCreateTeamDateToPlay = new System.Windows.Forms.DateTimePicker();
+      this.tabPageCreateTeams = new System.Windows.Forms.TabPage();
       this.menuStrip1.SuspendLayout();
       this.tabControlMain.SuspendLayout();
       this.tabPageAddPlayer.SuspendLayout();
@@ -413,6 +414,7 @@
       // 
       // tabControlMain
       // 
+      this.tabControlMain.Controls.Add(this.tabPageCreateTeams);
       this.tabControlMain.Controls.Add(this.tabPageAddPlayer);
       this.tabControlMain.Controls.Add(this.tabPageVisualizeTeam);
       this.tabControlMain.Controls.Add(this.tabPageCreateTeam);
@@ -445,7 +447,7 @@
       this.tabPageAddPlayer.Margin = new System.Windows.Forms.Padding(2);
       this.tabPageAddPlayer.Name = "tabPageAddPlayer";
       this.tabPageAddPlayer.Padding = new System.Windows.Forms.Padding(2);
-      this.tabPageAddPlayer.Size = new System.Drawing.Size(1068, 427);
+      this.tabPageAddPlayer.Size = new System.Drawing.Size(1068, 556);
       this.tabPageAddPlayer.TabIndex = 0;
       this.tabPageAddPlayer.Text = "Add Player";
       this.tabPageAddPlayer.UseVisualStyleBackColor = true;
@@ -628,7 +630,7 @@
       this.tabPageVisualizeTeam.Margin = new System.Windows.Forms.Padding(2);
       this.tabPageVisualizeTeam.Name = "tabPageVisualizeTeam";
       this.tabPageVisualizeTeam.Padding = new System.Windows.Forms.Padding(2);
-      this.tabPageVisualizeTeam.Size = new System.Drawing.Size(1068, 427);
+      this.tabPageVisualizeTeam.Size = new System.Drawing.Size(1068, 556);
       this.tabPageVisualizeTeam.TabIndex = 1;
       this.tabPageVisualizeTeam.Text = "Visualize team";
       this.tabPageVisualizeTeam.UseVisualStyleBackColor = true;
@@ -640,7 +642,7 @@
       this.listViewVisualizeTeam.Location = new System.Drawing.Point(2, 2);
       this.listViewVisualizeTeam.Margin = new System.Windows.Forms.Padding(2);
       this.listViewVisualizeTeam.Name = "listViewVisualizeTeam";
-      this.listViewVisualizeTeam.Size = new System.Drawing.Size(1064, 423);
+      this.listViewVisualizeTeam.Size = new System.Drawing.Size(1064, 552);
       this.listViewVisualizeTeam.TabIndex = 0;
       this.listViewVisualizeTeam.UseCompatibleStateImageBehavior = false;
       // 
@@ -674,9 +676,27 @@
       this.tabPageCreateTeam.Name = "tabPageCreateTeam";
       this.tabPageCreateTeam.Size = new System.Drawing.Size(1068, 556);
       this.tabPageCreateTeam.TabIndex = 2;
-      this.tabPageCreateTeam.Text = "Create team";
+      this.tabPageCreateTeam.Text = "Create one day team";
       this.tabPageCreateTeam.UseVisualStyleBackColor = true;
       this.tabPageCreateTeam.Enter += new System.EventHandler(this.tabPageCreateTeam_Enter);
+      // 
+      // dateTimePickerCreateTeamDateToPlay
+      // 
+      this.dateTimePickerCreateTeamDateToPlay.Location = new System.Drawing.Point(142, 304);
+      this.dateTimePickerCreateTeamDateToPlay.Name = "dateTimePickerCreateTeamDateToPlay";
+      this.dateTimePickerCreateTeamDateToPlay.Size = new System.Drawing.Size(200, 20);
+      this.dateTimePickerCreateTeamDateToPlay.TabIndex = 34;
+      // 
+      // labelCreateTeamDateToPlay
+      // 
+      this.labelCreateTeamDateToPlay.AutoSize = true;
+      this.labelCreateTeamDateToPlay.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.labelCreateTeamDateToPlay.Location = new System.Drawing.Point(26, 304);
+      this.labelCreateTeamDateToPlay.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+      this.labelCreateTeamDateToPlay.Name = "labelCreateTeamDateToPlay";
+      this.labelCreateTeamDateToPlay.Size = new System.Drawing.Size(84, 17);
+      this.labelCreateTeamDateToPlay.TabIndex = 33;
+      this.labelCreateTeamDateToPlay.Text = "Date to play";
       // 
       // listViewCreateTeam
       // 
@@ -910,23 +930,14 @@
       this.labelCreateTeamPlayer.TabIndex = 13;
       this.labelCreateTeamPlayer.Text = "Player";
       // 
-      // labelCreateTeamDateToPlay
+      // tabPageCreateTeams
       // 
-      this.labelCreateTeamDateToPlay.AutoSize = true;
-      this.labelCreateTeamDateToPlay.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.labelCreateTeamDateToPlay.Location = new System.Drawing.Point(26, 304);
-      this.labelCreateTeamDateToPlay.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-      this.labelCreateTeamDateToPlay.Name = "labelCreateTeamDateToPlay";
-      this.labelCreateTeamDateToPlay.Size = new System.Drawing.Size(84, 17);
-      this.labelCreateTeamDateToPlay.TabIndex = 33;
-      this.labelCreateTeamDateToPlay.Text = "Date to play";
-      // 
-      // dateTimePickerCreateTeamDateToPlay
-      // 
-      this.dateTimePickerCreateTeamDateToPlay.Location = new System.Drawing.Point(142, 304);
-      this.dateTimePickerCreateTeamDateToPlay.Name = "dateTimePickerCreateTeamDateToPlay";
-      this.dateTimePickerCreateTeamDateToPlay.Size = new System.Drawing.Size(200, 20);
-      this.dateTimePickerCreateTeamDateToPlay.TabIndex = 34;
+      this.tabPageCreateTeams.Location = new System.Drawing.Point(4, 22);
+      this.tabPageCreateTeams.Name = "tabPageCreateTeams";
+      this.tabPageCreateTeams.Size = new System.Drawing.Size(1068, 556);
+      this.tabPageCreateTeams.TabIndex = 3;
+      this.tabPageCreateTeams.Text = "Create teams";
+      this.tabPageCreateTeams.UseVisualStyleBackColor = true;
       // 
       // FormMain
       // 
@@ -1037,5 +1048,6 @@
     private System.Windows.Forms.ListView listViewCreateTeam;
     private System.Windows.Forms.DateTimePicker dateTimePickerCreateTeamDateToPlay;
     private System.Windows.Forms.Label labelCreateTeamDateToPlay;
+    private System.Windows.Forms.TabPage tabPageCreateTeams;
   }
 }
