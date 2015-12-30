@@ -83,6 +83,17 @@ namespace InterClubBadminton
       SetButtonEnabled(buttonAddPlayer, textBoxFirstName, textBoxLastName, comboBoxGender, comboBoxSimple,
         comboBoxDouble, comboBoxMixed);
       LoadTeamIfExists();
+      InitializeListView(listViewCreateTeamsTeams, "Check", "Name");
+    }
+
+    private void InitializeListView(ListView lv, params string[] columnNames)
+    {
+      lv.Items.Clear();
+      foreach (string columnName in columnNames)
+      {
+
+      }
+
     }
 
     private void LoadTeamIfExists()
