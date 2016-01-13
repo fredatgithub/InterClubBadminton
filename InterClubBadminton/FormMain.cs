@@ -45,6 +45,8 @@ namespace InterClubBadminton
     private bool _teamMembersCreated;
     private bool _visualizeTeamLoaded;
     private List<Player> _listOfPlayers = new List<Player>();
+    private List<Player> _listOfTeams = new List<Player>(); 
+    private List<OneDayTeam> _listOfOneDayTeams = new List<OneDayTeam>(); 
 
     private void QuitToolStripMenuItem_Click(object sender, EventArgs e)
     {
