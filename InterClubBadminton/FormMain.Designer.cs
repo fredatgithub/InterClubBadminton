@@ -66,6 +66,14 @@
       this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
       this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.tabControlMain = new System.Windows.Forms.TabControl();
+      this.tabPageCreateTeams = new System.Windows.Forms.TabPage();
+      this.listViewCreateTeamsTeams = new System.Windows.Forms.ListView();
+      this.columnHeaderCreateTeamsCheck = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+      this.columnHeaderCreateTeamsName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+      this.labelCreateTeamsTeams = new System.Windows.Forms.Label();
+      this.buttonCreateTeamsCreateTeam = new System.Windows.Forms.Button();
+      this.textBoxCreateTeamsTeamName = new System.Windows.Forms.TextBox();
+      this.labelCreateTeamsTeamName = new System.Windows.Forms.Label();
       this.tabPageAddPlayer = new System.Windows.Forms.TabPage();
       this.textBoxLicenseNumber = new System.Windows.Forms.TextBox();
       this.labelLicenseNumber = new System.Windows.Forms.Label();
@@ -108,20 +116,14 @@
       this.labelCreateTeamFirstName = new System.Windows.Forms.Label();
       this.comboBoxCreateTeamPlayer = new System.Windows.Forms.ComboBox();
       this.labelCreateTeamPlayer = new System.Windows.Forms.Label();
-      this.tabPageCreateTeams = new System.Windows.Forms.TabPage();
-      this.listViewCreateTeamsTeams = new System.Windows.Forms.ListView();
-      this.labelCreateTeamsTeams = new System.Windows.Forms.Label();
-      this.buttonCreateTeamsCreateTeam = new System.Windows.Forms.Button();
-      this.textBoxCreateTeamsTeamName = new System.Windows.Forms.TextBox();
-      this.labelCreateTeamsTeamName = new System.Windows.Forms.Label();
-      this.columnHeaderCreateTeamsCheck = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-      this.columnHeaderCreateTeamsName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+      this.labelAddPlayerTeamsName = new System.Windows.Forms.Label();
+      this.comboBoxAddPlayerTeamsName = new System.Windows.Forms.ComboBox();
       this.menuStrip1.SuspendLayout();
       this.tabControlMain.SuspendLayout();
+      this.tabPageCreateTeams.SuspendLayout();
       this.tabPageAddPlayer.SuspendLayout();
       this.tabPageVisualizeTeam.SuspendLayout();
       this.tabPageCreateTeam.SuspendLayout();
-      this.tabPageCreateTeams.SuspendLayout();
       this.SuspendLayout();
       // 
       // menuStrip1
@@ -434,8 +436,87 @@
       this.tabControlMain.Size = new System.Drawing.Size(1076, 582);
       this.tabControlMain.TabIndex = 2;
       // 
+      // tabPageCreateTeams
+      // 
+      this.tabPageCreateTeams.Controls.Add(this.listViewCreateTeamsTeams);
+      this.tabPageCreateTeams.Controls.Add(this.labelCreateTeamsTeams);
+      this.tabPageCreateTeams.Controls.Add(this.buttonCreateTeamsCreateTeam);
+      this.tabPageCreateTeams.Controls.Add(this.textBoxCreateTeamsTeamName);
+      this.tabPageCreateTeams.Controls.Add(this.labelCreateTeamsTeamName);
+      this.tabPageCreateTeams.Location = new System.Drawing.Point(4, 22);
+      this.tabPageCreateTeams.Name = "tabPageCreateTeams";
+      this.tabPageCreateTeams.Size = new System.Drawing.Size(1068, 556);
+      this.tabPageCreateTeams.TabIndex = 3;
+      this.tabPageCreateTeams.Text = "Create teams";
+      this.tabPageCreateTeams.UseVisualStyleBackColor = true;
+      // 
+      // listViewCreateTeamsTeams
+      // 
+      this.listViewCreateTeamsTeams.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+      this.listViewCreateTeamsTeams.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeaderCreateTeamsCheck,
+            this.columnHeaderCreateTeamsName});
+      this.listViewCreateTeamsTeams.Location = new System.Drawing.Point(404, 58);
+      this.listViewCreateTeamsTeams.Name = "listViewCreateTeamsTeams";
+      this.listViewCreateTeamsTeams.Size = new System.Drawing.Size(632, 470);
+      this.listViewCreateTeamsTeams.TabIndex = 37;
+      this.listViewCreateTeamsTeams.UseCompatibleStateImageBehavior = false;
+      // 
+      // columnHeaderCreateTeamsCheck
+      // 
+      this.columnHeaderCreateTeamsCheck.Text = "Check";
+      // 
+      // columnHeaderCreateTeamsName
+      // 
+      this.columnHeaderCreateTeamsName.Text = "Name";
+      // 
+      // labelCreateTeamsTeams
+      // 
+      this.labelCreateTeamsTeams.AutoSize = true;
+      this.labelCreateTeamsTeams.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.labelCreateTeamsTeams.Location = new System.Drawing.Point(401, 28);
+      this.labelCreateTeamsTeams.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+      this.labelCreateTeamsTeams.Name = "labelCreateTeamsTeams";
+      this.labelCreateTeamsTeams.Size = new System.Drawing.Size(51, 17);
+      this.labelCreateTeamsTeams.TabIndex = 36;
+      this.labelCreateTeamsTeams.Text = "Teams";
+      // 
+      // buttonCreateTeamsCreateTeam
+      // 
+      this.buttonCreateTeamsCreateTeam.Location = new System.Drawing.Point(149, 94);
+      this.buttonCreateTeamsCreateTeam.Margin = new System.Windows.Forms.Padding(2);
+      this.buttonCreateTeamsCreateTeam.Name = "buttonCreateTeamsCreateTeam";
+      this.buttonCreateTeamsCreateTeam.Size = new System.Drawing.Size(198, 28);
+      this.buttonCreateTeamsCreateTeam.TabIndex = 35;
+      this.buttonCreateTeamsCreateTeam.Text = "Create team ->";
+      this.buttonCreateTeamsCreateTeam.UseVisualStyleBackColor = true;
+      // 
+      // textBoxCreateTeamsTeamName
+      // 
+      this.textBoxCreateTeamsTeamName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.textBoxCreateTeamsTeamName.Location = new System.Drawing.Point(149, 58);
+      this.textBoxCreateTeamsTeamName.Margin = new System.Windows.Forms.Padding(2);
+      this.textBoxCreateTeamsTeamName.Name = "textBoxCreateTeamsTeamName";
+      this.textBoxCreateTeamsTeamName.Size = new System.Drawing.Size(198, 23);
+      this.textBoxCreateTeamsTeamName.TabIndex = 34;
+      this.textBoxCreateTeamsTeamName.Text = "Badiset-";
+      // 
+      // labelCreateTeamsTeamName
+      // 
+      this.labelCreateTeamsTeamName.AutoSize = true;
+      this.labelCreateTeamsTeamName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.labelCreateTeamsTeamName.Location = new System.Drawing.Point(33, 58);
+      this.labelCreateTeamsTeamName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+      this.labelCreateTeamsTeamName.Name = "labelCreateTeamsTeamName";
+      this.labelCreateTeamsTeamName.Size = new System.Drawing.Size(93, 17);
+      this.labelCreateTeamsTeamName.TabIndex = 33;
+      this.labelCreateTeamsTeamName.Text = "Team\'s name";
+      // 
       // tabPageAddPlayer
       // 
+      this.tabPageAddPlayer.Controls.Add(this.comboBoxAddPlayerTeamsName);
+      this.tabPageAddPlayer.Controls.Add(this.labelAddPlayerTeamsName);
       this.tabPageAddPlayer.Controls.Add(this.textBoxLicenseNumber);
       this.tabPageAddPlayer.Controls.Add(this.labelLicenseNumber);
       this.tabPageAddPlayer.Controls.Add(this.buttonAddPlayer);
@@ -486,7 +567,7 @@
       // 
       this.buttonAddPlayer.Enabled = false;
       this.buttonAddPlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.buttonAddPlayer.Location = new System.Drawing.Point(138, 236);
+      this.buttonAddPlayer.Location = new System.Drawing.Point(138, 283);
       this.buttonAddPlayer.Margin = new System.Windows.Forms.Padding(2);
       this.buttonAddPlayer.Name = "buttonAddPlayer";
       this.buttonAddPlayer.Size = new System.Drawing.Size(107, 25);
@@ -938,82 +1019,27 @@
       this.labelCreateTeamPlayer.TabIndex = 13;
       this.labelCreateTeamPlayer.Text = "Player";
       // 
-      // tabPageCreateTeams
+      // labelAddPlayerTeamsName
       // 
-      this.tabPageCreateTeams.Controls.Add(this.listViewCreateTeamsTeams);
-      this.tabPageCreateTeams.Controls.Add(this.labelCreateTeamsTeams);
-      this.tabPageCreateTeams.Controls.Add(this.buttonCreateTeamsCreateTeam);
-      this.tabPageCreateTeams.Controls.Add(this.textBoxCreateTeamsTeamName);
-      this.tabPageCreateTeams.Controls.Add(this.labelCreateTeamsTeamName);
-      this.tabPageCreateTeams.Location = new System.Drawing.Point(4, 22);
-      this.tabPageCreateTeams.Name = "tabPageCreateTeams";
-      this.tabPageCreateTeams.Size = new System.Drawing.Size(1068, 556);
-      this.tabPageCreateTeams.TabIndex = 3;
-      this.tabPageCreateTeams.Text = "Create teams";
-      this.tabPageCreateTeams.UseVisualStyleBackColor = true;
+      this.labelAddPlayerTeamsName.AutoSize = true;
+      this.labelAddPlayerTeamsName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.labelAddPlayerTeamsName.Location = new System.Drawing.Point(22, 244);
+      this.labelAddPlayerTeamsName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+      this.labelAddPlayerTeamsName.Name = "labelAddPlayerTeamsName";
+      this.labelAddPlayerTeamsName.Size = new System.Drawing.Size(95, 17);
+      this.labelAddPlayerTeamsName.TabIndex = 14;
+      this.labelAddPlayerTeamsName.Text = "Team\'s Name";
       // 
-      // listViewCreateTeamsTeams
+      // comboBoxAddPlayerTeamsName
       // 
-      this.listViewCreateTeamsTeams.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-      this.listViewCreateTeamsTeams.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeaderCreateTeamsCheck,
-            this.columnHeaderCreateTeamsName});
-      this.listViewCreateTeamsTeams.Location = new System.Drawing.Point(404, 58);
-      this.listViewCreateTeamsTeams.Name = "listViewCreateTeamsTeams";
-      this.listViewCreateTeamsTeams.Size = new System.Drawing.Size(632, 470);
-      this.listViewCreateTeamsTeams.TabIndex = 37;
-      this.listViewCreateTeamsTeams.UseCompatibleStateImageBehavior = false;
-      // 
-      // labelCreateTeamsTeams
-      // 
-      this.labelCreateTeamsTeams.AutoSize = true;
-      this.labelCreateTeamsTeams.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.labelCreateTeamsTeams.Location = new System.Drawing.Point(401, 28);
-      this.labelCreateTeamsTeams.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-      this.labelCreateTeamsTeams.Name = "labelCreateTeamsTeams";
-      this.labelCreateTeamsTeams.Size = new System.Drawing.Size(51, 17);
-      this.labelCreateTeamsTeams.TabIndex = 36;
-      this.labelCreateTeamsTeams.Text = "Teams";
-      // 
-      // buttonCreateTeamsCreateTeam
-      // 
-      this.buttonCreateTeamsCreateTeam.Location = new System.Drawing.Point(149, 94);
-      this.buttonCreateTeamsCreateTeam.Margin = new System.Windows.Forms.Padding(2);
-      this.buttonCreateTeamsCreateTeam.Name = "buttonCreateTeamsCreateTeam";
-      this.buttonCreateTeamsCreateTeam.Size = new System.Drawing.Size(198, 28);
-      this.buttonCreateTeamsCreateTeam.TabIndex = 35;
-      this.buttonCreateTeamsCreateTeam.Text = "Create team ->";
-      this.buttonCreateTeamsCreateTeam.UseVisualStyleBackColor = true;
-      // 
-      // textBoxCreateTeamsTeamName
-      // 
-      this.textBoxCreateTeamsTeamName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.textBoxCreateTeamsTeamName.Location = new System.Drawing.Point(149, 58);
-      this.textBoxCreateTeamsTeamName.Margin = new System.Windows.Forms.Padding(2);
-      this.textBoxCreateTeamsTeamName.Name = "textBoxCreateTeamsTeamName";
-      this.textBoxCreateTeamsTeamName.Size = new System.Drawing.Size(198, 23);
-      this.textBoxCreateTeamsTeamName.TabIndex = 34;
-      this.textBoxCreateTeamsTeamName.Text = "Badiset-";
-      // 
-      // labelCreateTeamsTeamName
-      // 
-      this.labelCreateTeamsTeamName.AutoSize = true;
-      this.labelCreateTeamsTeamName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.labelCreateTeamsTeamName.Location = new System.Drawing.Point(33, 58);
-      this.labelCreateTeamsTeamName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-      this.labelCreateTeamsTeamName.Name = "labelCreateTeamsTeamName";
-      this.labelCreateTeamsTeamName.Size = new System.Drawing.Size(93, 17);
-      this.labelCreateTeamsTeamName.TabIndex = 33;
-      this.labelCreateTeamsTeamName.Text = "Team\'s name";
-      // 
-      // columnHeaderCreateTeamsCheck
-      // 
-      this.columnHeaderCreateTeamsCheck.Text = "Check";
-      // 
-      // columnHeaderCreateTeamsName
-      // 
-      this.columnHeaderCreateTeamsName.Text = "Name";
+      this.comboBoxAddPlayerTeamsName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.comboBoxAddPlayerTeamsName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.comboBoxAddPlayerTeamsName.FormattingEnabled = true;
+      this.comboBoxAddPlayerTeamsName.Location = new System.Drawing.Point(138, 244);
+      this.comboBoxAddPlayerTeamsName.Margin = new System.Windows.Forms.Padding(2);
+      this.comboBoxAddPlayerTeamsName.Name = "comboBoxAddPlayerTeamsName";
+      this.comboBoxAddPlayerTeamsName.Size = new System.Drawing.Size(108, 24);
+      this.comboBoxAddPlayerTeamsName.TabIndex = 15;
       // 
       // FormMain
       // 
@@ -1032,13 +1058,13 @@
       this.menuStrip1.ResumeLayout(false);
       this.menuStrip1.PerformLayout();
       this.tabControlMain.ResumeLayout(false);
+      this.tabPageCreateTeams.ResumeLayout(false);
+      this.tabPageCreateTeams.PerformLayout();
       this.tabPageAddPlayer.ResumeLayout(false);
       this.tabPageAddPlayer.PerformLayout();
       this.tabPageVisualizeTeam.ResumeLayout(false);
       this.tabPageCreateTeam.ResumeLayout(false);
       this.tabPageCreateTeam.PerformLayout();
-      this.tabPageCreateTeams.ResumeLayout(false);
-      this.tabPageCreateTeams.PerformLayout();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -1134,5 +1160,7 @@
     private System.Windows.Forms.Button buttonCreateTeamsCreateTeam;
     private System.Windows.Forms.TextBox textBoxCreateTeamsTeamName;
     private System.Windows.Forms.Label labelCreateTeamsTeamName;
+    private System.Windows.Forms.ComboBox comboBoxAddPlayerTeamsName;
+    private System.Windows.Forms.Label labelAddPlayerTeamsName;
   }
 }
