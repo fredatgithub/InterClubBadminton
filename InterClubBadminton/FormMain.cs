@@ -86,6 +86,18 @@ namespace InterClubBadminton
         comboBoxDouble, comboBoxMixed);
       LoadTeamIfExists();
       InitializeListView(listViewCreateTeamsTeams, "Check", "Name");
+      LoadXmlFileToListView("teams.xml", listViewCreateTeamsTeams);
+    }
+
+    private static void LoadXmlFileToListView(string xmlFile, ListView lv)
+    {
+      if (!File.Exists(xmlFile))
+      {
+        return;
+      }
+
+      // load file elements to listview
+
     }
 
     private void InitializeListView(ListView lv, params string[] columnNames)
