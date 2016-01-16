@@ -45,8 +45,8 @@ namespace InterClubBadminton
     private bool _teamMembersCreated;
     private bool _visualizeTeamLoaded;
     private List<Player> _listOfPlayers = new List<Player>();
-    private List<Player> _listOfTeams = new List<Player>(); 
-    private List<OneDayTeam> _listOfOneDayTeams = new List<OneDayTeam>(); 
+    private List<Player> _listOfTeams = new List<Player>();
+    private List<OneDayTeam> _listOfOneDayTeams = new List<OneDayTeam>();
 
     private void QuitToolStripMenuItem_Click(object sender, EventArgs e)
     {
@@ -97,18 +97,18 @@ namespace InterClubBadminton
       }
 
       // load file elements to listview TODO
-      var listOfPlayers = LoadXmlIntoList(Settings.Default.PlayersFileName,
-          "player",
-          "firstname",
-          "lastname",
-          "gender",
-          "simplelevel",
-          "doublelevel",
-          "mixedlevel");
-      foreach (Player player in listOfPlayers)
-      {
-        _listOfPlayers.Add(player);
-      }
+      //var listOfPlayers = LoadXmlIntoList(Settings.Default.PlayersFileName,
+      //    "player",
+      //    "firstname",
+      //    "lastname",
+      //    "gender",
+      //    "simplelevel",
+      //    "doublelevel",
+      //    "mixedlevel");
+      //foreach (Player player in listOfPlayers)
+      //{
+      //  _listOfPlayers.Add(player);
+      //}
     }
 
     private void InitializeListView(ListView lv, params string[] columnNames)
@@ -130,7 +130,7 @@ namespace InterClubBadminton
         return;
       }
 
-      var listOfPlayers = LoadXmlIntoList(Settings.Default.PlayersFileName,
+      var listOfTeams = LoadXmlIntoList(Settings.Default.PlayersFileName,
           "player",
           "firstname",
           "lastname",
@@ -138,7 +138,7 @@ namespace InterClubBadminton
           "simplelevel",
           "doublelevel",
           "mixedlevel");
-      foreach (Player player in listOfPlayers)
+      foreach (Player player in listOfTeams)
       {
         _listOfPlayers.Add(player);
       }
@@ -1122,6 +1122,63 @@ namespace InterClubBadminton
           result = true;
           break;
         }
+      }
+
+      return result;
+    }
+
+    private static IEnumerable<T> LoadXmlIntoListGeneric<T>(string fileName, params string[] tags) where T : Type
+    {
+      // TODO write code
+      var result = new List<T>();
+      if (!File.Exists(fileName))
+      {
+        return result;
+      }
+
+      XDocument xDoc;
+      try
+      {
+        xDoc = XDocument.Load(fileName);
+      }
+      catch (Exception exception)
+      {
+        MessageBox.Show(Resources.Error_while_loading_the + Punctuation.OneSpace +
+          Settings.Default.PlayersFileName + Punctuation.OneSpace +
+          Resources.xml_file + Punctuation.OneSpace + exception.Message);
+        return result;
+      }
+      var result2 = from node in xDoc.Descendants(tags[0])
+                    where node.HasElements
+                    let xElementFirstName = node.Element(tags[1])
+                    where xElementFirstName != null
+                    let xElementLastName = node.Element(tags[2])
+                    where xElementLastName != null
+                    let xElementGender = node.Element(tags[3])
+                    where xElementGender != null
+                    let xElementSimpleLevel = node.Element(tags[4])
+                    where xElementSimpleLevel != null
+                    let xElementDoubleLevel = node.Element(tags[5])
+                    where xElementDoubleLevel != null
+                    let xElementMixedLevel = node.Element(tags[6])
+                    where xElementMixedLevel != null
+                    select new
+                    {
+                      NodeValue1 = xElementFirstName.Value,
+                      NodeValue2 = xElementLastName.Value,
+                      NodeValue3 = xElementGender.Value,
+                      NodeValue4 = xElementSimpleLevel.Value,
+                      NodeValue5 = xElementDoubleLevel.Value,
+                      NodeValue6 = xElementMixedLevel.Value
+                    };
+      foreach (var i in result2)
+      {
+        // TODO adjust result
+        //result.Add(new T(i.NodeValue1, i.NodeValue2,
+        //    (Gender)Enum.Parse(typeof(Gender), i.NodeValue3),
+        //    (RankLevel)Enum.Parse(typeof(RankLevel), i.NodeValue4),
+        //    (RankLevel)Enum.Parse(typeof(RankLevel), i.NodeValue5),
+        //    (RankLevel)Enum.Parse(typeof(RankLevel), i.NodeValue6)));
       }
 
       return result;
