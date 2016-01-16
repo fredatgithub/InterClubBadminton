@@ -96,8 +96,19 @@ namespace InterClubBadminton
         return;
       }
 
-      // load file elements to listview
-
+      // load file elements to listview TODO
+      var listOfPlayers = LoadXmlIntoList(Settings.Default.PlayersFileName,
+          "player",
+          "firstname",
+          "lastname",
+          "gender",
+          "simplelevel",
+          "doublelevel",
+          "mixedlevel");
+      foreach (Player player in listOfPlayers)
+      {
+        _listOfPlayers.Add(player);
+      }
     }
 
     private void InitializeListView(ListView lv, params string[] columnNames)
@@ -1118,7 +1129,7 @@ namespace InterClubBadminton
 
     private static IEnumerable<Player> LoadXmlIntoList(string fileName, params string[] tags)
     {
-      List<Player> result = new List<Player>();
+      var result = new List<Player>();
       if (!File.Exists(fileName))
       {
         return result;
