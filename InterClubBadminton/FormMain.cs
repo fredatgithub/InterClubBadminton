@@ -96,19 +96,15 @@ namespace InterClubBadminton
         return;
       }
 
-      // load file elements to listview TODO
-      //var listOfPlayers = LoadXmlIntoList(Settings.Default.PlayersFileName,
-      //    "player",
-      //    "firstname",
-      //    "lastname",
-      //    "gender",
-      //    "simplelevel",
-      //    "doublelevel",
-      //    "mixedlevel");
-      //foreach (Player player in listOfPlayers)
-      //{
-      //  _listOfPlayers.Add(player);
-      //}
+      //load file elements to listview TODO
+      var listOfTeams = LoadXmlIntoList2(Settings.Default.PlayersFileName,
+          "team",
+          "name");
+      foreach (Team team in listOfTeams)
+      {
+        // TODO to complete
+        //lv.Add(team);
+      }
     }
 
     private void InitializeListView(ListView lv, params string[] columnNames)
@@ -1175,6 +1171,63 @@ namespace InterClubBadminton
       {
         // TODO adjust result
         //result.Add(new T(i.NodeValue1, i.NodeValue2,
+        //    (Gender)Enum.Parse(typeof(Gender), i.NodeValue3),
+        //    (RankLevel)Enum.Parse(typeof(RankLevel), i.NodeValue4),
+        //    (RankLevel)Enum.Parse(typeof(RankLevel), i.NodeValue5),
+        //    (RankLevel)Enum.Parse(typeof(RankLevel), i.NodeValue6)));
+      }
+
+      return result;
+    }
+
+    private static IEnumerable<Team> LoadXmlIntoList2(string fileName, params string[] tags)
+    {
+      var result = new List<Team>();
+      if (!File.Exists(fileName))
+      {
+        return result;
+      }
+
+      XDocument xDoc;
+      try
+      {
+        xDoc = XDocument.Load(fileName);
+      }
+      catch (Exception exception)
+      {
+        MessageBox.Show(Resources.Error_while_loading_the + Punctuation.OneSpace +
+          Settings.Default.PlayersFileName + Punctuation.OneSpace +
+          Resources.xml_file + Punctuation.OneSpace + exception.Message);
+        return result;
+      }
+      // TODO to complete code
+      var result2 = from node in xDoc.Descendants(tags[0])
+                    where node.HasElements
+                    let xElementFirstName = node.Element(tags[1])
+                    where xElementFirstName != null
+                    let xElementLastName = node.Element(tags[2])
+                    where xElementLastName != null
+                    let xElementGender = node.Element(tags[3])
+                    where xElementGender != null
+                    let xElementSimpleLevel = node.Element(tags[4])
+                    where xElementSimpleLevel != null
+                    let xElementDoubleLevel = node.Element(tags[5])
+                    where xElementDoubleLevel != null
+                    let xElementMixedLevel = node.Element(tags[6])
+                    where xElementMixedLevel != null
+                    select new
+                    {
+                      NodeValue1 = xElementFirstName.Value,
+                      NodeValue2 = xElementLastName.Value,
+                      NodeValue3 = xElementGender.Value,
+                      NodeValue4 = xElementSimpleLevel.Value,
+                      NodeValue5 = xElementDoubleLevel.Value,
+                      NodeValue6 = xElementMixedLevel.Value
+                    };
+      foreach (var i in result2)
+      {
+        // TODO to complete
+        //result.Add(new Player(i.NodeValue1, i.NodeValue2,
         //    (Gender)Enum.Parse(typeof(Gender), i.NodeValue3),
         //    (RankLevel)Enum.Parse(typeof(RankLevel), i.NodeValue4),
         //    (RankLevel)Enum.Parse(typeof(RankLevel), i.NodeValue5),
