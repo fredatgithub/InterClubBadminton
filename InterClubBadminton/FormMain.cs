@@ -1,4 +1,5 @@
 ﻿#define DEBUG
+using InterClubBadminton.Properties;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -8,7 +9,6 @@ using System.Reflection;
 using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Linq;
-using InterClubBadminton.Properties;
 
 namespace InterClubBadminton
 {
@@ -1283,14 +1283,14 @@ namespace InterClubBadminton
       }
     }
 
-    private void textBoxLicenseNumber_TextChanged(object sender, EventArgs e)
+    private void TextBoxLicenseNumber_TextChanged(object sender, EventArgs e)
     {
       SetButtonEnabled(buttonAddPlayer, textBoxFirstName, textBoxLastName, comboBoxGender, comboBoxSimple,
         comboBoxDouble, comboBoxMixed, textBoxLicenseNumber);
       AcceptOnlyNumbers(textBoxLicenseNumber);
     }
 
-    private void tabPageCreateTeam_Enter(object sender, EventArgs e)
+    private void TabPageCreateTeam_Enter(object sender, EventArgs e)
     {
       var listOfPlayers = LoadXmlIntoList(Settings.Default.PlayersFileName,
           "player",
@@ -1307,7 +1307,7 @@ namespace InterClubBadminton
       }
     }
 
-    private void comboBoxCreateTeamPlayer_SelectedIndexChanged(object sender, EventArgs e)
+    private void ComboBoxCreateTeamPlayer_SelectedIndexChanged(object sender, EventArgs e)
     {
       string playerName = comboBoxCreateTeamPlayer.SelectedItem.ToString();
       Player player = GetPlayerFromName(playerName);
@@ -1366,12 +1366,12 @@ namespace InterClubBadminton
       }
     }
 
-    private void comboBoxPlayType_SelectedIndexChanged(object sender, EventArgs e)
+    private void ComboBoxPlayType_SelectedIndexChanged(object sender, EventArgs e)
     {
       SetButtonEnabled(buttonCreateTeamCopy, comboBoxPlayType, comboBoxCreateTeamPlayer);
     }
 
-    private void buttonCreateTeamCopy_Click(object sender, EventArgs e)
+    private void ButtonCreateTeamCopy_Click(object sender, EventArgs e)
     {
       // check if player is not already in, if so ask to replace it
 

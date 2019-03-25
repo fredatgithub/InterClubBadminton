@@ -550,7 +550,7 @@
       this.textBoxLicenseNumber.Size = new System.Drawing.Size(108, 23);
       this.textBoxLicenseNumber.TabIndex = 13;
       this.textBoxLicenseNumber.Text = "0";
-      this.textBoxLicenseNumber.TextChanged += new System.EventHandler(this.textBoxLicenseNumber_TextChanged);
+      this.textBoxLicenseNumber.TextChanged += new System.EventHandler(this.TextBoxLicenseNumber_TextChanged);
       // 
       // labelLicenseNumber
       // 
@@ -767,7 +767,7 @@
       this.tabPageCreateTeam.TabIndex = 2;
       this.tabPageCreateTeam.Text = "Create one day team";
       this.tabPageCreateTeam.UseVisualStyleBackColor = true;
-      this.tabPageCreateTeam.Enter += new System.EventHandler(this.tabPageCreateTeam_Enter);
+      this.tabPageCreateTeam.Enter += new System.EventHandler(this.TabPageCreateTeam_Enter);
       // 
       // dateTimePickerCreateTeamDateToPlay
       // 
@@ -807,7 +807,7 @@
       this.comboBoxPlayType.Name = "comboBoxPlayType";
       this.comboBoxPlayType.Size = new System.Drawing.Size(198, 24);
       this.comboBoxPlayType.TabIndex = 30;
-      this.comboBoxPlayType.SelectedIndexChanged += new System.EventHandler(this.comboBoxPlayType_SelectedIndexChanged);
+      this.comboBoxPlayType.SelectedIndexChanged += new System.EventHandler(this.ComboBoxPlayType_SelectedIndexChanged);
       // 
       // labelPlayType
       // 
@@ -840,7 +840,7 @@
       this.buttonCreateTeamCopy.TabIndex = 28;
       this.buttonCreateTeamCopy.Text = "Add to team ->";
       this.buttonCreateTeamCopy.UseVisualStyleBackColor = true;
-      this.buttonCreateTeamCopy.Click += new System.EventHandler(this.buttonCreateTeamCopy_Click);
+      this.buttonCreateTeamCopy.Click += new System.EventHandler(this.ButtonCreateTeamCopy_Click);
       // 
       // textBoxCreateTeamMixedLevel
       // 
@@ -1006,7 +1006,7 @@
       this.comboBoxCreateTeamPlayer.Name = "comboBoxCreateTeamPlayer";
       this.comboBoxCreateTeamPlayer.Size = new System.Drawing.Size(198, 24);
       this.comboBoxCreateTeamPlayer.TabIndex = 12;
-      this.comboBoxCreateTeamPlayer.SelectedIndexChanged += new System.EventHandler(this.comboBoxCreateTeamPlayer_SelectedIndexChanged);
+      this.comboBoxCreateTeamPlayer.SelectedIndexChanged += new System.EventHandler(this.ComboBoxCreateTeamPlayer_SelectedIndexChanged);
       // 
       // labelCreateTeamPlayer
       // 
