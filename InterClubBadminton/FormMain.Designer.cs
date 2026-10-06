@@ -75,6 +75,8 @@
       this.textBoxCreateTeamsTeamName = new System.Windows.Forms.TextBox();
       this.labelCreateTeamsTeamName = new System.Windows.Forms.Label();
       this.tabPageAddPlayer = new System.Windows.Forms.TabPage();
+      this.comboBoxAddPlayerTeamsName = new System.Windows.Forms.ComboBox();
+      this.labelAddPlayerTeamsName = new System.Windows.Forms.Label();
       this.textBoxLicenseNumber = new System.Windows.Forms.TextBox();
       this.labelLicenseNumber = new System.Windows.Forms.Label();
       this.buttonAddPlayer = new System.Windows.Forms.Button();
@@ -116,8 +118,6 @@
       this.labelCreateTeamFirstName = new System.Windows.Forms.Label();
       this.comboBoxCreateTeamPlayer = new System.Windows.Forms.ComboBox();
       this.labelCreateTeamPlayer = new System.Windows.Forms.Label();
-      this.labelAddPlayerTeamsName = new System.Windows.Forms.Label();
-      this.comboBoxAddPlayerTeamsName = new System.Windows.Forms.ComboBox();
       this.menuStrip1.SuspendLayout();
       this.tabControlMain.SuspendLayout();
       this.tabPageCreateTeams.SuspendLayout();
@@ -128,6 +128,7 @@
       // 
       // menuStrip1
       // 
+      this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
       this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
       this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
@@ -138,8 +139,8 @@
             this.helpToolStripMenuItem});
       this.menuStrip1.Location = new System.Drawing.Point(0, 0);
       this.menuStrip1.Name = "menuStrip1";
-      this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-      this.menuStrip1.Size = new System.Drawing.Size(1076, 24);
+      this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 3, 0, 3);
+      this.menuStrip1.Size = new System.Drawing.Size(1614, 36);
       this.menuStrip1.TabIndex = 1;
       this.menuStrip1.Text = "menuStrip1";
       // 
@@ -157,7 +158,7 @@
             this.toolStripSeparator2,
             this.quitToolStripMenuItem});
       this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-      this.fileToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+      this.fileToolStripMenuItem.Size = new System.Drawing.Size(78, 30);
       this.fileToolStripMenuItem.Text = "&Fichier";
       // 
       // newToolStripMenuItem
@@ -165,7 +166,7 @@
       this.newToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
       this.newToolStripMenuItem.Name = "newToolStripMenuItem";
       this.newToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-      this.newToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+      this.newToolStripMenuItem.Size = new System.Drawing.Size(310, 34);
       this.newToolStripMenuItem.Text = "&Nouveau";
       // 
       // openToolStripMenuItem
@@ -173,57 +174,57 @@
       this.openToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
       this.openToolStripMenuItem.Name = "openToolStripMenuItem";
       this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-      this.openToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+      this.openToolStripMenuItem.Size = new System.Drawing.Size(310, 34);
       this.openToolStripMenuItem.Text = "&Ouvrir";
       // 
       // toolStripSeparator
       // 
       this.toolStripSeparator.Name = "toolStripSeparator";
-      this.toolStripSeparator.Size = new System.Drawing.Size(202, 6);
+      this.toolStripSeparator.Size = new System.Drawing.Size(307, 6);
       // 
       // saveToolStripMenuItem
       // 
       this.saveToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
       this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
       this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-      this.saveToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+      this.saveToolStripMenuItem.Size = new System.Drawing.Size(310, 34);
       this.saveToolStripMenuItem.Text = "&Enregistrer";
       // 
       // saveasToolStripMenuItem
       // 
       this.saveasToolStripMenuItem.Name = "saveasToolStripMenuItem";
-      this.saveasToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+      this.saveasToolStripMenuItem.Size = new System.Drawing.Size(310, 34);
       this.saveasToolStripMenuItem.Text = "Enregistrer &sous";
       // 
       // toolStripSeparator1
       // 
       this.toolStripSeparator1.Name = "toolStripSeparator1";
-      this.toolStripSeparator1.Size = new System.Drawing.Size(202, 6);
+      this.toolStripSeparator1.Size = new System.Drawing.Size(307, 6);
       // 
       // printToolStripMenuItem
       // 
       this.printToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
       this.printToolStripMenuItem.Name = "printToolStripMenuItem";
       this.printToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
-      this.printToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+      this.printToolStripMenuItem.Size = new System.Drawing.Size(310, 34);
       this.printToolStripMenuItem.Text = "&Imprimer";
       // 
       // printPreviewToolStripMenuItem
       // 
       this.printPreviewToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
       this.printPreviewToolStripMenuItem.Name = "printPreviewToolStripMenuItem";
-      this.printPreviewToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+      this.printPreviewToolStripMenuItem.Size = new System.Drawing.Size(310, 34);
       this.printPreviewToolStripMenuItem.Text = "Aperçu a&vant impression";
       // 
       // toolStripSeparator2
       // 
       this.toolStripSeparator2.Name = "toolStripSeparator2";
-      this.toolStripSeparator2.Size = new System.Drawing.Size(202, 6);
+      this.toolStripSeparator2.Size = new System.Drawing.Size(307, 6);
       // 
       // quitToolStripMenuItem
       // 
       this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
-      this.quitToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+      this.quitToolStripMenuItem.Size = new System.Drawing.Size(310, 34);
       this.quitToolStripMenuItem.Text = "&Quitter";
       this.quitToolStripMenuItem.Click += new System.EventHandler(this.QuitToolStripMenuItem_Click);
       // 
@@ -239,34 +240,34 @@
             this.toolStripSeparator4,
             this.selectAllToolStripMenuItem});
       this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-      this.editToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+      this.editToolStripMenuItem.Size = new System.Drawing.Size(83, 30);
       this.editToolStripMenuItem.Text = "&Edition";
       // 
       // cancelToolStripMenuItem
       // 
       this.cancelToolStripMenuItem.Name = "cancelToolStripMenuItem";
       this.cancelToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
-      this.cancelToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+      this.cancelToolStripMenuItem.Size = new System.Drawing.Size(248, 34);
       this.cancelToolStripMenuItem.Text = "&Annuler";
       // 
       // redoToolStripMenuItem
       // 
       this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
       this.redoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
-      this.redoToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+      this.redoToolStripMenuItem.Size = new System.Drawing.Size(248, 34);
       this.redoToolStripMenuItem.Text = "&Rétablir";
       // 
       // toolStripSeparator3
       // 
       this.toolStripSeparator3.Name = "toolStripSeparator3";
-      this.toolStripSeparator3.Size = new System.Drawing.Size(161, 6);
+      this.toolStripSeparator3.Size = new System.Drawing.Size(245, 6);
       // 
       // cutToolStripMenuItem
       // 
       this.cutToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
       this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
       this.cutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-      this.cutToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+      this.cutToolStripMenuItem.Size = new System.Drawing.Size(248, 34);
       this.cutToolStripMenuItem.Text = "&Couper";
       this.cutToolStripMenuItem.Click += new System.EventHandler(this.cutToolStripMenuItem_Click);
       // 
@@ -275,7 +276,7 @@
       this.copyToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
       this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
       this.copyToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-      this.copyToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+      this.copyToolStripMenuItem.Size = new System.Drawing.Size(248, 34);
       this.copyToolStripMenuItem.Text = "Co&pier";
       this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
       // 
@@ -284,19 +285,19 @@
       this.pasteToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
       this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
       this.pasteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-      this.pasteToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+      this.pasteToolStripMenuItem.Size = new System.Drawing.Size(248, 34);
       this.pasteToolStripMenuItem.Text = "Co&ller";
       this.pasteToolStripMenuItem.Click += new System.EventHandler(this.pasteToolStripMenuItem_Click);
       // 
       // toolStripSeparator4
       // 
       this.toolStripSeparator4.Name = "toolStripSeparator4";
-      this.toolStripSeparator4.Size = new System.Drawing.Size(161, 6);
+      this.toolStripSeparator4.Size = new System.Drawing.Size(245, 6);
       // 
       // selectAllToolStripMenuItem
       // 
       this.selectAllToolStripMenuItem.Name = "selectAllToolStripMenuItem";
-      this.selectAllToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+      this.selectAllToolStripMenuItem.Size = new System.Drawing.Size(248, 34);
       this.selectAllToolStripMenuItem.Text = "Sélectio&nner tout";
       this.selectAllToolStripMenuItem.Click += new System.EventHandler(this.selectAllToolStripMenuItem_Click);
       // 
@@ -306,19 +307,19 @@
             this.personalizeToolStripMenuItem,
             this.optionsToolStripMenuItem});
       this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-      this.toolsToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+      this.toolsToolStripMenuItem.Size = new System.Drawing.Size(74, 30);
       this.toolsToolStripMenuItem.Text = "&Outils";
       // 
       // personalizeToolStripMenuItem
       // 
       this.personalizeToolStripMenuItem.Name = "personalizeToolStripMenuItem";
-      this.personalizeToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+      this.personalizeToolStripMenuItem.Size = new System.Drawing.Size(217, 34);
       this.personalizeToolStripMenuItem.Text = "&Personnaliser";
       // 
       // optionsToolStripMenuItem
       // 
       this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-      this.optionsToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+      this.optionsToolStripMenuItem.Size = new System.Drawing.Size(217, 34);
       this.optionsToolStripMenuItem.Text = "&Options";
       this.optionsToolStripMenuItem.Click += new System.EventHandler(this.optionsToolStripMenuItem_Click);
       // 
@@ -328,7 +329,7 @@
             this.frenchToolStripMenuItem,
             this.englishToolStripMenuItem});
       this.languagetoolStripMenuItem.Name = "languagetoolStripMenuItem";
-      this.languagetoolStripMenuItem.Size = new System.Drawing.Size(71, 20);
+      this.languagetoolStripMenuItem.Size = new System.Drawing.Size(105, 30);
       this.languagetoolStripMenuItem.Text = "Language";
       // 
       // frenchToolStripMenuItem
@@ -336,14 +337,14 @@
       this.frenchToolStripMenuItem.Checked = true;
       this.frenchToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
       this.frenchToolStripMenuItem.Name = "frenchToolStripMenuItem";
-      this.frenchToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+      this.frenchToolStripMenuItem.Size = new System.Drawing.Size(177, 34);
       this.frenchToolStripMenuItem.Text = "Français";
       this.frenchToolStripMenuItem.Click += new System.EventHandler(this.frenchToolStripMenuItem_Click);
       // 
       // englishToolStripMenuItem
       // 
       this.englishToolStripMenuItem.Name = "englishToolStripMenuItem";
-      this.englishToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+      this.englishToolStripMenuItem.Size = new System.Drawing.Size(177, 34);
       this.englishToolStripMenuItem.Text = "Anglais";
       this.englishToolStripMenuItem.Click += new System.EventHandler(this.englishToolStripMenuItem_Click);
       // 
@@ -354,7 +355,7 @@
             this.MediumToolStripMenuItem,
             this.LargeToolStripMenuItem});
       this.DisplayToolStripMenuItem.Name = "DisplayToolStripMenuItem";
-      this.DisplayToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
+      this.DisplayToolStripMenuItem.Size = new System.Drawing.Size(103, 30);
       this.DisplayToolStripMenuItem.Text = "Affichage";
       // 
       // SmallToolStripMenuItem
@@ -362,21 +363,21 @@
       this.SmallToolStripMenuItem.Checked = true;
       this.SmallToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
       this.SmallToolStripMenuItem.Name = "SmallToolStripMenuItem";
-      this.SmallToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+      this.SmallToolStripMenuItem.Size = new System.Drawing.Size(169, 34);
       this.SmallToolStripMenuItem.Text = "Petit";
       this.SmallToolStripMenuItem.Click += new System.EventHandler(this.SmallToolStripMenuItem_Click);
       // 
       // MediumToolStripMenuItem
       // 
       this.MediumToolStripMenuItem.Name = "MediumToolStripMenuItem";
-      this.MediumToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+      this.MediumToolStripMenuItem.Size = new System.Drawing.Size(169, 34);
       this.MediumToolStripMenuItem.Text = "Moyen";
       this.MediumToolStripMenuItem.Click += new System.EventHandler(this.MediumToolStripMenuItem_Click);
       // 
       // LargeToolStripMenuItem
       // 
       this.LargeToolStripMenuItem.Name = "LargeToolStripMenuItem";
-      this.LargeToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+      this.LargeToolStripMenuItem.Size = new System.Drawing.Size(169, 34);
       this.LargeToolStripMenuItem.Text = "Grand";
       this.LargeToolStripMenuItem.Click += new System.EventHandler(this.LargeToolStripMenuItem_Click);
       // 
@@ -389,36 +390,36 @@
             this.toolStripSeparator5,
             this.aboutToolStripMenuItem});
       this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-      this.helpToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+      this.helpToolStripMenuItem.Size = new System.Drawing.Size(64, 30);
       this.helpToolStripMenuItem.Text = "&Aide";
       // 
       // summaryToolStripMenuItem
       // 
       this.summaryToolStripMenuItem.Name = "summaryToolStripMenuItem";
-      this.summaryToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+      this.summaryToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
       this.summaryToolStripMenuItem.Text = "&Sommaire";
       // 
       // indexToolStripMenuItem
       // 
       this.indexToolStripMenuItem.Name = "indexToolStripMenuItem";
-      this.indexToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+      this.indexToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
       this.indexToolStripMenuItem.Text = "&Index";
       // 
       // searchToolStripMenuItem
       // 
       this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-      this.searchToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+      this.searchToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
       this.searchToolStripMenuItem.Text = "&Rechercher";
       // 
       // toolStripSeparator5
       // 
       this.toolStripSeparator5.Name = "toolStripSeparator5";
-      this.toolStripSeparator5.Size = new System.Drawing.Size(144, 6);
+      this.toolStripSeparator5.Size = new System.Drawing.Size(267, 6);
       // 
       // aboutToolStripMenuItem
       // 
       this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-      this.aboutToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+      this.aboutToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
       this.aboutToolStripMenuItem.Text = "À &propos de...";
       this.aboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
       // 
@@ -429,11 +430,10 @@
       this.tabControlMain.Controls.Add(this.tabPageVisualizeTeam);
       this.tabControlMain.Controls.Add(this.tabPageCreateTeam);
       this.tabControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.tabControlMain.Location = new System.Drawing.Point(0, 24);
-      this.tabControlMain.Margin = new System.Windows.Forms.Padding(2);
+      this.tabControlMain.Location = new System.Drawing.Point(0, 36);
       this.tabControlMain.Name = "tabControlMain";
       this.tabControlMain.SelectedIndex = 0;
-      this.tabControlMain.Size = new System.Drawing.Size(1076, 582);
+      this.tabControlMain.Size = new System.Drawing.Size(1614, 896);
       this.tabControlMain.TabIndex = 2;
       // 
       // tabPageCreateTeams
@@ -443,9 +443,10 @@
       this.tabPageCreateTeams.Controls.Add(this.buttonCreateTeamsCreateTeam);
       this.tabPageCreateTeams.Controls.Add(this.textBoxCreateTeamsTeamName);
       this.tabPageCreateTeams.Controls.Add(this.labelCreateTeamsTeamName);
-      this.tabPageCreateTeams.Location = new System.Drawing.Point(4, 22);
+      this.tabPageCreateTeams.Location = new System.Drawing.Point(4, 29);
+      this.tabPageCreateTeams.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
       this.tabPageCreateTeams.Name = "tabPageCreateTeams";
-      this.tabPageCreateTeams.Size = new System.Drawing.Size(1068, 556);
+      this.tabPageCreateTeams.Size = new System.Drawing.Size(1606, 863);
       this.tabPageCreateTeams.TabIndex = 3;
       this.tabPageCreateTeams.Text = "Create teams";
       this.tabPageCreateTeams.UseVisualStyleBackColor = true;
@@ -457,9 +458,11 @@
       this.listViewCreateTeamsTeams.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeaderCreateTeamsCheck,
             this.columnHeaderCreateTeamsName});
-      this.listViewCreateTeamsTeams.Location = new System.Drawing.Point(404, 58);
+      this.listViewCreateTeamsTeams.HideSelection = false;
+      this.listViewCreateTeamsTeams.Location = new System.Drawing.Point(606, 89);
+      this.listViewCreateTeamsTeams.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
       this.listViewCreateTeamsTeams.Name = "listViewCreateTeamsTeams";
-      this.listViewCreateTeamsTeams.Size = new System.Drawing.Size(632, 470);
+      this.listViewCreateTeamsTeams.Size = new System.Drawing.Size(946, 721);
       this.listViewCreateTeamsTeams.TabIndex = 37;
       this.listViewCreateTeamsTeams.UseCompatibleStateImageBehavior = false;
       // 
@@ -475,19 +478,17 @@
       // 
       this.labelCreateTeamsTeams.AutoSize = true;
       this.labelCreateTeamsTeams.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.labelCreateTeamsTeams.Location = new System.Drawing.Point(401, 28);
-      this.labelCreateTeamsTeams.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+      this.labelCreateTeamsTeams.Location = new System.Drawing.Point(602, 43);
       this.labelCreateTeamsTeams.Name = "labelCreateTeamsTeams";
-      this.labelCreateTeamsTeams.Size = new System.Drawing.Size(51, 17);
+      this.labelCreateTeamsTeams.Size = new System.Drawing.Size(73, 25);
       this.labelCreateTeamsTeams.TabIndex = 36;
       this.labelCreateTeamsTeams.Text = "Teams";
       // 
       // buttonCreateTeamsCreateTeam
       // 
-      this.buttonCreateTeamsCreateTeam.Location = new System.Drawing.Point(149, 94);
-      this.buttonCreateTeamsCreateTeam.Margin = new System.Windows.Forms.Padding(2);
+      this.buttonCreateTeamsCreateTeam.Location = new System.Drawing.Point(224, 145);
       this.buttonCreateTeamsCreateTeam.Name = "buttonCreateTeamsCreateTeam";
-      this.buttonCreateTeamsCreateTeam.Size = new System.Drawing.Size(198, 28);
+      this.buttonCreateTeamsCreateTeam.Size = new System.Drawing.Size(297, 43);
       this.buttonCreateTeamsCreateTeam.TabIndex = 35;
       this.buttonCreateTeamsCreateTeam.Text = "Create team ->";
       this.buttonCreateTeamsCreateTeam.UseVisualStyleBackColor = true;
@@ -495,10 +496,9 @@
       // textBoxCreateTeamsTeamName
       // 
       this.textBoxCreateTeamsTeamName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.textBoxCreateTeamsTeamName.Location = new System.Drawing.Point(149, 58);
-      this.textBoxCreateTeamsTeamName.Margin = new System.Windows.Forms.Padding(2);
+      this.textBoxCreateTeamsTeamName.Location = new System.Drawing.Point(224, 89);
       this.textBoxCreateTeamsTeamName.Name = "textBoxCreateTeamsTeamName";
-      this.textBoxCreateTeamsTeamName.Size = new System.Drawing.Size(198, 23);
+      this.textBoxCreateTeamsTeamName.Size = new System.Drawing.Size(295, 30);
       this.textBoxCreateTeamsTeamName.TabIndex = 34;
       this.textBoxCreateTeamsTeamName.Text = "Badiset-";
       // 
@@ -506,10 +506,9 @@
       // 
       this.labelCreateTeamsTeamName.AutoSize = true;
       this.labelCreateTeamsTeamName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.labelCreateTeamsTeamName.Location = new System.Drawing.Point(33, 58);
-      this.labelCreateTeamsTeamName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+      this.labelCreateTeamsTeamName.Location = new System.Drawing.Point(50, 89);
       this.labelCreateTeamsTeamName.Name = "labelCreateTeamsTeamName";
-      this.labelCreateTeamsTeamName.Size = new System.Drawing.Size(93, 17);
+      this.labelCreateTeamsTeamName.Size = new System.Drawing.Size(131, 25);
       this.labelCreateTeamsTeamName.TabIndex = 33;
       this.labelCreateTeamsTeamName.Text = "Team\'s name";
       // 
@@ -532,22 +531,40 @@
       this.tabPageAddPlayer.Controls.Add(this.labelLastName);
       this.tabPageAddPlayer.Controls.Add(this.textBoxFirstName);
       this.tabPageAddPlayer.Controls.Add(this.labelFirstName);
-      this.tabPageAddPlayer.Location = new System.Drawing.Point(4, 22);
-      this.tabPageAddPlayer.Margin = new System.Windows.Forms.Padding(2);
+      this.tabPageAddPlayer.Location = new System.Drawing.Point(4, 29);
       this.tabPageAddPlayer.Name = "tabPageAddPlayer";
-      this.tabPageAddPlayer.Padding = new System.Windows.Forms.Padding(2);
-      this.tabPageAddPlayer.Size = new System.Drawing.Size(1068, 556);
+      this.tabPageAddPlayer.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+      this.tabPageAddPlayer.Size = new System.Drawing.Size(1606, 862);
       this.tabPageAddPlayer.TabIndex = 0;
       this.tabPageAddPlayer.Text = "Add Player";
       this.tabPageAddPlayer.UseVisualStyleBackColor = true;
       // 
+      // comboBoxAddPlayerTeamsName
+      // 
+      this.comboBoxAddPlayerTeamsName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.comboBoxAddPlayerTeamsName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.comboBoxAddPlayerTeamsName.FormattingEnabled = true;
+      this.comboBoxAddPlayerTeamsName.Location = new System.Drawing.Point(207, 375);
+      this.comboBoxAddPlayerTeamsName.Name = "comboBoxAddPlayerTeamsName";
+      this.comboBoxAddPlayerTeamsName.Size = new System.Drawing.Size(160, 33);
+      this.comboBoxAddPlayerTeamsName.TabIndex = 15;
+      // 
+      // labelAddPlayerTeamsName
+      // 
+      this.labelAddPlayerTeamsName.AutoSize = true;
+      this.labelAddPlayerTeamsName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.labelAddPlayerTeamsName.Location = new System.Drawing.Point(33, 375);
+      this.labelAddPlayerTeamsName.Name = "labelAddPlayerTeamsName";
+      this.labelAddPlayerTeamsName.Size = new System.Drawing.Size(134, 25);
+      this.labelAddPlayerTeamsName.TabIndex = 14;
+      this.labelAddPlayerTeamsName.Text = "Team\'s Name";
+      // 
       // textBoxLicenseNumber
       // 
       this.textBoxLicenseNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.textBoxLicenseNumber.Location = new System.Drawing.Point(138, 203);
-      this.textBoxLicenseNumber.Margin = new System.Windows.Forms.Padding(2);
+      this.textBoxLicenseNumber.Location = new System.Drawing.Point(207, 312);
       this.textBoxLicenseNumber.Name = "textBoxLicenseNumber";
-      this.textBoxLicenseNumber.Size = new System.Drawing.Size(108, 23);
+      this.textBoxLicenseNumber.Size = new System.Drawing.Size(160, 30);
       this.textBoxLicenseNumber.TabIndex = 13;
       this.textBoxLicenseNumber.Text = "0";
       this.textBoxLicenseNumber.TextChanged += new System.EventHandler(this.TextBoxLicenseNumber_TextChanged);
@@ -556,10 +573,9 @@
       // 
       this.labelLicenseNumber.AutoSize = true;
       this.labelLicenseNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.labelLicenseNumber.Location = new System.Drawing.Point(22, 203);
-      this.labelLicenseNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+      this.labelLicenseNumber.Location = new System.Drawing.Point(33, 312);
       this.labelLicenseNumber.Name = "labelLicenseNumber";
-      this.labelLicenseNumber.Size = new System.Drawing.Size(109, 17);
+      this.labelLicenseNumber.Size = new System.Drawing.Size(151, 25);
       this.labelLicenseNumber.TabIndex = 12;
       this.labelLicenseNumber.Text = "License number";
       // 
@@ -567,10 +583,9 @@
       // 
       this.buttonAddPlayer.Enabled = false;
       this.buttonAddPlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.buttonAddPlayer.Location = new System.Drawing.Point(138, 283);
-      this.buttonAddPlayer.Margin = new System.Windows.Forms.Padding(2);
+      this.buttonAddPlayer.Location = new System.Drawing.Point(207, 435);
       this.buttonAddPlayer.Name = "buttonAddPlayer";
-      this.buttonAddPlayer.Size = new System.Drawing.Size(107, 25);
+      this.buttonAddPlayer.Size = new System.Drawing.Size(160, 38);
       this.buttonAddPlayer.TabIndex = 7;
       this.buttonAddPlayer.Text = "Add Player";
       this.buttonAddPlayer.UseVisualStyleBackColor = true;
@@ -581,10 +596,9 @@
       this.comboBoxGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.comboBoxGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.comboBoxGender.FormattingEnabled = true;
-      this.comboBoxGender.Location = new System.Drawing.Point(138, 85);
-      this.comboBoxGender.Margin = new System.Windows.Forms.Padding(2);
+      this.comboBoxGender.Location = new System.Drawing.Point(207, 131);
       this.comboBoxGender.Name = "comboBoxGender";
-      this.comboBoxGender.Size = new System.Drawing.Size(108, 24);
+      this.comboBoxGender.Size = new System.Drawing.Size(160, 33);
       this.comboBoxGender.TabIndex = 3;
       this.comboBoxGender.SelectedIndexChanged += new System.EventHandler(this.comboBoxSex_SelectedIndexChanged);
       // 
@@ -592,10 +606,9 @@
       // 
       this.labelSex.AutoSize = true;
       this.labelSex.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.labelSex.Location = new System.Drawing.Point(22, 85);
-      this.labelSex.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+      this.labelSex.Location = new System.Drawing.Point(33, 131);
       this.labelSex.Name = "labelSex";
-      this.labelSex.Size = new System.Drawing.Size(31, 17);
+      this.labelSex.Size = new System.Drawing.Size(47, 25);
       this.labelSex.TabIndex = 11;
       this.labelSex.Text = "Sex";
       // 
@@ -604,10 +617,9 @@
       this.comboBoxMixed.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.comboBoxMixed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.comboBoxMixed.FormattingEnabled = true;
-      this.comboBoxMixed.Location = new System.Drawing.Point(138, 168);
-      this.comboBoxMixed.Margin = new System.Windows.Forms.Padding(2);
+      this.comboBoxMixed.Location = new System.Drawing.Point(207, 258);
       this.comboBoxMixed.Name = "comboBoxMixed";
-      this.comboBoxMixed.Size = new System.Drawing.Size(108, 24);
+      this.comboBoxMixed.Size = new System.Drawing.Size(160, 33);
       this.comboBoxMixed.TabIndex = 6;
       this.comboBoxMixed.SelectedIndexChanged += new System.EventHandler(this.comboBoxMixed_SelectedIndexChanged);
       // 
@@ -615,10 +627,9 @@
       // 
       this.labelMixed.AutoSize = true;
       this.labelMixed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.labelMixed.Location = new System.Drawing.Point(22, 171);
-      this.labelMixed.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+      this.labelMixed.Location = new System.Drawing.Point(33, 263);
       this.labelMixed.Name = "labelMixed";
-      this.labelMixed.Size = new System.Drawing.Size(44, 17);
+      this.labelMixed.Size = new System.Drawing.Size(65, 25);
       this.labelMixed.TabIndex = 9;
       this.labelMixed.Text = "Mixed";
       // 
@@ -627,10 +638,9 @@
       this.comboBoxDouble.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.comboBoxDouble.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.comboBoxDouble.FormattingEnabled = true;
-      this.comboBoxDouble.Location = new System.Drawing.Point(138, 141);
-      this.comboBoxDouble.Margin = new System.Windows.Forms.Padding(2);
+      this.comboBoxDouble.Location = new System.Drawing.Point(207, 217);
       this.comboBoxDouble.Name = "comboBoxDouble";
-      this.comboBoxDouble.Size = new System.Drawing.Size(108, 24);
+      this.comboBoxDouble.Size = new System.Drawing.Size(160, 33);
       this.comboBoxDouble.TabIndex = 5;
       this.comboBoxDouble.SelectedIndexChanged += new System.EventHandler(this.comboBoxDouble_SelectedIndexChanged);
       // 
@@ -639,10 +649,9 @@
       this.comboBoxSimple.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.comboBoxSimple.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.comboBoxSimple.FormattingEnabled = true;
-      this.comboBoxSimple.Location = new System.Drawing.Point(138, 113);
-      this.comboBoxSimple.Margin = new System.Windows.Forms.Padding(2);
+      this.comboBoxSimple.Location = new System.Drawing.Point(207, 174);
       this.comboBoxSimple.Name = "comboBoxSimple";
-      this.comboBoxSimple.Size = new System.Drawing.Size(108, 24);
+      this.comboBoxSimple.Size = new System.Drawing.Size(160, 33);
       this.comboBoxSimple.TabIndex = 4;
       this.comboBoxSimple.SelectedIndexChanged += new System.EventHandler(this.comboBoxSimple_SelectedIndexChanged);
       // 
@@ -650,10 +659,9 @@
       // 
       this.labelCreationDouble.AutoSize = true;
       this.labelCreationDouble.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.labelCreationDouble.Location = new System.Drawing.Point(22, 143);
-      this.labelCreationDouble.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+      this.labelCreationDouble.Location = new System.Drawing.Point(33, 220);
       this.labelCreationDouble.Name = "labelCreationDouble";
-      this.labelCreationDouble.Size = new System.Drawing.Size(53, 17);
+      this.labelCreationDouble.Size = new System.Drawing.Size(74, 25);
       this.labelCreationDouble.TabIndex = 6;
       this.labelCreationDouble.Text = "Double";
       // 
@@ -661,20 +669,18 @@
       // 
       this.labelCreateSimple.AutoSize = true;
       this.labelCreateSimple.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.labelCreateSimple.Location = new System.Drawing.Point(22, 116);
-      this.labelCreateSimple.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+      this.labelCreateSimple.Location = new System.Drawing.Point(33, 178);
       this.labelCreateSimple.Name = "labelCreateSimple";
-      this.labelCreateSimple.Size = new System.Drawing.Size(50, 17);
+      this.labelCreateSimple.Size = new System.Drawing.Size(72, 25);
       this.labelCreateSimple.TabIndex = 4;
       this.labelCreateSimple.Text = "Simple";
       // 
       // textBoxLastName
       // 
       this.textBoxLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.textBoxLastName.Location = new System.Drawing.Point(138, 56);
-      this.textBoxLastName.Margin = new System.Windows.Forms.Padding(2);
+      this.textBoxLastName.Location = new System.Drawing.Point(207, 86);
       this.textBoxLastName.Name = "textBoxLastName";
-      this.textBoxLastName.Size = new System.Drawing.Size(108, 23);
+      this.textBoxLastName.Size = new System.Drawing.Size(160, 30);
       this.textBoxLastName.TabIndex = 2;
       this.textBoxLastName.Text = "a";
       this.textBoxLastName.TextChanged += new System.EventHandler(this.textBoxLastName_TextChanged);
@@ -683,20 +689,18 @@
       // 
       this.labelLastName.AutoSize = true;
       this.labelLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.labelLastName.Location = new System.Drawing.Point(22, 56);
-      this.labelLastName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+      this.labelLastName.Location = new System.Drawing.Point(33, 86);
       this.labelLastName.Name = "labelLastName";
-      this.labelLastName.Size = new System.Drawing.Size(76, 17);
+      this.labelLastName.Size = new System.Drawing.Size(106, 25);
       this.labelLastName.TabIndex = 2;
       this.labelLastName.Text = "Last Name";
       // 
       // textBoxFirstName
       // 
       this.textBoxFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.textBoxFirstName.Location = new System.Drawing.Point(138, 33);
-      this.textBoxFirstName.Margin = new System.Windows.Forms.Padding(2);
+      this.textBoxFirstName.Location = new System.Drawing.Point(207, 51);
       this.textBoxFirstName.Name = "textBoxFirstName";
-      this.textBoxFirstName.Size = new System.Drawing.Size(108, 23);
+      this.textBoxFirstName.Size = new System.Drawing.Size(160, 30);
       this.textBoxFirstName.TabIndex = 1;
       this.textBoxFirstName.Text = "a";
       this.textBoxFirstName.TextChanged += new System.EventHandler(this.textBoxFirstName_TextChanged);
@@ -705,21 +709,19 @@
       // 
       this.labelFirstName.AutoSize = true;
       this.labelFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.labelFirstName.Location = new System.Drawing.Point(22, 33);
-      this.labelFirstName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+      this.labelFirstName.Location = new System.Drawing.Point(33, 51);
       this.labelFirstName.Name = "labelFirstName";
-      this.labelFirstName.Size = new System.Drawing.Size(76, 17);
+      this.labelFirstName.Size = new System.Drawing.Size(106, 25);
       this.labelFirstName.TabIndex = 0;
       this.labelFirstName.Text = "First Name";
       // 
       // tabPageVisualizeTeam
       // 
       this.tabPageVisualizeTeam.Controls.Add(this.listViewVisualizeTeam);
-      this.tabPageVisualizeTeam.Location = new System.Drawing.Point(4, 22);
-      this.tabPageVisualizeTeam.Margin = new System.Windows.Forms.Padding(2);
+      this.tabPageVisualizeTeam.Location = new System.Drawing.Point(4, 29);
       this.tabPageVisualizeTeam.Name = "tabPageVisualizeTeam";
-      this.tabPageVisualizeTeam.Padding = new System.Windows.Forms.Padding(2);
-      this.tabPageVisualizeTeam.Size = new System.Drawing.Size(1068, 556);
+      this.tabPageVisualizeTeam.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+      this.tabPageVisualizeTeam.Size = new System.Drawing.Size(1606, 862);
       this.tabPageVisualizeTeam.TabIndex = 1;
       this.tabPageVisualizeTeam.Text = "Visualize team";
       this.tabPageVisualizeTeam.UseVisualStyleBackColor = true;
@@ -728,10 +730,10 @@
       // listViewVisualizeTeam
       // 
       this.listViewVisualizeTeam.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.listViewVisualizeTeam.Location = new System.Drawing.Point(2, 2);
-      this.listViewVisualizeTeam.Margin = new System.Windows.Forms.Padding(2);
+      this.listViewVisualizeTeam.HideSelection = false;
+      this.listViewVisualizeTeam.Location = new System.Drawing.Point(3, 3);
       this.listViewVisualizeTeam.Name = "listViewVisualizeTeam";
-      this.listViewVisualizeTeam.Size = new System.Drawing.Size(1064, 552);
+      this.listViewVisualizeTeam.Size = new System.Drawing.Size(1600, 856);
       this.listViewVisualizeTeam.TabIndex = 0;
       this.listViewVisualizeTeam.UseCompatibleStateImageBehavior = false;
       // 
@@ -760,10 +762,9 @@
       this.tabPageCreateTeam.Controls.Add(this.labelCreateTeamFirstName);
       this.tabPageCreateTeam.Controls.Add(this.comboBoxCreateTeamPlayer);
       this.tabPageCreateTeam.Controls.Add(this.labelCreateTeamPlayer);
-      this.tabPageCreateTeam.Location = new System.Drawing.Point(4, 22);
-      this.tabPageCreateTeam.Margin = new System.Windows.Forms.Padding(2);
+      this.tabPageCreateTeam.Location = new System.Drawing.Point(4, 29);
       this.tabPageCreateTeam.Name = "tabPageCreateTeam";
-      this.tabPageCreateTeam.Size = new System.Drawing.Size(1068, 556);
+      this.tabPageCreateTeam.Size = new System.Drawing.Size(1606, 862);
       this.tabPageCreateTeam.TabIndex = 2;
       this.tabPageCreateTeam.Text = "Create one day team";
       this.tabPageCreateTeam.UseVisualStyleBackColor = true;
@@ -771,19 +772,19 @@
       // 
       // dateTimePickerCreateTeamDateToPlay
       // 
-      this.dateTimePickerCreateTeamDateToPlay.Location = new System.Drawing.Point(142, 304);
+      this.dateTimePickerCreateTeamDateToPlay.Location = new System.Drawing.Point(213, 468);
+      this.dateTimePickerCreateTeamDateToPlay.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
       this.dateTimePickerCreateTeamDateToPlay.Name = "dateTimePickerCreateTeamDateToPlay";
-      this.dateTimePickerCreateTeamDateToPlay.Size = new System.Drawing.Size(200, 20);
+      this.dateTimePickerCreateTeamDateToPlay.Size = new System.Drawing.Size(298, 26);
       this.dateTimePickerCreateTeamDateToPlay.TabIndex = 34;
       // 
       // labelCreateTeamDateToPlay
       // 
       this.labelCreateTeamDateToPlay.AutoSize = true;
       this.labelCreateTeamDateToPlay.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.labelCreateTeamDateToPlay.Location = new System.Drawing.Point(26, 304);
-      this.labelCreateTeamDateToPlay.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+      this.labelCreateTeamDateToPlay.Location = new System.Drawing.Point(39, 468);
       this.labelCreateTeamDateToPlay.Name = "labelCreateTeamDateToPlay";
-      this.labelCreateTeamDateToPlay.Size = new System.Drawing.Size(84, 17);
+      this.labelCreateTeamDateToPlay.Size = new System.Drawing.Size(115, 25);
       this.labelCreateTeamDateToPlay.TabIndex = 33;
       this.labelCreateTeamDateToPlay.Text = "Date to play";
       // 
@@ -791,9 +792,11 @@
       // 
       this.listViewCreateTeam.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-      this.listViewCreateTeam.Location = new System.Drawing.Point(397, 52);
+      this.listViewCreateTeam.HideSelection = false;
+      this.listViewCreateTeam.Location = new System.Drawing.Point(596, 80);
+      this.listViewCreateTeam.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
       this.listViewCreateTeam.Name = "listViewCreateTeam";
-      this.listViewCreateTeam.Size = new System.Drawing.Size(632, 470);
+      this.listViewCreateTeam.Size = new System.Drawing.Size(946, 721);
       this.listViewCreateTeam.TabIndex = 32;
       this.listViewCreateTeam.UseCompatibleStateImageBehavior = false;
       // 
@@ -802,10 +805,9 @@
       this.comboBoxPlayType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.comboBoxPlayType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.comboBoxPlayType.FormattingEnabled = true;
-      this.comboBoxPlayType.Location = new System.Drawing.Point(142, 352);
-      this.comboBoxPlayType.Margin = new System.Windows.Forms.Padding(2);
+      this.comboBoxPlayType.Location = new System.Drawing.Point(213, 542);
       this.comboBoxPlayType.Name = "comboBoxPlayType";
-      this.comboBoxPlayType.Size = new System.Drawing.Size(198, 24);
+      this.comboBoxPlayType.Size = new System.Drawing.Size(295, 33);
       this.comboBoxPlayType.TabIndex = 30;
       this.comboBoxPlayType.SelectedIndexChanged += new System.EventHandler(this.ComboBoxPlayType_SelectedIndexChanged);
       // 
@@ -813,10 +815,9 @@
       // 
       this.labelPlayType.AutoSize = true;
       this.labelPlayType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.labelPlayType.Location = new System.Drawing.Point(26, 352);
-      this.labelPlayType.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+      this.labelPlayType.Location = new System.Drawing.Point(39, 542);
       this.labelPlayType.Name = "labelPlayType";
-      this.labelPlayType.Size = new System.Drawing.Size(66, 17);
+      this.labelPlayType.Size = new System.Drawing.Size(92, 25);
       this.labelPlayType.TabIndex = 31;
       this.labelPlayType.Text = "Play type";
       // 
@@ -824,19 +825,17 @@
       // 
       this.labelCreateTeamTeam.AutoSize = true;
       this.labelCreateTeamTeam.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.labelCreateTeamTeam.Location = new System.Drawing.Point(394, 22);
-      this.labelCreateTeamTeam.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+      this.labelCreateTeamTeam.Location = new System.Drawing.Point(591, 34);
       this.labelCreateTeamTeam.Name = "labelCreateTeamTeam";
-      this.labelCreateTeamTeam.Size = new System.Drawing.Size(44, 17);
+      this.labelCreateTeamTeam.Size = new System.Drawing.Size(63, 25);
       this.labelCreateTeamTeam.TabIndex = 29;
       this.labelCreateTeamTeam.Text = "Team";
       // 
       // buttonCreateTeamCopy
       // 
-      this.buttonCreateTeamCopy.Location = new System.Drawing.Point(142, 391);
-      this.buttonCreateTeamCopy.Margin = new System.Windows.Forms.Padding(2);
+      this.buttonCreateTeamCopy.Location = new System.Drawing.Point(213, 602);
       this.buttonCreateTeamCopy.Name = "buttonCreateTeamCopy";
-      this.buttonCreateTeamCopy.Size = new System.Drawing.Size(198, 28);
+      this.buttonCreateTeamCopy.Size = new System.Drawing.Size(297, 43);
       this.buttonCreateTeamCopy.TabIndex = 28;
       this.buttonCreateTeamCopy.Text = "Add to team ->";
       this.buttonCreateTeamCopy.UseVisualStyleBackColor = true;
@@ -845,11 +844,10 @@
       // textBoxCreateTeamMixedLevel
       // 
       this.textBoxCreateTeamMixedLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.textBoxCreateTeamMixedLevel.Location = new System.Drawing.Point(142, 228);
-      this.textBoxCreateTeamMixedLevel.Margin = new System.Windows.Forms.Padding(2);
+      this.textBoxCreateTeamMixedLevel.Location = new System.Drawing.Point(213, 351);
       this.textBoxCreateTeamMixedLevel.Name = "textBoxCreateTeamMixedLevel";
       this.textBoxCreateTeamMixedLevel.ReadOnly = true;
-      this.textBoxCreateTeamMixedLevel.Size = new System.Drawing.Size(108, 23);
+      this.textBoxCreateTeamMixedLevel.Size = new System.Drawing.Size(160, 30);
       this.textBoxCreateTeamMixedLevel.TabIndex = 26;
       this.textBoxCreateTeamMixedLevel.Text = "a";
       // 
@@ -857,21 +855,19 @@
       // 
       this.labelCreateTeamMixedLevel.AutoSize = true;
       this.labelCreateTeamMixedLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.labelCreateTeamMixedLevel.Location = new System.Drawing.Point(26, 228);
-      this.labelCreateTeamMixedLevel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+      this.labelCreateTeamMixedLevel.Location = new System.Drawing.Point(39, 351);
       this.labelCreateTeamMixedLevel.Name = "labelCreateTeamMixedLevel";
-      this.labelCreateTeamMixedLevel.Size = new System.Drawing.Size(77, 17);
+      this.labelCreateTeamMixedLevel.Size = new System.Drawing.Size(110, 25);
       this.labelCreateTeamMixedLevel.TabIndex = 27;
       this.labelCreateTeamMixedLevel.Text = "Mixed level";
       // 
       // textBoxCreateTeamDoubleLevel
       // 
       this.textBoxCreateTeamDoubleLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.textBoxCreateTeamDoubleLevel.Location = new System.Drawing.Point(142, 205);
-      this.textBoxCreateTeamDoubleLevel.Margin = new System.Windows.Forms.Padding(2);
+      this.textBoxCreateTeamDoubleLevel.Location = new System.Drawing.Point(213, 315);
       this.textBoxCreateTeamDoubleLevel.Name = "textBoxCreateTeamDoubleLevel";
       this.textBoxCreateTeamDoubleLevel.ReadOnly = true;
-      this.textBoxCreateTeamDoubleLevel.Size = new System.Drawing.Size(108, 23);
+      this.textBoxCreateTeamDoubleLevel.Size = new System.Drawing.Size(160, 30);
       this.textBoxCreateTeamDoubleLevel.TabIndex = 25;
       this.textBoxCreateTeamDoubleLevel.Text = "a";
       // 
@@ -879,21 +875,19 @@
       // 
       this.labelCreateTeamDoubleLevel.AutoSize = true;
       this.labelCreateTeamDoubleLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.labelCreateTeamDoubleLevel.Location = new System.Drawing.Point(26, 205);
-      this.labelCreateTeamDoubleLevel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+      this.labelCreateTeamDoubleLevel.Location = new System.Drawing.Point(39, 315);
       this.labelCreateTeamDoubleLevel.Name = "labelCreateTeamDoubleLevel";
-      this.labelCreateTeamDoubleLevel.Size = new System.Drawing.Size(86, 17);
+      this.labelCreateTeamDoubleLevel.Size = new System.Drawing.Size(119, 25);
       this.labelCreateTeamDoubleLevel.TabIndex = 24;
       this.labelCreateTeamDoubleLevel.Text = "Double level";
       // 
       // textBoxCreateTeamSimpleLevel
       // 
       this.textBoxCreateTeamSimpleLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.textBoxCreateTeamSimpleLevel.Location = new System.Drawing.Point(142, 176);
-      this.textBoxCreateTeamSimpleLevel.Margin = new System.Windows.Forms.Padding(2);
+      this.textBoxCreateTeamSimpleLevel.Location = new System.Drawing.Point(213, 271);
       this.textBoxCreateTeamSimpleLevel.Name = "textBoxCreateTeamSimpleLevel";
       this.textBoxCreateTeamSimpleLevel.ReadOnly = true;
-      this.textBoxCreateTeamSimpleLevel.Size = new System.Drawing.Size(108, 23);
+      this.textBoxCreateTeamSimpleLevel.Size = new System.Drawing.Size(160, 30);
       this.textBoxCreateTeamSimpleLevel.TabIndex = 22;
       this.textBoxCreateTeamSimpleLevel.Text = "a";
       // 
@@ -901,21 +895,19 @@
       // 
       this.labelCreateTeamSimpleLevel.AutoSize = true;
       this.labelCreateTeamSimpleLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.labelCreateTeamSimpleLevel.Location = new System.Drawing.Point(26, 176);
-      this.labelCreateTeamSimpleLevel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+      this.labelCreateTeamSimpleLevel.Location = new System.Drawing.Point(39, 271);
       this.labelCreateTeamSimpleLevel.Name = "labelCreateTeamSimpleLevel";
-      this.labelCreateTeamSimpleLevel.Size = new System.Drawing.Size(83, 17);
+      this.labelCreateTeamSimpleLevel.Size = new System.Drawing.Size(117, 25);
       this.labelCreateTeamSimpleLevel.TabIndex = 23;
       this.labelCreateTeamSimpleLevel.Text = "Simple level";
       // 
       // textBoxCreateTeamGender
       // 
       this.textBoxCreateTeamGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.textBoxCreateTeamGender.Location = new System.Drawing.Point(142, 151);
-      this.textBoxCreateTeamGender.Margin = new System.Windows.Forms.Padding(2);
+      this.textBoxCreateTeamGender.Location = new System.Drawing.Point(213, 232);
       this.textBoxCreateTeamGender.Name = "textBoxCreateTeamGender";
       this.textBoxCreateTeamGender.ReadOnly = true;
-      this.textBoxCreateTeamGender.Size = new System.Drawing.Size(108, 23);
+      this.textBoxCreateTeamGender.Size = new System.Drawing.Size(160, 30);
       this.textBoxCreateTeamGender.TabIndex = 21;
       this.textBoxCreateTeamGender.Text = "a";
       // 
@@ -923,21 +915,19 @@
       // 
       this.labelCreateTeamGender.AutoSize = true;
       this.labelCreateTeamGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.labelCreateTeamGender.Location = new System.Drawing.Point(26, 151);
-      this.labelCreateTeamGender.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+      this.labelCreateTeamGender.Location = new System.Drawing.Point(39, 232);
       this.labelCreateTeamGender.Name = "labelCreateTeamGender";
-      this.labelCreateTeamGender.Size = new System.Drawing.Size(31, 17);
+      this.labelCreateTeamGender.Size = new System.Drawing.Size(47, 25);
       this.labelCreateTeamGender.TabIndex = 20;
       this.labelCreateTeamGender.Text = "Sex";
       // 
       // textBoxCreateTeamLicenseNumber
       // 
       this.textBoxCreateTeamLicenseNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.textBoxCreateTeamLicenseNumber.Location = new System.Drawing.Point(142, 262);
-      this.textBoxCreateTeamLicenseNumber.Margin = new System.Windows.Forms.Padding(2);
+      this.textBoxCreateTeamLicenseNumber.Location = new System.Drawing.Point(213, 403);
       this.textBoxCreateTeamLicenseNumber.Name = "textBoxCreateTeamLicenseNumber";
       this.textBoxCreateTeamLicenseNumber.ReadOnly = true;
-      this.textBoxCreateTeamLicenseNumber.Size = new System.Drawing.Size(108, 23);
+      this.textBoxCreateTeamLicenseNumber.Size = new System.Drawing.Size(160, 30);
       this.textBoxCreateTeamLicenseNumber.TabIndex = 19;
       this.textBoxCreateTeamLicenseNumber.Text = "0";
       // 
@@ -945,21 +935,19 @@
       // 
       this.labelCreateTeamLicenseNumber.AutoSize = true;
       this.labelCreateTeamLicenseNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.labelCreateTeamLicenseNumber.Location = new System.Drawing.Point(26, 262);
-      this.labelCreateTeamLicenseNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+      this.labelCreateTeamLicenseNumber.Location = new System.Drawing.Point(39, 403);
       this.labelCreateTeamLicenseNumber.Name = "labelCreateTeamLicenseNumber";
-      this.labelCreateTeamLicenseNumber.Size = new System.Drawing.Size(109, 17);
+      this.labelCreateTeamLicenseNumber.Size = new System.Drawing.Size(151, 25);
       this.labelCreateTeamLicenseNumber.TabIndex = 18;
       this.labelCreateTeamLicenseNumber.Text = "License number";
       // 
       // textBoxCreateTeamLastName
       // 
       this.textBoxCreateTeamLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.textBoxCreateTeamLastName.Location = new System.Drawing.Point(142, 124);
-      this.textBoxCreateTeamLastName.Margin = new System.Windows.Forms.Padding(2);
+      this.textBoxCreateTeamLastName.Location = new System.Drawing.Point(213, 191);
       this.textBoxCreateTeamLastName.Name = "textBoxCreateTeamLastName";
       this.textBoxCreateTeamLastName.ReadOnly = true;
-      this.textBoxCreateTeamLastName.Size = new System.Drawing.Size(198, 23);
+      this.textBoxCreateTeamLastName.Size = new System.Drawing.Size(295, 30);
       this.textBoxCreateTeamLastName.TabIndex = 16;
       this.textBoxCreateTeamLastName.Text = "a";
       // 
@@ -967,21 +955,19 @@
       // 
       this.labelCreateTeamLastName.AutoSize = true;
       this.labelCreateTeamLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.labelCreateTeamLastName.Location = new System.Drawing.Point(26, 124);
-      this.labelCreateTeamLastName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+      this.labelCreateTeamLastName.Location = new System.Drawing.Point(39, 191);
       this.labelCreateTeamLastName.Name = "labelCreateTeamLastName";
-      this.labelCreateTeamLastName.Size = new System.Drawing.Size(76, 17);
+      this.labelCreateTeamLastName.Size = new System.Drawing.Size(106, 25);
       this.labelCreateTeamLastName.TabIndex = 17;
       this.labelCreateTeamLastName.Text = "Last Name";
       // 
       // textBoxCreateTeamFirstName
       // 
       this.textBoxCreateTeamFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.textBoxCreateTeamFirstName.Location = new System.Drawing.Point(142, 98);
-      this.textBoxCreateTeamFirstName.Margin = new System.Windows.Forms.Padding(2);
+      this.textBoxCreateTeamFirstName.Location = new System.Drawing.Point(213, 151);
       this.textBoxCreateTeamFirstName.Name = "textBoxCreateTeamFirstName";
       this.textBoxCreateTeamFirstName.ReadOnly = true;
-      this.textBoxCreateTeamFirstName.Size = new System.Drawing.Size(198, 23);
+      this.textBoxCreateTeamFirstName.Size = new System.Drawing.Size(295, 30);
       this.textBoxCreateTeamFirstName.TabIndex = 15;
       this.textBoxCreateTeamFirstName.Text = "a";
       // 
@@ -989,10 +975,9 @@
       // 
       this.labelCreateTeamFirstName.AutoSize = true;
       this.labelCreateTeamFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.labelCreateTeamFirstName.Location = new System.Drawing.Point(26, 98);
-      this.labelCreateTeamFirstName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+      this.labelCreateTeamFirstName.Location = new System.Drawing.Point(39, 151);
       this.labelCreateTeamFirstName.Name = "labelCreateTeamFirstName";
-      this.labelCreateTeamFirstName.Size = new System.Drawing.Size(76, 17);
+      this.labelCreateTeamFirstName.Size = new System.Drawing.Size(106, 25);
       this.labelCreateTeamFirstName.TabIndex = 14;
       this.labelCreateTeamFirstName.Text = "First Name";
       // 
@@ -1001,10 +986,9 @@
       this.comboBoxCreateTeamPlayer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.comboBoxCreateTeamPlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.comboBoxCreateTeamPlayer.FormattingEnabled = true;
-      this.comboBoxCreateTeamPlayer.Location = new System.Drawing.Point(142, 52);
-      this.comboBoxCreateTeamPlayer.Margin = new System.Windows.Forms.Padding(2);
+      this.comboBoxCreateTeamPlayer.Location = new System.Drawing.Point(213, 80);
       this.comboBoxCreateTeamPlayer.Name = "comboBoxCreateTeamPlayer";
-      this.comboBoxCreateTeamPlayer.Size = new System.Drawing.Size(198, 24);
+      this.comboBoxCreateTeamPlayer.Size = new System.Drawing.Size(295, 33);
       this.comboBoxCreateTeamPlayer.TabIndex = 12;
       this.comboBoxCreateTeamPlayer.SelectedIndexChanged += new System.EventHandler(this.ComboBoxCreateTeamPlayer_SelectedIndexChanged);
       // 
@@ -1012,44 +996,20 @@
       // 
       this.labelCreateTeamPlayer.AutoSize = true;
       this.labelCreateTeamPlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.labelCreateTeamPlayer.Location = new System.Drawing.Point(26, 52);
-      this.labelCreateTeamPlayer.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+      this.labelCreateTeamPlayer.Location = new System.Drawing.Point(39, 80);
       this.labelCreateTeamPlayer.Name = "labelCreateTeamPlayer";
-      this.labelCreateTeamPlayer.Size = new System.Drawing.Size(48, 17);
+      this.labelCreateTeamPlayer.Size = new System.Drawing.Size(67, 25);
       this.labelCreateTeamPlayer.TabIndex = 13;
       this.labelCreateTeamPlayer.Text = "Player";
       // 
-      // labelAddPlayerTeamsName
-      // 
-      this.labelAddPlayerTeamsName.AutoSize = true;
-      this.labelAddPlayerTeamsName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.labelAddPlayerTeamsName.Location = new System.Drawing.Point(22, 244);
-      this.labelAddPlayerTeamsName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-      this.labelAddPlayerTeamsName.Name = "labelAddPlayerTeamsName";
-      this.labelAddPlayerTeamsName.Size = new System.Drawing.Size(95, 17);
-      this.labelAddPlayerTeamsName.TabIndex = 14;
-      this.labelAddPlayerTeamsName.Text = "Team\'s Name";
-      // 
-      // comboBoxAddPlayerTeamsName
-      // 
-      this.comboBoxAddPlayerTeamsName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-      this.comboBoxAddPlayerTeamsName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.comboBoxAddPlayerTeamsName.FormattingEnabled = true;
-      this.comboBoxAddPlayerTeamsName.Location = new System.Drawing.Point(138, 244);
-      this.comboBoxAddPlayerTeamsName.Margin = new System.Windows.Forms.Padding(2);
-      this.comboBoxAddPlayerTeamsName.Name = "comboBoxAddPlayerTeamsName";
-      this.comboBoxAddPlayerTeamsName.Size = new System.Drawing.Size(108, 24);
-      this.comboBoxAddPlayerTeamsName.TabIndex = 15;
-      // 
       // FormMain
       // 
-      this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+      this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(1076, 606);
+      this.ClientSize = new System.Drawing.Size(1614, 932);
       this.Controls.Add(this.tabControlMain);
       this.Controls.Add(this.menuStrip1);
       this.MainMenuStrip = this.menuStrip1;
-      this.Margin = new System.Windows.Forms.Padding(2);
       this.Name = "FormMain";
       this.ShowIcon = false;
       this.Text = "InterClub Badminton";
